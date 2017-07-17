@@ -1,12 +1,11 @@
 {
-    "name": "robinson/audio",
-    "require": {
-        "spipu/html2pdf": "^5.0"
-    },
+    "name": "robinson/factura-electronica",
+    "description": "Factura electronica",
     "authors": [
         {
-            "name": "robinson coello",
+            "name": "Robinson",
             "email": "robincoello@hotmail.com"
         }
-    ]
+    ],
+    "require": {}
 }
