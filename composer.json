@@ -1,0 +1,12 @@
+{
+    "name": "robinson/audio",
+    "require": {
+        "spipu/html2pdf": "^5.0"
+    },
+    "authors": [
+        {
+            "name": "robinson coello",
+            "email": "robincoello@hotmail.com"
+        }
+    ]
+}
