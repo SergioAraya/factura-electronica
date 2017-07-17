@@ -1,4 +1,6 @@
-<?php/*
+<?php
+require '../mg_config.php';
+/*
 // DATOS DE LA EMPRESA
 $path_imagenes = "/var/www/html/audio/imagenes";
 $config_debug = 0; 
@@ -88,3 +90,5 @@ $config_enviar_email_admin_scc = true; // solicita cambio de clave
 #
 $config_enviar_email_contacto_cambia_clave = true;
 $config_enviar_email_admin_cambia_clave = true;
+ * 
+ */

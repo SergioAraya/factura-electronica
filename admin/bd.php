@@ -1,4 +1,6 @@
-<?php/*
+<?php
+include "../mg_config.php";
+/*
 switch ($_SERVER['SERVER_NAME']) {
     case "127.0.0.1":
     case "localhost":
@@ -21,3 +23,5 @@ switch ($_SERVER['SERVER_NAME']) {
     default:
         break;
 }
+ * 
+ */
