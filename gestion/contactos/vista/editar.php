@@ -10,7 +10,6 @@
 </h2> 
 
 
-
 <form class="form-horizontal" method="post" action="index.php"> 
     <input type="hidden" name="p" value="contactos"> 
     <input type="hidden" name="c" value="editar"> 
@@ -241,19 +240,16 @@
             <div class="radio">
                 <label>
                     <input  type="radio" name="contactos_estatus" value="1" <?php echo "$contactos_estatus_1"; ?>  >
-                    <?php
-                    _t("Activo, puede realizar pedidos");
-                    echo " ";
-                    _t('Un email sera enviado al usuario');
-                    ?> 
+                    <?php 
+                    _t("Activo, puede realizar pedidos"); 
+                    echo " "; 
+                    _t('Un email sera enviado al usuario'); ?> 
                 </label>
             </div>
             <div class="radio">
                 <label>
                     <input  type="radio" name="contactos_estatus" value="0"  <?php echo "$contactos_estatus_0"; ?>  >
-<?php _t("Bloqueado, No puede realizar pedidos");
-echo " ";
-_t('Un email sera enviado al usuario'); ?>  
+                    <?php _t("Bloqueado, No puede realizar pedidos"); echo " ";  _t('Un email sera enviado al usuario');?>  
                 </label>
             </div>
         </div> 
@@ -269,8 +265,11 @@ _t('Un email sera enviado al usuario'); ?>
 
 
 
+
+
+
 <h2><?php _t("Atención"); ?></h2>
 <p><?php _t("Ud esta va a borrar definitivamente este registro, desea hacerlo?"); ?></p>
 <a class="btn btn-danger" href="index.php?p=contactos&c=borrar&contactos_email=<?php echo $contactos_email; ?>">
-<?php _t("Si,borrar"); ?>
+    <?php _t("Si,borrar"); ?>
 </a>

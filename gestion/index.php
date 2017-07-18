@@ -1,7 +1,5 @@
 <?php
 session_start("magia_php");
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 include "z_verificar.php";
 include "../admin/bd.php";
 include "../admin/errores.php";
@@ -28,6 +26,7 @@ $p = (isset($_REQUEST['p'])) ? $_REQUEST['p'] : "home";
 $c = (isset($_REQUEST['c'])) ? $_REQUEST['c'] : "index";
 // para las paginaciones de todas las paginas
 $pag = (isset($_REQUEST['pag'])) ? $_REQUEST['pag'] : 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +49,12 @@ $pag = (isset($_REQUEST['pag'])) ? $_REQUEST['pag'] : 0;
         <link rel="stylesheet" href="estilo.css"/>
 
         <?php
-        $scripts = "./$p/scripts/$c.php";
+        $scripts = "./$p/scripts/$c.php";                  
         (file_exists($scripts)) ? include "$scripts" : "";
         ?>
 
     </head>
-
+    
     <body id="<?php echo "$p" . "_" . "$c"; ?>">
 
 
@@ -89,18 +88,18 @@ $pag = (isset($_REQUEST['pag'])) ? $_REQUEST['pag'] : 0;
 
                     <?php
                     include "home/vista/sidebar.php";
-                    include './' . $p . '/controlador/' . $c . '.php';
+                    include './' . $p . '/controlador/' . $c . '.php';                    
                     ?>
 
                 </div>	  <!-- /3 --> 
             </div>  <!-- /2 -->
         </div>	<!-- /1 -->
 
-        <?php
-        include "home/vista/footer.php";
-        // cerramos la coneccion 
-        //  mysql_close($conexion);
-        ?>
+                    <?php
+                    include "home/vista/footer.php";
+                    // cerramos la coneccion 
+                  //  mysql_close($conexion);
+                    ?>
 
 
         <!-- Bootstrap core JavaScript

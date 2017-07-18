@@ -1,4 +1,4 @@
-<?php/*
+<?php
 // DATOS DE LA EMPRESA
 $config_debug = _opciones_valor_segun_opcion('debug'); 
 $config_desarrollo = _opciones_valor_segun_opcion('desarrollo'); 
