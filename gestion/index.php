@@ -87,7 +87,13 @@ $pag = (isset($_REQUEST['pag'])) ? $_REQUEST['pag'] : 0;
 
 
                     <?php
-                    include "home/vista/sidebar.php";
+                    if(file_exists("$p/vista/menu_$c.php")){
+                        include "$p/vista/menu_$c.php";
+                    }else{
+                        include "home/vista/sidebar.php";
+                    }
+                    
+                    
                     include './' . $p . '/controlador/' . $c . '.php';                    
                     ?>
 

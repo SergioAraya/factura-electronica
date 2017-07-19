@@ -3,10 +3,10 @@
 /**
   magia_version: 0.0.11
  * */
-$sql = mysql_query(
-        "SELECT * FROM facturas WHERE id = '$facturas_id' ORDER BY id DESC   ", $conexion)
-        or error(__DIR__, __FILE__, __LINE__);
-$facturas = mysql_fetch_array($sql);
+$sql = mysql_query(" UPDATE facturas SET  
+ estatus = '-1'  
+ WHERE id = '$facturas_id' 
+ ", $conexion) or error(__DIR__, __FILE__, __LINE__);
 
 
 if ($config_debug) {

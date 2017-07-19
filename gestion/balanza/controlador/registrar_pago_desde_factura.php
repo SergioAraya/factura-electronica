@@ -4,16 +4,18 @@
   magia_version: 0.0.11
  * */
 $accion = "crear";
-$pagina = "factura_items";
+$pagina = "balanza";
 if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
-    if (isset($_REQUEST['a']) == 'crear') {
-        include "./factura_items/reg/post.php";
-        include "./factura_items/modelos/crear.php";
+    if (isset($_REQUEST['a']) == 'registrar') {
+        include "./balanza/reg/post.php";
+        include "./balanza/modelos/registrar_pago_desde_factura.php";
+        
+        
         if (!$config_debug) {
-            echo '<META http-equiv="refresh" content="0; URL=index.php?p=facturas&c=editar&facturas_id='. facturas_campo_segun_ref('id', $factura_items_ref_factura).'">';
+            echo '<meta http-equiv="refresh" content="0; url=index.php?p=' . $p . '&c=index">';
         }
     } else {
-        include "./factura_items/vista/crear.php";
+        include "./balanza/vista/crear.php";
     }
 } else {
     permisos_sin_permiso($accion, $pagina, $_usuarios_usuario);

@@ -12,9 +12,15 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
     //asc / desc
     $orden   = (isset($_REQUEST['orden']) && $_REQUEST['orden'] != '' ) ? $_REQUEST['orden']  : ' DESC ';
     
+    if(permisos_tiene_permiso('ver', 'contactos_otros', $_usuarios_grupo))
+    {
+        include "./contactos/modelos/index_otros.php";
+    } else {
+        include "./contactos/modelos/index_mios.php";
+
+    }
     
     
-    include "./contactos/modelos/index.php";
     include "./contactos/vista/index.php";
 } else {
     permisos_sin_permiso($accion, $pagina, $_usuarios_usuario);

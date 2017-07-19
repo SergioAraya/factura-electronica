@@ -2,7 +2,7 @@
 // DATOS DE LA EMPRESA
 $path_imagenes = "/var/www/html/";
 $config_debug = 0; 
-$config_nombre_web = "Magia_php";
+$config_nombre_web = "factura electro";
 $config_url = "https://github.com/robincoello/magia_php"; // sin / al final
 $config_direccion = "Av del codigo abierto 1970, \n1000 Bruselas, \nBégica";
 $config_tel = "+32(0)474 62 47 07";
@@ -13,7 +13,7 @@ $config_grupo_por_defecto = 'centros';
 // cuantas cifras debe tener min?
 $config_ceros_bon = 6; 
 // idioma por defecto del sistema
-$cfg_idioma  = "en_GB"; 
+$cfg_idioma  = "es_ES"; 
 $config_idioma  = $cfg_idioma; 
 // limite de lineas en las tablas de los diferentes items 
 $cfg_limite_items_en_tablas = 50; 

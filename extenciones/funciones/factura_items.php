@@ -6,7 +6,7 @@
 function factura_items_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
-            "SELECT $campo FROM factura_items WHERE id = $id   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+            "SELECT $campo FROM factura_items WHERE id = '$id'   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
     $reg = mysql_fetch_array($sql);
 
 

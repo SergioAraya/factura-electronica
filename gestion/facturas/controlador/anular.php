@@ -3,23 +3,19 @@
 $accion = "editar";
 $pagina = "facturas";
 if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
-
-
-
-    
-    if (isset($_REQUEST['a']) == 'editar') {
+    if (isset($_REQUEST['a']) == 'anular') {
         $facturas_id = mysql_real_escape_string($_REQUEST['facturas_id']);
 
         if (!$facturas_id || $facturas_id == '') {
             die("No hay id");
         }
-
-
-
-
-
-        include "./facturas/reg/post.php";
-        include "./facturas/modelos/editar.php";
+        if (!$config_debug) {
+            echo '<meta http-equiv="refresh" content="0; url=index.php?p=' . $p . '&c=ver&facturas_id='.$facturas_id.'">';
+        }
+        
+        
+       //include "./facturas/reg/post.php";
+        include "./facturas/modelos/anular.php";
 
         include "./facturas/modelos/ver.php";
         include "./facturas/reg/reg.php";
@@ -30,7 +26,6 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
             die("No hay id");
         }
 
-        
         include "./facturas/modelos/ver.php";
         include "./facturas/reg/reg.php";
         include "./facturas/vista/editar.php";

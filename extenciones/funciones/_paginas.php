@@ -41,8 +41,13 @@ function _paginas_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     }
 }
 
-function _paginas_add($selecionado = "", $excluir = "") {
+function _paginas_add($selecionado = "", $excluir = array()) {
     global $conexion;
+    
+
+    
+    
+    
     $sql = mysql_query(
             "SELECT * FROM _paginas  ", $conexion) or die("Error:" . mysql_error());
     while ($_paginas = mysql_fetch_array($sql)) {

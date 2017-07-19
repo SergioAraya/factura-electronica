@@ -130,3 +130,57 @@ function facturas_thead() {
 function facturas_tfoot() {
     facturas_thead();
 }
+
+/* * **************************************************************************** */
+/* * **************************************************************************** */
+/* * **************************************************************************** */
+/* * **************************************************************************** */
+/* * **************************************************************************** */
+/* * **************************************************************************** */
+/**
+ * si mando el codigo del estatus me regresa el estatus
+ * sino me regresa el array de estatus
+ * @param type $facturas_estatus
+ * @return string
+ */
+function facturas_estatus($facturas_estatus = false) {
+    $estatus = array(
+        "0" => "Borrador",
+        "10" => "Registrada",
+        "20" => "Cobrada",
+        "-1" => "Anulada"
+    );
+    if ($facturas_estatus) {
+        return $estatus[$facturas_estatus];
+    } else {
+        return $estatus;
+    }
+}
+
+function facturas_campo_segun_ref($campo, $ref) {
+    global $conexion;
+    $sql = mysql_query(
+            "SELECT $campo FROM facturas WHERE ref = '$ref'   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    $reg = mysql_fetch_array($sql);
+
+    if ($reg[$campo]) {
+        return $reg[$campo];
+    } else {
+        return false;
+    }
+}
+
+function facturas_cliente_direccion_sobre($id) {
+    global $conexion;
+    $sql = mysql_query(
+            "SELECT * FROM contactos WHERE id = '$id'   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    $contactos = mysql_fetch_array($sql);
+
+    if ($contactos[0]) {
+        //include "../gestion/clientes/reg/reg.php";
+        include "../gestion/facturas/vista/cliente_direccion_sobre.php";
+    } else {
+        echo "no";
+        return false;
+    }
+}

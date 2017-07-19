@@ -1,8 +1,8 @@
 <form method="" action="">
     <input type="hidden" name="p" value="factura_items">
-    <input type="hidden" name="c" value="borrar_item">
-    <input type="hidden" name="a" value="borrar_item">
-    <input type="hidden" name="factura_items_ref" value="<?php echo "$facturas_ref"; ?>">
+    <input type="hidden" name="c" value="borrar">
+    <input type="hidden" name="a" value="borrar">
+    <input type="hidden" name="factura_items_id" value="<?php echo "$factura_items_id"; ?>">
     <tr>
         <td><?php echo "$factura_items_cantidad"; ?></td>
         <td><?php echo "$factura_items_descripcion"; ?></td>

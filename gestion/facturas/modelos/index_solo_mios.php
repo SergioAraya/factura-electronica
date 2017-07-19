@@ -3,10 +3,11 @@
 /**
   magia_version: 0.0.11
  * */
-$sql = mysql_query(
-        "SELECT * FROM facturas WHERE id = '$facturas_id' ORDER BY id DESC   ", $conexion)
+$comando = "SELECT * FROM facturas WHERE id_contacto = '$_usuarios_id'  ORDER BY id DESC  ";
+$sql = mysql_query("$comando Limit $inicia, $cfg_limite_items_en_tablas ", $conexion)
         or error(__DIR__, __FILE__, __LINE__);
-$facturas = mysql_fetch_array($sql);
+// esto es para la paginacion	  
+$total_items = mysql_num_rows(mysql_query("$comando ", $conexion));
 
 
 if ($config_debug) {
@@ -14,7 +15,8 @@ if ($config_debug) {
 
     $variables = array(
         "\$sql" => "$sql",
-        "\$facturas_id" => "$facturas_id"
+        "\$comando" => "$comando",
+        "\$total_items" => "$total_items"
     );
 
     echo "<table border>";

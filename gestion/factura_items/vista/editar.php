@@ -1,7 +1,4 @@
-<?php 
- /**  
- magia_version: 0.0.11 
- **/ ?>
+
 <h2>
 
 <span class="glyphicon glyphicon-<?php echo _menu_icono_segun_pagina($p); ?>"></span> 
