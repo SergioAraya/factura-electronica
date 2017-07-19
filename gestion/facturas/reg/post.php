@@ -18,9 +18,9 @@ $facturas_r1 = (isset($_POST['facturas_r1'])) ? mysql_real_escape_string($_POST[
 $facturas_r2 = (isset($_POST['facturas_r2'])) ? mysql_real_escape_string($_POST['facturas_r2']) : null;
 $facturas_r3 = (isset($_POST['facturas_r3'])) ? mysql_real_escape_string($_POST['facturas_r3']) : null;
 $facturas_fecha_cobro = (isset($_POST['facturas_fecha_cobro'])) ? mysql_real_escape_string($_POST['facturas_fecha_cobro']) : null;
-$facturas_expira = (isset($_POST['facturas_expira'])) ? mysql_real_escape_string($_POST['facturas_expira']) : null;
+$facturas_expira = (isset($_POST['facturas_expira'])) ? mysql_real_escape_string($_POST['facturas_expira']) : 0;
 $facturas_ce = (isset($_POST['facturas_ce'])) ? mysql_real_escape_string($_POST['facturas_ce']) : null;
-$facturas_estatus = (isset($_POST['facturas_estatus'])) ? mysql_real_escape_string($_POST['facturas_estatus']) : null;
+$facturas_estatus = (isset($_POST['facturas_estatus'])) ? mysql_real_escape_string($_POST['facturas_estatus']) : 0;
 
 if ($config_debug) {
     echo "<h3>Debug mode (" . __FILE__ . " )</h3>";

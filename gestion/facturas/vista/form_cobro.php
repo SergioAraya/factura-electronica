@@ -25,8 +25,7 @@
         <label for="balanza_sub_total" class="col-sm-12 control-label "><?php _t("Banco"); ?></label> 
         <div class="col-sm-12"> 
             <select class="form-control" name="balanza_banco">
-                <option>Banco 123</option>
-                <option>Caja</option>
+                <?php bancos_add(); ?>
             </select>
         </div> 
     </div> 
