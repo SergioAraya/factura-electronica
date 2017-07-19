@@ -1,0 +1,10 @@
+{
+    "name": "robinson/factura-electronica",
+    "authors": [
+        {
+            "name": "Robinson",
+            "email": "robincoello@hotmail.com"
+        }
+    ],
+    "require": {}
+}
