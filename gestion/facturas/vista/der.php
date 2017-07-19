@@ -1,6 +1,6 @@
 <div class="list-group">
   <a href="#" class="list-group-item disabled">
-    <?php _t("Estatus"); ?>: <?php _t(facturas_estatus($facturas_estatus)); ?>
+    <?php _t("Estatus"); ?>: <?php //_t(facturas_estatus($facturas_estatus)); ?>
   </a>
   <a href="#" class="list-group-item"><?php _t("Fecha"); ?>: <?php echo $facturas_fecha_registro; ?></a>
   <a href="index.php?p=presupuestos&c=ver&presupuestos_id=<?php echo $facturas_id_presupuesto; ?>" class="list-group-item"><?php _t("Presupuesto"); ?>: <?php echo $facturas_id_presupuesto; ?></a>

@@ -1,6 +1,7 @@
 
 <ul class="nav nav-pills" role="tablist">
   
+    <li role="presentation" class="active"><a href="index.php?p=facturas&c=crear"><span class="glyphicon glyphicon-ok"></span> <?php _t("Nueva"); ?></a></li>
     <li role="presentation"><a href="index.php?p=facturas&c=editar&facturas_id=<?php echo $facturas_id; ?>"><span class="glyphicon glyphicon-pencil"></span> <?php _t("Editar"); ?></a></li>
     <li role="presentation"><a href="pdf.php?p=facturas&c=pdf&facturas_id=<?php echo $facturas_id; ?>&metodo=pdf"><span class="glyphicon glyphicon-print"></span> <?php _t("Imprimir"); ?></a></li>
     <li role="presentation"><a href="pdf.php?p=facturas&c=pdf&facturas_id=<?php echo $facturas_id; ?>&metodo=pdf"><span class="glyphicon glyphicon-download"></span> <?php _t("Pdf"); ?></a></li>
