@@ -8,56 +8,103 @@ $pdf->SetFont("Times", "", 12);
 
 
 $pdf->Cell($w * 12, $h, "$p", 0, $ln, $align, $fill, $link);
-$pdf->Ln(10);
-//********************
-$pdf->Cell($w * 1, $h, "#", $border, $ln, $align, $fill, $link);
+$pdf->Ln();
+$pdf->Cell($w * 6, $h, "#", $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, _tr("Cliente"), $border, $ln, $align, $fill, $link);
+$pdf->Ln();
 
-$pdf->Cell($w * 1, $h, _tr("ref"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("id_presupuesto"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("id_notac"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("id_contacto"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("fecha_registro"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("sub_total"), $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, "#", $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, _tr("Cliente"), $border, $ln, $align, $fill, $link);
+$pdf->Ln();
+
+$pdf->Cell($w * 6, $h, "#", $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, _tr("Cliente"), $border, $ln, $align, $fill, $link);
+$pdf->Ln();
+
+$pdf->Cell($w * 6, $h, "#", $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, _tr("Cliente"), $border, $ln, $align, $fill, $link);
+$pdf->Ln();
+
+$pdf->Cell($w * 6, $h, "#", $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, _tr("Cliente"), $border, $ln, $align, $fill, $link);
+$pdf->Ln(10);
+
+
+
+$pdf->Cell($w * 1, $h, _tr("Cantidad"), $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 6, $h, _tr("Descripcion"), $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 2, $h, _tr("Precio U."), $border, $ln, $align, $fill, $link);
 $pdf->Cell($w * 1, $h, _tr("iva"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("anticipo"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("saldo"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("comentarios"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("r1"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("r2"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("r3"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("fecha_cobro"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("expira"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("ce"), $border, $ln, $align, $fill, $link);
-$pdf->Cell($w * 1, $h, _tr("estatus"), $border, $ln, $align, $fill, $link);
+$pdf->Cell($w * 2, $h, _tr("Subtotal"), $border, $ln, $align, $fill, $link);
+
+
+
+
 $pdf->Ln();
 //********************
 $i = 1;
-include "./facturas/modelos/pdf.php";
-while ($facturas = mysql_fetch_array($sql)) {
-    include "./facturas/reg/reg.php";
-    $pdf->Cell($w * 1, $h, $i, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_ref, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_id_presupuesto, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_id_notac, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_id_contacto, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_fecha_registro, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_sub_total, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_iva, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_anticipo, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_saldo, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_comentarios, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_r1, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_r2, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_r3, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_fecha_cobro, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_expira, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_ce, $border, $ln, $align, $fill, $link);
-    $pdf->Cell($w * 1, $h, $facturas_estatus, $border, $ln, $align, $fill, $link);
+$facturas_ref = 44;
+include "./factura_items/modelos/pdf.php";
+while ($factura_items = mysql_fetch_array($sql)) {
+    include "./factura_items/reg/reg.php";
 
-
+    $pdf->Cell($w * 1, $h, $factura_items_cantidad,         $border, $ln, $align, $fill, $link);
+    $pdf->Cell($w * 6, $h, $factura_items_descripcion,      $border, $ln, $align, $fill, $link);
+    $pdf->Cell($w * 2, $h, $factura_items_valor,            $border, $ln, 'R', $fill, $link);
+    $pdf->Cell($w * 1, $h, "$factura_items_porcentaje_iva%", $border, $ln, 'C', $fill, $link);
+    $pdf->Cell($w * 2, $h, $factura_items_valor,            $border, $ln, 'R', $fill, $link);
     $pdf->Ln();
     $i++;
 }
+
+
+
+$pdf->Cell($w * 10, $h, _tr("Subtotal"), '', $ln, 'R', $fill, $link);
+$pdf->Cell($w * 02, $h, '120,20', $border, $ln, 'R', $fill, $link);
+$pdf->Ln();
+
+$pdf->Cell($w * 10, $h, _tr("Iva"), '', $ln, 'R', $fill, $link);
+$pdf->Cell($w * 02, $h, '120,20', $border, $ln, 'R', $fill, $link);
+$pdf->Ln();
+
+
+
+$pdf->Cell($w * 10, $h, _tr("Pagado"), '', $ln, 'R', $fill, $link);
+$pdf->Cell($w * 02, $h, '120,20', $border, $ln, 'R', $fill, $link);
+$pdf->Ln();
+
+
+
+
+$pdf->Cell($w * 10, $h, _tr("A pagar"), '', $ln, 'R', $fill, $link);
+$pdf->Cell($w * 02, $h, '120,20', $border, $ln, 'R', $fill, $link);
+$pdf->Ln();
+$pdf->Ln();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$pdf->Cell($w * 12, $h, $facturas_ce, $border, $ln, 'C', $fill, $link);
+$pdf->Ln(10);
+
+$pdf->Cell($w * 1, $h, _tr("Notas"), $border, $ln, 'C', $fill, $link);
+$pdf->Ln();
+$pdf->Cell($w * 12, $h, $facturas_comentarios, $border, $ln, $align, $fill, $link);
+$pdf->Ln(10);
+
+
+
+
 //********************
 $pdf->Output();
 

@@ -2,7 +2,7 @@
  /**  
  magia_version: 0.0.11 
  **/ 
-$comando = "SELECT * FROM factura_items ORDER BY id DESC  "; 
+$comando = "SELECT * FROM factura_items WHERE ref_factura = '$facturas_ref' ORDER BY id DESC  "; 
 $sql=mysql_query("$comando ",$conexion) 
 or error(__DIR__, __FILE__, __LINE__);	  
 // esto es para la paginacion	  

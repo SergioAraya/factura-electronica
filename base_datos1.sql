@@ -1,10 +1,9 @@
-
 -- phpMyAdmin SQL Dump
 -- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2017 at 12:25 PM
+-- Generation Time: Jul 18, 2017 at 11:06 PM
 -- Server version: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -44,17 +43,6 @@ CREATE TABLE `balanza` (
   `anulada` int(11) DEFAULT NULL,
   `cod_anu` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `balanza`
---
-
-INSERT INTO `balanza` (`id`, `id_contacto`, `id_factura`, `tipo`, `ref`, `descripcion`, `ce`, `sub_total`, `iva`, `fecha`, `fecha_registro`, `factura`, `banco`, `anulada`, `cod_anu`) VALUES
-(5, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
-(6, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
-(7, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
-(8, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
-(9, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -106,9 +94,7 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id`, `idioma`, `tipo_documento`, `ruc_prefijo`, `numero_documento`, `empresa`, `contacto`, `saludo`, `direccion`, `cpostal`, `ciudad`, `provincia`, `pais`, `tel`, `fax`, `email`, `notas`, `tipo`, `fecha_registro`, `es_contacto`, `estrellas`, `estatus`) VALUES
-(34, 'es_ES', 'Pasaporte', 'BE', '1020304050', 'Facturas.be', 'Robinson Coello S.', 'Mr.', 'Av de codigo 1970', '1020', 'Bruxelles', '', 'Belgique', '+32474624707', '', 'robincoello@hotmail.com', 'Nada que decir', 0, '2017-06-21 08:50:22', '', 1, 1),
-(35, 'es_ES', 'null', 'BE', '', 'Empresa', 'Patico Cadavid', 'M.', 'Calle del muerto', '1200', 'Cali', 'null', 'Colombie', '', 'null', 'pato@colombia.com', '', 0, '2017-07-19 00:35:24', '', 1, 1),
-(36, 'en_GB', 'null', 'BE', '', '', '', 'M.', '', '', '', 'null', 'Belgique', '', 'null', 'casa@master.com', '', 0, '2017-07-19 02:11:59', NULL, 1, 1);
+(34, 'es_ES', 'Pasaporte', 'BE', '1020304050', 'Facturas.be', 'Robinson Coello S.', 'Mr.', 'Av de codigo 1970', '1020', 'Bruxelles', '', 'Belgique', '+32474624707', '', 'robincoello@hotmail.com', 'Nada que decir', 0, '2017-06-21 08:50:22', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -3062,10 +3048,7 @@ CREATE TABLE `facturas` (
 --
 
 INSERT INTO `facturas` (`id`, `ref`, `id_presupuesto`, `id_notac`, `id_contacto`, `fecha_registro`, `sub_total`, `iva`, `anticipo`, `saldo`, `comentarios`, `r1`, `r2`, `r3`, `fecha_cobro`, `expira`, `ce`, `estatus`) VALUES
-(5, '120120', NULL, NULL, 34, '2017-07-18 22:01:31', '0.00000', '0.00000', '0.00000', '0.00000', 'deme', '2017-07-11', NULL, NULL, NULL, 0, '+++123/45698/987++++', 0),
-(6, '', NULL, NULL, 34, '2017-07-18 23:15:41', '0.00000', '0.00000', '0.00000', '0.00000', NULL, NULL, NULL, NULL, NULL, 0, NULL, 20),
-(7, '44', 5, 1, 34, '2017-07-18 23:21:10', '4.00000', '4.00000', '4.00000', '4.00000', '140', '2017-07-11', '2017-07-11', '2017-07-11', '2017-07-11', 4, '4', 10),
-(9, 'dssdsedzsd', 3, NULL, 35, '2017-07-19 01:08:09', '0.00000', '0.00000', '0.00000', '0.00000', 'Este es un comentarios publico', NULL, NULL, NULL, NULL, 0, '+++123/45698/456+++', -1);
+(5, '120120', NULL, NULL, 34, '2017-07-18 22:01:31', '0.00000', '0.00000', '0.00000', '0.00000', NULL, NULL, NULL, NULL, NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -3087,18 +3070,7 @@ CREATE TABLE `factura_items` (
 --
 
 INSERT INTO `factura_items` (`id`, `ref_factura`, `cantidad`, `descripcion`, `valor`, `porcentaje_iva`) VALUES
-(9, '44', 1, '1', '1.00000', 10),
-(12, '120120', 1, 'casa', '251.00000', 10),
-(13, '120120', 1, 'cambio de casa', '100000.00000', 10),
-(15, '120120', 1, 'carton para laventa de materiales de contruccioncarton para laventa de materiales de contruccioncarton para laventa de materiales de contruccion', '251.00000', 10),
-(23, 'dssdsedzsd', 1, 'casa de pere', '250.00000', 10),
-(24, '', 1, 'demos', '20.00000', 10),
-(25, '', 20, '20', '20.00000', 10),
-(26, '', 55, '5', '5.00000', 10),
-(28, 'dssdsedzsd', 1, 'casa de pe', '5410.00000', 10),
-(29, 'dssdsedzsd', 1, 'demenagemnt', '250.00000', 10),
-(30, 'dssdsedzsd', 150, 'lapices de colores', '0.10000', 20),
-(31, 'dssdsedzsd', 20, 'demos', '120.00000', 10);
+(4, '120120', 210, 'DEMOSTRACION', '1.00000', 1);
 
 -- --------------------------------------------------------
 
@@ -3120,16 +3092,6 @@ CREATE TABLE `logs` (
   `argumento` text COLLATE utf8_unicode_ci NOT NULL,
   `sospechoso` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `fecha`, `usuario`, `grupo`, `ip`, `mac`, `p`, `c`, `a`, `comando`, `argumento`, `sospechoso`) VALUES
-(1, '2017-07-19 01:13:49', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"345\",\"_permisos_grupo\":\"centros\",\"_permisos_pagina\":\"facturas\",\"ver\":\"1\",\"crear\":\"0\",\"editar\":\"0\",\"borrar\":\"0\"}', '345', ''),
-(2, '2017-07-19 01:16:53', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"346\",\"_permisos_grupo\":\"centros\",\"_permisos_pagina\":\"facturas_otros\",\"ver\":\"0\",\"crear\":\"0\",\"editar\":\"0\",\"borrar\":\"0\"}', '346', ''),
-(3, '2017-07-19 01:20:51', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"347\",\"_permisos_grupo\":\"root\",\"_permisos_pagina\":\"facturas_otros\",\"ver\":\"1\",\"crear\":\"1\",\"editar\":\"1\",\"borrar\":\"1\"}', '347', ''),
-(4, '2017-07-19 01:43:15', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"214\",\"_permisos_grupo\":\"centros\",\"_permisos_pagina\":\"contactos\",\"ver\":\"1\",\"crear\":\"0\",\"editar\":\"0\",\"borrar\":\"0\"}', '214', '');
 
 -- --------------------------------------------------------
 
@@ -3523,11 +3485,9 @@ CREATE TABLE `_contenido` (
 --
 
 INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
-(753, '', NULL),
 (535, '#', NULL),
 (378, '% Traducción', NULL),
 (645, '% Tva', NULL),
-(727, '% iva', NULL),
 (183, '+322123456', NULL),
 (180, '000.111.222', NULL),
 (420, '1', NULL),
@@ -3535,13 +3495,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (199, '123, sin ceros al inicio', NULL),
 (221, '123.123.123', NULL),
 (185, '123.456.789', NULL),
-(740, '1er Recordatorio', NULL),
 (605, '20', NULL),
 (606, '2020', NULL),
-(741, '2do Recordatorio', NULL),
 (607, '30', NULL),
 (617, '320251254', NULL),
-(742, '3er Recordatorio', NULL),
 (608, '5050', NULL),
 (609, '5210', NULL),
 (610, '5555', NULL),
@@ -3565,7 +3522,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (99, 'Anti-Bactérie', NULL),
 (678, 'Anticipo', NULL),
 (709, 'Anulada', NULL),
-(745, 'Anular', NULL),
 (661, 'Apellidos', NULL),
 (276, 'Area restinjida', NULL),
 (286, 'Argumento', NULL),
@@ -3601,7 +3557,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (253, 'Busqueda detallada', NULL),
 (283, 'C', NULL),
 (358, 'Cambiar', NULL),
-(751, 'Cambiar Cliente', NULL),
 (6, 'Cambiar clave', NULL),
 (357, 'Cambiar contacto', NULL),
 (355, 'Cambiar de clave', NULL),
@@ -3624,10 +3579,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (563, 'Clave ha sido cambiada', NULL),
 (513, 'Clave perdida', NULL),
 (351, 'Claves nueva y repetición no son iguales', NULL),
-(747, 'Cliente', NULL),
-(754, 'Cobrada', NULL),
-(749, 'Cobros', NULL),
-(735, 'Cod anu', NULL),
 (710, 'Cod_anu', NULL),
 (390, 'Codigo', NULL),
 (575, 'Codigo_usado', NULL),
@@ -3637,8 +3588,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (403, 'Columnas disponibles', NULL),
 (597, 'Comando', NULL),
 (680, 'Comentarios', NULL),
-(729, 'Comentarios publicos', NULL),
-(734, 'Comunicación extructurada', NULL),
 (654, 'Comunicicón extructurada', NULL),
 (474, 'Condiciones', NULL),
 (89, 'Conduit seul', NULL),
@@ -3743,7 +3692,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (511, 'Estatus actualizado, email enviado a contacto', NULL),
 (503, 'Estatus actualizado, sms', NULL),
 (268, 'Estatus del pedidoBorrado', NULL),
-(744, 'Este es un comentarios publico', NULL),
 (230, 'Este pedido no le pertenece', NULL),
 (273, 'Estimado susana@gmail.com, ud no puede realizar la accion [ver] en la pagina [contactos]', NULL),
 (275, 'Estimado usuario, ud no puede realizar esta acción en esta página.', NULL),
@@ -3757,7 +3705,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (166, 'Fax', NULL),
 (28, 'Fecha', NULL),
 (703, 'Fecha cobro', NULL),
-(726, 'Fecha pago', NULL),
 (175, 'Fecha registro', NULL),
 (684, 'Fecha_cobro', NULL),
 (718, 'Fecha_pago', NULL),
@@ -3847,7 +3794,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (138, 'No disponible', NULL),
 (522, 'No se pudo borrar este usuario', NULL),
 (239, 'No se puede agregar usuarios root', NULL),
-(756, 'No se puede registrar pagos en una factura anulada', NULL),
 (467, 'No tiene login', NULL),
 (381, 'No tiene permiso para editar pedidos que no le pertenecen', NULL),
 (427, 'No traducidas', NULL),
@@ -3856,7 +3802,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (45, 'Nombre', NULL),
 (67, 'Nombre del contacto', NULL),
 (222, 'Nombres y apellidos', NULL),
-(748, 'Nota de crédito', NULL),
 (666, 'Notac', NULL),
 (665, 'Notac_items', NULL),
 (29, 'Notas', NULL),
@@ -3914,7 +3859,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (215, 'Para que un usuario tenga un login, debe estar registrado primero en la lista de contactos', NULL),
 (68, 'Payant', NULL),
 (228, 'País', NULL),
-(743, 'Pdf', NULL),
 (446, 'Pedidda Auditiva', NULL),
 (285, 'Pedido', NULL),
 (455, 'Pedido editado', NULL),
@@ -3929,7 +3873,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (49, 'Permiso', NULL),
 (569, 'Ponga el siguiente código', NULL),
 (242, 'Por defecto se asignara el grupo centros a todo nuevo usuario', NULL),
-(733, 'Porcentaje iva', NULL),
 (722, 'Porcentaje_iva', NULL),
 (646, 'Precio U.', NULL),
 (672, 'Presupuesto', NULL),
@@ -3944,26 +3887,18 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (682, 'R2', NULL),
 (683, 'R3', NULL),
 (107, 'RITE / SLIM TUBE', NULL),
-(739, 'Recordatorios', NULL),
 (515, 'Recuperar', NULL),
 (514, 'Recuperar clave', NULL),
 (23, 'Ref', NULL),
-(732, 'Ref factura', NULL),
 (641, 'Ref pedido', NULL),
 (721, 'Ref_factura', NULL),
-(730, 'Registar', NULL),
-(750, 'Registo de cobros', NULL),
-(752, 'Registrada', NULL),
 (257, 'Registrado', NULL),
 (489, 'Registrado con exito', NULL),
 (37, 'Registrar', NULL),
-(746, 'Registrar cobros', NULL),
 (147, 'Registrar idioma', NULL),
-(757, 'Registrar pagos', NULL),
 (512, 'Registrarse', NULL),
 (468, 'Registrese aca', NULL),
 (488, 'Registrese gratis', NULL),
-(728, 'Registro de cobros', NULL),
 (476, 'Registro enviado, pronto le contactaremos', NULL),
 (477, 'Regresar', NULL),
 (69, 'Remake', NULL),
@@ -4001,7 +3936,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (76, 'Suave', NULL),
 (647, 'Sub total', NULL),
 (676, 'Sub_total', NULL),
-(737, 'Sus facturas', NULL),
 (422, 'System code is incorrect', NULL),
 (423, 'System code is incorrect (Licence error)', NULL),
 (636, 'Sábado', NULL),
@@ -4033,7 +3967,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (471, 'Ud tiene la posibilidad de registrarse en nuesto sistema GRATUITAMETE', NULL),
 (516, 'Ud. (u otra persona), ha solicitado el acceso a la plataforma web para realizar pedidos en: JIHOLABO</p>', NULL),
 (566, 'Ud. (u otra persona), ha solicitado el cambio de clave en: JIHOLABO</p>', NULL),
-(758, 'Ud. no puede editar una factura anulada', NULL),
 (506, 'Ud. puede consultar sus pedidos realizados pero no puede realiar nuevos', NULL),
 (525, 'Ud. puede consultar sus pedidos realizados pero no puede realizar nuevos', NULL),
 (502, 'Un email sera enviado al usuario', NULL),
@@ -4079,7 +4012,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (320, 'anti_bruit', NULL),
 (693, 'anticipo', NULL),
 (714, 'anulada', NULL),
-(755, 'anular', NULL),
 (658, 'apellidos', NULL),
 (604, 'argumento', NULL),
 (428, 'atraducir', NULL),
@@ -4090,7 +4022,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (545, 'bloqueados', NULL),
 (541, 'borrados', NULL),
 (248, 'borrar', NULL),
-(736, 'borrar_item', NULL),
 (249, 'borrarr', NULL),
 (314, 'bte', NULL),
 (119, 'buscar', NULL),
@@ -4142,7 +4073,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (298, 'du_numero', NULL),
 (313, 'dure', NULL),
 (61, 'editar', NULL),
-(731, 'editar_comentarios', NULL),
 (592, 'ejecutar', NULL),
 (152, 'email', NULL),
 (612, 'empeador', NULL),
@@ -4244,7 +4174,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (600, 'sospechoso', NULL),
 (482, 'ssss', NULL),
 (691, 'sub_total', NULL),
-(738, 'sus_facturas', NULL),
 (240, 't_usuarios', NULL),
 (660, 'test', NULL),
 (330, 'thermosoft', NULL),
@@ -4408,7 +4337,7 @@ INSERT INTO `_opciones` (`id`, `opcion`, `valor`, `grupo`) VALUES
 (41, 'balanza_thead', '{\"id\":\"id\",\"id_contacto\":\"id_contacto\",\"id_factura\":\"id_factura\",\"tipo\":\"tipo\",\"ref\":\"ref\",\"descripcion\":\"descripcion\",\"ce\":\"ce\",\"sub_total\":\"sub_total\",\"iva\":\"iva\",\"fecha\":\"fecha\",\"fecha_registro\":\"fecha_registro\",\"factura\":\"factura\",\"banco\":\"banco\",\"anulada\":\"anulada\",\"cod_anu\":\"cod_anu\"}', 0),
 (42, 'cp_ville_thead', '{\"vil_id\":\"vil_id\",\"vil_cp\":\"vil_cp\",\"vil_nom\":\"vil_nom\"}', 0),
 (43, 'factura_items_thead', '{\"id\":\"id\",\"ref_factura\":\"ref_factura\",\"cantidad\":\"cantidad\",\"descripcion\":\"descripcion\",\"valor\":\"valor\",\"porcentaje_iva\":\"porcentaje_iva\"}', 0),
-(44, 'facturas_thead', '{\"id\":\"id\",\n\"id_presupuesto\":\"id_presupuesto\",\n\"id_notac\":\"id_notac\",\n\"id_contacto\":\"id_contacto\",\n\"fecha_registro\":\"fecha_registro\",\n\"saldo\":\"saldo\",\n\"expira\":\"expira\",\n\"estatus\":\"estatus\"\n}', 0),
+(44, 'facturas_thead', '{\"id\":\"id\",\n\"id_presupuesto\":\"id_presupuesto\",\n\"id_notac\":\"id_notac\",\n\"id_contacto\":\"id_contacto\",\n\"fecha_registro\":\"fecha_registro\",\n\"saldo\":\"saldo\",\n\"r1\":\"r1\",\"r2\":\"r2\",\"r3\":\"r3\",\n\"expira\":\"expira\",\n\"estatus\":\"estatus\"\n}', 0),
 (45, 'notac_thead', '{\"id\":\"id\",\"ref\":\"ref\",\"id_factura\":\"id_factura\",\"id_contacto\":\"id_contacto\",\"fecha_registro\":\"fecha_registro\",\"fecha_pago\":\"fecha_pago\",\"sub_total\":\"sub_total\",\"iva\":\"iva\",\"comentarios\":\"comentarios\",\"estatus\":\"estatus\"}', 0),
 (46, 'notac_items_thead', '{\"id\":\"id\",\"ref_notac\":\"ref_notac\",\"cantidad\":\"cantidad\",\"descripcion\":\"descripcion\",\"valor\":\"valor\",\"porcentaje_iva\":\"porcentaje_iva\"}', 0),
 (47, 'paises_thead', '{\"Code\":\"Code\",\"name\":\"name\",\"continent\":\"continent\",\"Region\":\"Region\",\"SurfaceArea\":\"SurfaceArea\",\"IndepYear\":\"IndepYear\",\"Population\":\"Population\",\"LifeExpectancy\":\"LifeExpectancy\",\"GNP\":\"GNP\",\"GNPOld\":\"GNPOld\",\"LocalName\":\"LocalName\",\"GovernmentForm\":\"GovernmentForm\",\"HeadOfState\":\"HeadOfState\",\"Capital\":\"Capital\",\"code2\":\"code2\",\"prefijo_ruc\":\"prefijo_ruc\"}', 0),
@@ -4452,7 +4381,6 @@ INSERT INTO `_paginas` (`id`, `pagina`) VALUES
 (86, 'cp_ville'),
 (87, 'factura_items'),
 (88, 'facturas'),
-(103, 'facturas_otros'),
 (65, 'home'),
 (70, 'logs'),
 (89, 'notac'),
@@ -4520,7 +4448,7 @@ INSERT INTO `_permisos` (`id`, `grupo`, `pagina`, `permiso`) VALUES
 (210, 'administradores', 'contactos_otros', '1110'),
 (211, 'root', 'contactos_otros', '1111'),
 (213, 'centros', 'contactos_otros', '0000'),
-(214, 'centros', 'contactos', '1000'),
+(214, 'centros', 'contactos', '0000'),
 (215, 'root', 't_usuarios', '1111'),
 (216, 'administradores', 't_usuarios', '1110'),
 (217, 'centros', 'pedidos_estatus', '0000'),
@@ -4569,10 +4497,7 @@ INSERT INTO `_permisos` (`id`, `grupo`, `pagina`, `permiso`) VALUES
 (301, 'root', 'presupuesto_items', '1111'),
 (302, 'administradores', 'presupuesto_items', '1110'),
 (305, 'root', 'presupuestos', '1111'),
-(306, 'administradores', 'presupuestos', '1110'),
-(345, 'centros', 'facturas', '1000'),
-(346, 'centros', 'facturas_otros', '0000'),
-(347, 'root', 'facturas_otros', '1111');
+(306, 'administradores', 'presupuestos', '1110');
 
 -- --------------------------------------------------------
 
@@ -5886,106 +5811,7 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5408, 'Porcentaje_iva', 'es_ES', 'Porcentaje_iva'),
 (5409, 'ref_factura', 'es_ES', 'ref_factura'),
 (5410, 'cantidad', 'es_ES', 'cantidad'),
-(5411, 'porcentaje_iva', 'es_ES', 'porcentaje_iva'),
-(5412, 'Fecha pago', 'es_ES', 'Fecha pago'),
-(5413, '% iva', 'es_ES', '% iva'),
-(5414, 'Registro de cobros', 'es_ES', 'Registro de cobros'),
-(5415, 'Comentarios publicos', 'es_ES', 'Comentarios publicos'),
-(5416, 'Registar', 'es_ES', 'Registar'),
-(5417, 'editar_comentarios', 'es_ES', 'editar_comentarios'),
-(5418, 'Ref factura', 'es_ES', 'Ref factura'),
-(5419, 'Porcentaje iva', 'es_ES', 'Porcentaje iva'),
-(5420, 'Comunicación extructurada', 'es_ES', 'Comunicación extructurada'),
-(5421, 'Cod anu', 'es_ES', 'Cod anu'),
-(5422, 'borrar_item', 'es_ES', 'borrar_item'),
-(5423, 'Facturas', 'en_GB', '---'),
-(5424, 'Presupuestos', 'en_GB', '---'),
-(5425, 'Notac', 'en_GB', '---'),
-(5426, 'Balanza', 'en_GB', '---'),
-(5427, 'presupuestos', 'en_GB', '---'),
-(5428, 'notac', 'en_GB', '---'),
-(5429, 'balanza', 'en_GB', '---'),
-(5430, 'Presupuesto_items', 'en_GB', '---'),
-(5431, 'Paises', 'en_GB', '---'),
-(5432, 'Notac_items', 'en_GB', '---'),
-(5433, 'Factura_items', 'en_GB', '---'),
-(5434, 'Cp_ville', 'en_GB', '---'),
-(5435, 'Id_factura', 'en_GB', '---'),
-(5436, 'Id_contacto', 'en_GB', '---'),
-(5437, 'Sub_total', 'en_GB', '---'),
-(5438, 'Iva', 'en_GB', '---'),
-(5439, 'Anticipo', 'en_GB', '---'),
-(5440, 'Saldo', 'en_GB', '---'),
-(5441, 'Comentarios', 'en_GB', '---'),
-(5442, 'R1', 'en_GB', '---'),
-(5443, 'R2', 'en_GB', '---'),
-(5444, 'R3', 'en_GB', '---'),
-(5445, 'Fecha_cobro', 'en_GB', '---'),
-(5446, 'Ce', 'en_GB', '---'),
-(5447, 'ref', 'en_GB', '---'),
-(5448, 'id_factura', 'en_GB', '---'),
-(5449, 'id_contacto', 'en_GB', '---'),
-(5450, 'fecha_registro', 'en_GB', '---'),
-(5451, 'sub_total', 'en_GB', '---'),
-(5452, 'iva', 'en_GB', '---'),
-(5453, 'anticipo', 'en_GB', '---'),
-(5454, 'saldo', 'en_GB', '---'),
-(5455, 'comentarios', 'en_GB', '---'),
-(5456, 'r1', 'en_GB', '---'),
-(5457, 'r2', 'en_GB', '---'),
-(5458, 'r3', 'en_GB', '---'),
-(5459, 'fecha_cobro', 'en_GB', '---'),
-(5460, 'expira', 'en_GB', '---'),
-(5461, 'ce', 'en_GB', '---'),
-(5462, 'estatus', 'en_GB', '---'),
-(5463, 'Presupuesto', 'en_GB', '---'),
-(5464, 'Id_presupuesto', 'en_GB', '---'),
-(5465, 'Id_notac', 'en_GB', '---'),
-(5466, 'id_presupuesto', 'en_GB', '---'),
-(5467, 'id_notac', 'en_GB', '---'),
-(5468, 'Fecha_pago', 'en_GB', '---'),
-(5469, 'fecha_pago', 'en_GB', '---'),
-(5470, 'Banco', 'en_GB', '---'),
-(5471, 'Anulada', 'en_GB', '---'),
-(5472, 'Cod_anu', 'en_GB', '---'),
-(5473, 'tipo', 'en_GB', '---'),
-(5474, 'fecha', 'en_GB', '---'),
-(5475, 'banco', 'en_GB', '---'),
-(5476, 'anulada', 'en_GB', '---'),
-(5477, 'cod_anu', 'en_GB', '---'),
-(5478, 'Sus facturas', 'es_ES', 'Sus facturas'),
-(5479, 'sus_facturas', 'es_ES', 'sus_facturas'),
-(5480, 'Recordatorios', 'es_ES', 'Recordatorios'),
-(5481, '1er Recordatorio', 'es_ES', '1er Recordatorio'),
-(5482, '2do Recordatorio', 'es_ES', '2do Recordatorio'),
-(5483, '3er Recordatorio', 'es_ES', '3er Recordatorio'),
-(5484, 'Pdf', 'es_ES', 'Pdf'),
-(5485, 'Este es un comentarios publico', 'es_ES', 'Este es un comentarios publico'),
-(5486, 'Anular', 'es_ES', 'Anular'),
-(5487, 'Registrar cobros', 'es_ES', 'Registrar cobros'),
-(5488, 'Pdf', 'en_GB', '---'),
-(5489, 'Anular', 'en_GB', '---'),
-(5490, 'Cantidad', 'en_GB', '---'),
-(5491, 'Descripción', 'en_GB', '---'),
-(5492, '% iva', 'en_GB', '---'),
-(5493, 'Comunicación extructurada', 'en_GB', '---'),
-(5494, 'Registrar cobros', 'en_GB', '---'),
-(5495, 'Cliente', 'es_ES', 'Cliente'),
-(5496, 'Nota de crédito', 'es_ES', 'Nota de crédito'),
-(5497, 'Cobros', 'es_ES', 'Cobros'),
-(5498, 'Registo de cobros', 'es_ES', 'Registo de cobros'),
-(5499, 'Cambiar Cliente', 'es_ES', 'Cambiar Cliente'),
-(5500, 'Registrada', 'es_ES', 'Registrada'),
-(5501, 'Cliente', 'en_GB', '---'),
-(5502, 'Registrada', 'en_GB', '---'),
-(5503, 'Nota de crédito', 'en_GB', '---'),
-(5504, 'Registo de cobros', 'en_GB', '---'),
-(5505, '', 'es_ES', ''),
-(5509, 'Cobrada', 'es_ES', 'Cobrada'),
-(5510, 'anular', 'es_ES', 'anular'),
-(5511, 'No se puede registrar pagos en una factura anulada', 'es_ES', 'No se puede registrar pagos en una factura anulada'),
-(5512, 'Registrar pagos', 'es_ES', 'Registrar pagos'),
-(5513, 'Ud. no puede editar una factura anulada', 'es_ES', 'Ud. no puede editar una factura anulada');
+(5411, 'porcentaje_iva', 'es_ES', 'porcentaje_iva');
 
 -- --------------------------------------------------------
 
@@ -6006,9 +5832,7 @@ CREATE TABLE `_usuarios` (
 --
 
 INSERT INTO `_usuarios` (`id`, `grupo`, `usuario`, `clave`, `estatus`) VALUES
-(26, 'root', 'robincoello@hotmail.com', '$2y$12$3lnUh.FbwS4frwYGd92LwuPQ0Dyup0J2dQJnyEAj.jQ8QdEcQO9VG', 1),
-(105, 'centros', 'pato@colombia.com', '$2y$12$oBwLugOqpvS0m5e35wAGYuRjvY1mX3txtunIzcfOkAvDqERQuDfLS', 1),
-(106, 'centros', 'casa@master.com', '$2y$12$.X1Tq/8h6eMEVhXZmlekUOgzyZXOas8qrZbdq.qGfTswWPgBMwx6K', 1);
+(26, 'root', 'robincoello@hotmail.com', '$2y$12$3lnUh.FbwS4frwYGd92LwuPQ0Dyup0J2dQJnyEAj.jQ8QdEcQO9VG', 1);
 
 --
 -- Indexes for dumped tables
@@ -6174,7 +5998,7 @@ ALTER TABLE `_usuarios`
 -- AUTO_INCREMENT for table `balanza`
 --
 ALTER TABLE `balanza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `cambio_claves`
 --
@@ -6184,7 +6008,7 @@ ALTER TABLE `cambio_claves`
 -- AUTO_INCREMENT for table `contactos`
 --
 ALTER TABLE `contactos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `cp_ville`
 --
@@ -6194,17 +6018,17 @@ ALTER TABLE `cp_ville`
 -- AUTO_INCREMENT for table `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `factura_items`
 --
 ALTER TABLE `factura_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `notac`
 --
@@ -6229,7 +6053,7 @@ ALTER TABLE `presupuesto_items`
 -- AUTO_INCREMENT for table `_contenido`
 --
 ALTER TABLE `_contenido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=759;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=726;
 --
 -- AUTO_INCREMENT for table `_grupos`
 --
@@ -6254,22 +6078,22 @@ ALTER TABLE `_opciones`
 -- AUTO_INCREMENT for table `_paginas`
 --
 ALTER TABLE `_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 --
 -- AUTO_INCREMENT for table `_permisos`
 --
 ALTER TABLE `_permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=345;
 --
 -- AUTO_INCREMENT for table `_traducciones`
 --
 ALTER TABLE `_traducciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5514;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5412;
 --
 -- AUTO_INCREMENT for table `_usuarios`
 --
 ALTER TABLE `_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- Constraints for dumped tables
 --
