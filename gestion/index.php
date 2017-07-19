@@ -13,6 +13,7 @@ include "../admin/permisos.php";
 include "../admin/traductor.php";
 include "../admin/contenido.php";
 include "../admin/formularios.php";
+include "../admin/moneda.php";
 include "../admin/menu.php";
 include "../admin/mensajes.php";
 include "../admin/paginacion.php";

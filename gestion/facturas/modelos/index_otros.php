@@ -3,7 +3,10 @@
 /**
   magia_version: 0.0.11
  * */
-$comando = "SELECT * FROM facturas ORDER BY id DESC  ";
+$comando = "SELECT 
+        *
+        FROM facturas 
+        ORDER BY id DESC  ";
 $sql = mysql_query("$comando Limit $inicia, $cfg_limite_items_en_tablas ", $conexion)
         or error(__DIR__, __FILE__, __LINE__);
 // esto es para la paginacion	  

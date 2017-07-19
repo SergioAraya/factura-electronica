@@ -18,7 +18,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#cambiar_cliente">
-<?php _t("Cambiar"); ?>
+                    <?php _t("Cambiar"); ?>
                 </button>
 
             </div>
@@ -42,9 +42,9 @@
         <tr>
             <th><?php _t("Cantidad"); ?></th>
             <th><?php _t("Descripción"); ?></th>
-            <th><?php _t("% iva"); ?></th>
-            <th><?php _t("Precio U."); ?></th>
-            <th><?php _t("Total"); ?></th>
+            <th class="text-center"><?php _t("% iva"); ?></th>
+            <th class="text-right"><?php _t("Precio U."); ?></th>
+            <th class="text-right"><?php _t("Total"); ?></th>
             <th><?php _t("Acción"); ?></th>
         </tr>
     </thead>
@@ -56,6 +56,17 @@
         factura_items_editar($facturas_ref);
         ?>
 
+        
+        <tr>
+            <td></td>
+            <td></td>
+            <td><?php _t("Totales"); ?></td>
+            <td class="text-right"><?php echo moneda(factura_items_totalghtva($facturas_ref)); ?></td>
+            <td class="text-right"><?php echo moneda(factura_items_totalgtvac($facturas_ref)); ?></td>  
+            <td></td>
+        </tr>
+        
+        
 
 
     <form method="post" action="index.php">
@@ -69,6 +80,7 @@
             <td><input class="form-control" type="" name="factura_items_descripcion" size="3"></td>
             <td>
                 <select class="form-control" name="factura_items_porcentaje_iva">
+                    <option value="0"> 0%</option>
                     <option value="10"> 10%</option>
                     <option value="20"> 20%</option>
 
@@ -84,25 +96,25 @@
 
     <tr>
         <td class="text-right" colspan="4"><?php _t("Sub total"); ?></td>
-        <td class="text-right">1200.20</td>  
+        <td class="text-right"><?php echo moneda(factura_items_totalghtva($facturas_ref)); ?></td>  
         <td></td>
     </tr>        
 
     <tr>
         <td class="text-right" colspan="4"><?php _t("Iva"); ?></td>
-        <td class="text-right">1200.20</td>            
+        <td class="text-right"><?php echo moneda(factura_items_totalgiva($facturas_ref)); ?></td>             
         <td></td>
     </tr>        
 
     <tr>
-        <td class="text-right" colspan="4"><?php _t("Adelanto"); ?></td>
-        <td class="text-right">1200.20</td>            
+        <td class="text-right" colspan="4"><?php _t("Anticipo"); ?></td>
+        <td class="text-right"> -<?php echo moneda($facturas_anticipo); ?></td>           
         <td></td>
     </tr>        
 
     <tr>
         <td class="text-right" colspan="4"><?php _t("Saldo"); ?></td>
-        <td class="text-right">1200.20</td>            
+        <td class="text-right"><?php echo moneda(factura_items_totalgtvac($facturas_ref) - $facturas_anticipo); ?></td>            
         <td></td>
     </tr>        
 

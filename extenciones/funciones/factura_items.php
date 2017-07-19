@@ -140,7 +140,7 @@ function factura_items_tfoot() {
 function factura_items_detalles($facturas_ref) {
     global $conexion;
     $sql = mysql_query(
-            "SELECT * FROM factura_items WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+            "SELECT *, (cantidad*valor)*(1+porcentaje_iva/100) as totaltvac FROM factura_items WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
     while ($factura_items = mysql_fetch_array($sql)) {
         include "../gestion/factura_items/reg/reg.php";
         include "../gestion/factura_items/vista/items_detalles.php";
@@ -152,11 +152,41 @@ function factura_items_detalles($facturas_ref) {
 function factura_items_editar($facturas_ref) {
     global $conexion;
     $sql = mysql_query(
-            "SELECT * FROM factura_items WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+            "SELECT
+            *, 
+            (cantidad*valor)*(1+porcentaje_iva/100) as totaltvac
+            
+            
+            FROM factura_items 
+            WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    
+    
     while ($factura_items = mysql_fetch_array($sql)) {
         include "../gestion/factura_items/reg/reg.php";
         include "../gestion/factura_items/vista/items_editar.php";
 
 
     }
+}
+function factura_items_totalgiva($facturas_ref) {
+    global $conexion;
+    $sql = mysql_query(
+            "SELECT sum((cantidad*valor)*(porcentaje_iva/100)) as totalgiva FROM factura_items WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    $reg = mysql_fetch_array($sql);    
+    return $reg['totalgiva'];    
+}
+
+function factura_items_totalghtva($facturas_ref) {
+    global $conexion;
+    $sql = mysql_query(
+            "SELECT sum((cantidad*valor))  as totalhtva FROM factura_items WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    $reg = mysql_fetch_array($sql);    
+    return $reg['totalhtva'];    
+}
+function factura_items_totalgtvac($facturas_ref) {
+    global $conexion;
+    $sql = mysql_query(
+            "SELECT sum((cantidad*valor)*(1+(porcentaje_iva/100))) as totaltvac FROM factura_items WHERE ref_factura = '$facturas_ref' ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    $reg = mysql_fetch_array($sql);    
+    return $reg['totaltvac'];    
 }

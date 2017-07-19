@@ -21,9 +21,9 @@
         <tr>
             <th><?php _t("Cantidad"); ?></th>
             <th><?php _t("Descripción"); ?></th>
-            <th><?php _t("% iva"); ?></th>
-            <th><?php _t("Precio U."); ?></th>
-            <th><?php _t("Total"); ?></th>
+            <th class="text-center"><?php _t("% iva"); ?></th>
+            <th class="text-right"><?php _t("Precio U."); ?></th>
+            <th class="text-right"><?php _t("Total"); ?></th>
         </tr>
     </thead>
     <tbody>
@@ -34,27 +34,42 @@
         ?>
 
 
-
-
         <tr>
-            <td class="text-right" colspan="4"><?php _t("Sub total"); ?></td>
-            <td class="text-right">1200.20</td>            
-        </tr>        
+            <td></td>
+            <td></td>
+            <td><?php _t("Totales"); ?></td>
+            <td class="text-right"><?php echo moneda(factura_items_totalghtva($facturas_ref)); ?></td>
+            <td class="text-right"><?php echo moneda(factura_items_totalgtvac($facturas_ref)); ?></td>  
+            
+        </tr>
+        
 
-        <tr>
-            <td class="text-right" colspan="4"><?php _t("Iva"); ?></td>
-            <td class="text-right">1200.20</td>            
-        </tr>        
+       
+        
 
-        <tr>
-            <td class="text-right" colspan="4"><?php _t("Adelanto"); ?></td>
-            <td class="text-right">1200.20</td>            
-        </tr>        
+    <tr>
+        <td class="text-right" colspan="4"><?php _t("Sub total"); ?></td>
+        <td class="text-right"><?php echo moneda(factura_items_totalghtva($facturas_ref)); ?></td>  
+        
+    </tr>        
 
-        <tr>
-            <td class="text-right" colspan="4"><?php _t("Saldo"); ?></td>
-            <td class="text-right">1200.20</td>            
-        </tr>        
+    <tr>
+        <td class="text-right" colspan="4"><?php _t("Iva"); ?></td>
+        <td class="text-right"><?php echo moneda(factura_items_totalgiva($facturas_ref)); ?></td>             
+        
+    </tr>        
+
+    <tr>
+        <td class="text-right" colspan="4"><?php _t("Anticipo"); ?></td>
+        <td class="text-right"> -<?php echo moneda($facturas_anticipo); ?></td>           
+        
+    </tr>        
+
+    <tr>
+        <td class="text-right" colspan="4"><?php _t("Saldo"); ?></td>
+        <td class="text-right"><?php echo moneda(factura_items_totalgtvac($facturas_ref) - $facturas_anticipo); ?></td>            
+        
+    </tr>        
 
     </tbody>
 </table>
