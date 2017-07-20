@@ -3,10 +3,10 @@
 /**
   magia_version: 0.0.11
  * */
-function facturas_campo($campo, $id) {
+function facturas_campo($campo, $facturas_id) {
     global $conexion;
     $sql = mysql_query(
-            "SELECT $campo FROM facturas WHERE id = $id   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+            "SELECT $campo FROM facturas WHERE id = $facturas_id   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
     $reg = mysql_fetch_array($sql);
 
 
@@ -143,18 +143,30 @@ function facturas_tfoot() {
  * @param type $facturas_estatus
  * @return string
  */
-function facturas_estatus($facturas_estatus = false) {
+function facturas_estatus() {
     $estatus = array(
-        "0" => "Borrador",
-        "10" => "Registrada",
-        "20" => "Cobrada",
+        "0" => "Registrada",        
+        "10" => "Cobrada",
         "-1" => "Anulada"
     );
-    if ($facturas_estatus) {
-        return $estatus[$facturas_estatus];
-    } else {
-        return $estatus;
+    
+    return $estatus;
+}
+function facturas_estatus_add($seleccionado) {
+    $estatus = array(
+        "0" => "Registrada",        
+        "10" => "Cobrada",
+        "-1" => "Anulada"
+    );
+    
+    foreach ($estatus as $key => $value) {
+        echo '<option value="'.$key.'">'.$value.'</option>';
     }
+}
+function facturas_estatus_segun_codigo($facturas_estatus = false) {
+    $estatus = facturas_estatus();
+    
+    return $estatus[$facturas_estatus];
 }
 
 function facturas_campo_segun_ref($campo, $ref) {
@@ -182,5 +194,28 @@ function facturas_cliente_direccion_sobre($id) {
     } else {
         echo "no";
         return false;
+    }
+}
+function facturas_por_cobrar_add($selecionado = "", $excluir = "") {
+    global $conexion;
+    $sql = mysql_query(
+            "SELECT * FROM facturas WHERE estatus = '0'  ", $conexion) or error(__DIR__, __FILE__, __LINE__);
+    while ($facturas = mysql_fetch_array($sql)) {
+
+        include "../gestion/facturas/reg/reg.php";
+
+        echo "<option ";
+        if ($selecionado == $facturas[0]) {
+            echo " selected ";
+        } else {
+            echo "";
+        }
+        if ($excluir == $facturas[0]) {
+            echo " disabled ";
+        } else {
+            echo "";
+        }
+        //echo "value=\"$facturas[0]\">$facturas[0]</option>";
+        echo "value=\"$facturas[0]\">"._tr("Factura").": $facturas[0] | Cliente Empresa 235.00</option>";
     }
 }

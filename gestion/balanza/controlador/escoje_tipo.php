@@ -13,7 +13,7 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
             echo '<meta http-equiv="refresh" content="0; url=index.php?p=' . $p . '&c=index">';
         }
     } else {
-        include "./balanza/vista/crear.php";
+        include "./balanza/vista/escoje_tipo.php";
     }
 } else {
     permisos_sin_permiso($accion, $pagina, $_usuarios_usuario);

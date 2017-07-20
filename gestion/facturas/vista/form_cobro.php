@@ -3,6 +3,7 @@
     <input type="hidden" name="p" value="balanza"> 
     <input type="hidden" name="c" value="registrar_pago_desde_factura"> 
     <input type="hidden" name="a" value="registrar"> 
+    <input type="hidden" name="balanza_facturas_id" value="<?php echo $facturas_id; ?>"> 
 
 
 

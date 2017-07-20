@@ -2,14 +2,11 @@
   magia_version: 0.0.11
  * */ ?>
 <?php include "tabs.php"; ?>
-<h2> 
-    <span class="glyphicon glyphicon-<?php echo _menu_icono_segun_pagina($p); ?>"></span> 
+<br>
+<?php include "menu_facturas.php"; ?>
 
-    <?php echo _t("facturas"); ?> 
-    <a type="button" class="btn btn-primary navbar-btn" href="?p=facturas&c=crear"> 
-        <?php _t("Nuevo"); ?> 
-    </a>
-</h2>
+
+
 
 <table class="table table-striped">
     <?php //facturas_thead(); ?>
@@ -23,6 +20,7 @@
             <th class="text-right"><?php _t("Anticipo"); ?></th>
             <th class="text-right"><?php _t("Saldo"); ?></th>
             <th><?php _t("Estatus"); ?></th>
+            <th><?php _t("Acción"); ?></th>
         </tr>
     </thead>
     <tbody>
@@ -37,20 +35,22 @@
 
             include "./facturas/reg/reg.php";
 
-            $re1 = ($r1 !='0000-00-00')?"<span class=\"glyphicon glyphicon-envelope\"></span>":"";
+            $re1 = ($r1 != null)?"<span class=\"glyphicon glyphicon-envelope\"></span>":"";
             
             
             echo "<tr>";
             echo "<td>$i</td>";
             echo "<td>$facturas_id</td>";
             
-            echo "<td>" . contactos_campo('contacto', $facturas_id_contacto) . "</td>";
+            echo "<td><a href=\"index.php?p=contactos&c=ver&contactos_id=".$facturas_id_contacto."\">" . contactos_campo('contacto', $facturas_id_contacto) . "</a></td>";
             echo "<td>$re1</td>";
             echo "<td class=\"text-right\">" . moneda($facturas_sub_total + $facturas_iva) . "</td>";
             echo "<td class=\"text-right\">" . moneda($facturas_anticipo) . "</td>";
             echo "<td class=\"text-right\">" . moneda(($facturas_sub_total + $facturas_iva) - $facturas_anticipo) . "</td>";
-            echo "<td>$facturas_estatus</td>";
+            echo "<td>". facturas_estatus_segun_codigo($facturas_estatus)."</td>";
+            echo '<td><a href="index.php?p=facturas&c=ver&facturas_id='.$facturas_id.'">'._tr("Ver").'</a> | <a href="index.php?p=facturas&c=ver&facturas_id='.$facturas_id.'">'._tr("Editar").'</a></td>';
             echo "</tr>";
+             
 
 
 

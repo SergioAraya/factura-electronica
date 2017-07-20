@@ -1,12 +1,13 @@
- <?php 
- /**  
- magia_version: 0.0.11 
- **/ 
- $sql=mysql_query( 
-         "SELECT *  
+<?php
+
+/**
+  magia_version: 0.0.11
+ * */
+$comando = " SELECT *  
  FROM facturas  
  WHERE  
- ref like '%$facturas_ref%'    
+ id  like '%$facturas_id%'    
+ AND like '%$facturas_ref%'    
  AND  id_presupuesto like '%$facturas_id_presupuesto%'    
  AND  id_notac like '%$facturas_id_notac%'    
  AND  id_contacto like '%$facturas_id_contacto%'    
@@ -23,23 +24,26 @@
  AND  expira like '%$facturas_expira%'    
  AND  ce like '%$facturas_ce%'    
  AND  estatus like '%$facturas_estatus%'    
- ORDER BY id DESC    
- ",$conexion) or error(__DIR__, __FILE__, __LINE__);  
- $total_items = mysql_num_rows(mysql_query("$comando ", $conexion)); 
+ ORDER BY id DESC    ";
 
 
-            if($config_debug){
-                echo "<h3>Debug mode (".__FILE__." )</h3>";
 
-                $variables = array(
-                    "\$sql"=>"$sql"
-                );
 
-                echo "<table border>";
-                echo "<tr><td><b>Variable</b></td><td><b>Valor</b></td></tr>";       
-                foreach ($variables as $key => $value) {
-                    echo "<tr><td><b>$key:</b></td><td>$value</td></tr>";
-                }    
-                echo "</table>";
+$sql = mysql_query($comando , $conexion) or error(__DIR__, __FILE__, __LINE__);
+$total_items = mysql_num_rows(mysql_query($sql, $conexion));
 
-            }
+
+if ($config_debug) {
+    echo "<h3>Debug mode (" . __FILE__ . " )</h3>";
+
+    $variables = array(
+        "\$sql" => "$sql"
+    );
+
+    echo "<table border>";
+    echo "<tr><td><b>Variable</b></td><td><b>Valor</b></td></tr>";
+    foreach ($variables as $key => $value) {
+        echo "<tr><td><b>$key:</b></td><td>$value</td></tr>";
+    }
+    echo "</table>";
+}

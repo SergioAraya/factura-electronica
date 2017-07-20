@@ -136,11 +136,8 @@
     <?php
     if(contactos_total_segun_estatus(-1)){
         echo '<a href="index.php?p=contactos&c=borrados">'._tr('Borrados').' '.contactos_total_segun_estatus(-1).'</a>'; 
-    }
-    
-    
+    }        
     $g = _grupos_array_grupos();
-
     $i = 0;
     while ($i < count(_grupos_array_grupos())) {
         echo ucfirst(_tr($g[$i]));
@@ -148,7 +145,6 @@
         $i++;
     }
     ?>
-
 </form>
 
 
