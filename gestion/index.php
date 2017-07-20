@@ -17,6 +17,7 @@ include "../admin/moneda.php";
 include "../admin/menu.php";
 include "../admin/mensajes.php";
 include "../admin/paginacion.php";
+include "../admin/t_usuarios.php";
 ///require '../includes/PHPMailer-5.2.23/PHPMailerAutoload.php';
 _incluir_funciones();
 $aqui_seccion = "";

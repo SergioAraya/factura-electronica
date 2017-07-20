@@ -43,11 +43,15 @@ function _campo($tabla, $id, $campo) {
  * Incluye las funciones creadas para cada tabla
  */
 function _incluir_funciones() {
-    $ruta = "../extenciones/funciones/";
+    $ruta = "../gestion/";
     $directorio = scandir($ruta); //ruta actual
-    $i = 2; // empiezo en el segundo fichero  
+    $i = 2; // empiezo en el segundo fichero  para evitar los ficheros que empiezan por punto
     while ($i < count($directorio)) {
-        include ($ruta . $directorio[$i]);
+        
+        if(is_dir($directorio[$i])){
+            include ($ruta . $directorio[$i].'/funciones.php');
+        }
+        
         $i++;
     }
 }
