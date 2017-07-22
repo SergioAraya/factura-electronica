@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2017 at 01:25 PM
+-- Generation Time: Jul 22, 2017 at 09:14 AM
 -- Server version: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -70,8 +70,7 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id`, `idioma`, `tipo_documento`, `ruc_prefijo`, `numero_documento`, `empresa`, `contacto`, `saludo`, `direccion`, `cpostal`, `ciudad`, `provincia`, `pais`, `tel`, `fax`, `email`, `notas`, `tipo`, `fecha_registro`, `es_contacto`, `estrellas`, `estatus`) VALUES
-(34, 'en_GB', 'Pasaporte', 'BE', '1020304050', 'Facturas.be', 'Robinson Coello S.', 'Mr.', 'Av de codigo 1970', '1020', 'Bruxelles', '', 'Belgique', '+32474624707', '', 'robincoello@hotmail.com', 'Nada que decir', 0, '2017-06-21 08:50:22', '', 1, 1),
-(39, 'es_ES', 'null', 'BE', '', '', '', 'M.', '', '', '', 'null', 'Belgique', '', 'null', 'pato@colombia.com', '', 0, '2017-07-22 13:20:29', NULL, 1, 1);
+(34, 'es_ES', 'Pasaporte', 'BE', '1020304050', 'Facturas.be', 'Robinson Coello S.', 'Mr.', 'Av de codigo 1970', '1020', 'Bruxelles', '', 'Belgique', '+32474624707', '', 'robincoello@hotmail.com', 'Nada que decir', 0, '2017-06-21 08:50:22', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -3014,19 +3013,6 @@ CREATE TABLE `logs` (
   `sospechoso` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `fecha`, `usuario`, `grupo`, `ip`, `mac`, `p`, `c`, `a`, `comando`, `argumento`, `sospechoso`) VALUES
-(1, '2017-07-22 10:02:00', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5808\",\"_traducciones_frase\":\"Espa\\u00f1ol\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Spanish\"}', '5808', ''),
-(2, '2017-07-22 10:02:21', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5804\",\"_traducciones_frase\":\"Italiano\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Italian\"}', '5804', ''),
-(3, '2017-07-22 10:02:39', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5805\",\"_traducciones_frase\":\"Ingl\\u00e9s\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"English\"}', '5805', ''),
-(4, '2017-07-22 10:03:38', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5807\",\"_traducciones_frase\":\"Fran\\u00e7ais (Belgique)\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"French (Belgium)\"}', '5807', ''),
-(5, '2017-07-22 10:03:56', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5803\",\"_traducciones_frase\":\"Paises\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Countries\"}', '5803', ''),
-(6, '2017-07-22 10:04:07', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5801\",\"_traducciones_frase\":\"Plugins\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Plugins\"}', '5801', ''),
-(7, '2017-07-22 10:04:23', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5806\",\"_traducciones_frase\":\"Neerland\\u00e9s (B\\u00e9lgica)\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Dutch (Belgium)\"}', '5806', '');
-
 -- --------------------------------------------------------
 
 --
@@ -3366,7 +3352,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (611, '888888', NULL),
 (284, 'A', NULL),
 (653, 'A pagar', NULL),
-(854, 'Abril', NULL),
 (272, 'Acceso no permitido', NULL),
 (270, 'Acceso restrinjido', NULL),
 (18, 'Accion', NULL),
@@ -3377,10 +3362,8 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (588, 'Actualizaciones', NULL),
 (652, 'Adelanto', NULL),
 (498, 'Administración', NULL),
-(858, 'Agosto', NULL),
 (538, 'Agregar', NULL),
 (151, 'Al crear un nuevo grupo debe también configurar los permisos que este tendra en el sistema', NULL),
-(899, 'Alemán', NULL),
 (789, 'Alguna descripción?', NULL),
 (788, 'Alguna referencia?', NULL),
 (135, 'Alto', NULL),
@@ -3390,7 +3373,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (709, 'Anulada', NULL),
 (745, 'Anular', NULL),
 (661, 'Apellidos', NULL),
-(867, 'Arabe', NULL),
 (276, 'Area restinjida', NULL),
 (286, 'Argumento', NULL),
 (492, 'Atencion', NULL),
@@ -3426,7 +3408,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (13, 'Buscar', NULL),
 (461, 'Buscar traducción', NULL),
 (398, 'Buscar un contacto', NULL),
-(908, 'Buscar un tema', NULL),
 (793, 'Buscar una factura', NULL),
 (253, 'Busqueda detallada', NULL),
 (283, 'C', NULL),
@@ -3449,7 +3430,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (812, 'Capital', NULL),
 (685, 'Ce', NULL),
 (66, 'Centro auditivo', NULL),
-(866, 'Chino', NULL),
 (162, 'Ciudad', NULL),
 (40, 'Clave', NULL),
 (200, 'Clave Actual', NULL),
@@ -3531,7 +3511,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (339, 'Detalles del pedido', NULL),
 (459, 'Detalles del pedido editado', NULL),
 (457, 'Detalles pedido editado', NULL),
-(862, 'Diciembre', NULL),
 (160, 'Direccion', NULL),
 (227, 'Dirección', NULL),
 (637, 'Domingo', NULL),
@@ -3568,8 +3547,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (24, 'Empresa', NULL),
 (226, 'Empresa SPRL', NULL),
 (258, 'En proceso', NULL),
-(851, 'Enero', NULL),
-(901, 'English', NULL),
 (500, 'Entrar', NULL),
 (261, 'Enviado', NULL),
 (259, 'Enviado a contacto', NULL),
@@ -3584,7 +3561,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (462, 'Escoja uno', NULL),
 (786, 'Escoje', NULL),
 (475, 'Escriba aca su email', NULL),
-(863, 'Español', NULL),
 (144, 'Esta acción puede comprometar la seguridad de su web, esta seguro?', NULL),
 (30, 'Estatus', NULL),
 (511, 'Estatus actualizado, email enviado a contacto', NULL),
@@ -3603,9 +3579,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (668, 'Factura_items', NULL),
 (667, 'Facturas', NULL),
 (785, 'Facturas por cobrar', NULL),
-(865, 'Fancés', NULL),
 (166, 'Fax', NULL),
-(852, 'Febrero', NULL),
 (28, 'Fecha', NULL),
 (703, 'Fecha cobro', NULL),
 (726, 'Fecha pago', NULL),
@@ -3617,7 +3591,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (115, 'Fil nylon', NULL),
 (792, 'Filtrar', NULL),
 (256, 'Formato texto', NULL),
-(903, 'Français (Belgique)', NULL),
 (14, 'Frase', NULL),
 (578, 'Frase original', NULL),
 (807, 'GNP', NULL),
@@ -3651,22 +3624,17 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (804, 'IndepYear', NULL),
 (426, 'Index', NULL),
 (136, 'Info', NULL),
-(864, 'Ingles', NULL),
-(904, 'Inglés', NULL),
 (570, 'Ingresar al sistema', NULL),
 (8, 'Inicio', NULL),
 (87, 'Invisible', NULL),
 (593, 'Invitación para usar nuestro sistema', NULL),
 (595, 'Ip', NULL),
 (92, 'Iros', NULL),
-(900, 'Italiano', NULL),
 (453, 'Item', NULL),
 (345, 'Items', NULL),
 (677, 'Iva', NULL),
 (103, 'Izquierda', NULL),
 (634, 'Jueves', NULL),
-(857, 'Julio', NULL),
-(856, 'Junio', NULL),
 (55, 'Label', NULL),
 (464, 'Legere', NULL),
 (205, 'Letras, números, signos [&é#§çà, etc]', NULL),
@@ -3699,10 +3667,8 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (848, 'Magia_php', NULL),
 (108, 'Marques', NULL),
 (632, 'Martes', NULL),
-(853, 'Marzo', NULL),
 (94, 'Materiales', NULL),
 (621, 'Materials', NULL),
-(855, 'Mayo', NULL),
 (73, 'Media', NULL),
 (633, 'Miercoles', NULL),
 (269, 'Mis pedidos', NULL),
@@ -3714,8 +3680,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (465, 'Moyenne', NULL),
 (800, 'Name', NULL),
 (83, 'Natation', NULL),
-(869, 'Neerlandés', NULL),
-(902, 'Neerlandés (Bélgica)', NULL),
 (211, 'No', NULL),
 (138, 'No disponible', NULL),
 (522, 'No se pudo borrar este usuario', NULL),
@@ -3734,7 +3698,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (666, 'Notac', NULL),
 (665, 'Notac_items', NULL),
 (29, 'Notas', NULL),
-(861, 'Noviembre', NULL),
 (17, 'Nueva', NULL),
 (359, 'Nueva Clave', NULL),
 (201, 'Nueva clave', NULL),
@@ -3767,7 +3730,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (798, 'Número de factura', NULL),
 (796, 'Número de presupuesto relacionado', NULL),
 (252, 'Número no existe', NULL),
-(860, 'Octubre', NULL),
 (137, 'Ok', NULL),
 (238, 'Olvido el email', NULL),
 (431, 'Olvido el nombre del grupo', NULL),
@@ -3818,7 +3780,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (242, 'Por defecto se asignara el grupo centros a todo nuevo usuario', NULL),
 (733, 'Porcentaje iva', NULL),
 (722, 'Porcentaje_iva', NULL),
-(868, 'Portugues', NULL),
 (646, 'Precio U.', NULL),
 (814, 'Prefijo_ruc', NULL),
 (672, 'Presupuesto', NULL),
@@ -3870,7 +3831,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (95, 'Résine', NULL),
 (679, 'Saldo', NULL),
 (159, 'Saludo', NULL),
-(859, 'Septiembre', NULL),
 (212, 'Si', NULL),
 (568, 'Si desea cambiar de clave, ingrese en:', NULL),
 (567, 'Si no desea cambiar la clave, no haya nada', NULL),
@@ -3901,7 +3861,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (636, 'Sábado', NULL),
 (220, 'TVA', NULL),
 (165, 'Tel', NULL),
-(907, 'Temas', NULL),
 (659, 'Test', NULL),
 (98, 'Thermosoft', NULL),
 (97, 'Thermotec', NULL),
@@ -3919,7 +3878,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (124, 'Traduccion', NULL),
 (368, 'Traducción', NULL),
 (377, 'Traducido', NULL),
-(905, 'Traducido al', NULL),
 (190, 'Tva', NULL),
 (620, 'Types', NULL),
 (53, 'Ubicacion', NULL),
@@ -4006,18 +3964,12 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (360, 'cambiar_clave_otros', NULL),
 (263, 'cambiar_estatus', NULL),
 (375, 'cambiar_idioma', NULL),
-(909, 'cambiar_tema', NULL),
 (573, 'cambio_claves', NULL),
 (724, 'cantidad', NULL),
 (432, 'casa', NULL),
-(882, 'catorce', NULL),
 (701, 'ce', NULL),
 (384, 'centro', NULL),
 (348, 'centros', NULL),
-(896, 'cien', NULL),
-(897, 'cientos', NULL),
-(873, 'cinco', NULL),
-(891, 'cincuenta', NULL),
 (400, 'ciudad', NULL),
 (655, 'clientes', NULL),
 (715, 'cod_anu', NULL),
@@ -4049,20 +4001,12 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (301, 'couleur_gauche', NULL),
 (820, 'cp_ville', NULL),
 (32, 'crear', NULL),
-(890, 'cuarenta', NULL),
-(872, 'cuatro', NULL),
 (767, 'cuenta', NULL),
 (317, 'custom_dume', NULL),
 (779, 'd', NULL),
 (770, 'deme', NULL),
 (440, 'demo', NULL),
 (591, 'descripcion', NULL),
-(887, 'diecinueve', NULL),
-(886, 'dieciocho', NULL),
-(885, 'diecisiete', NULL),
-(884, 'diesiseis', NULL),
-(878, 'diez', NULL),
-(880, 'doce', NULL),
 (319, 'dormir', NULL),
 (434, 'dos', NULL),
 (298, 'du_numero', NULL),
@@ -4123,7 +4067,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (602, 'mac', NULL),
 (302, 'marques', NULL),
 (625, 'materials', NULL),
-(898, 'mil', NULL),
 (332, 'mix', NULL),
 (303, 'models', NULL),
 (312, 'molle', NULL),
@@ -4134,13 +4077,8 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (717, 'notac', NULL),
 (450, 'notas', NULL),
 (305, 'notes', NULL),
-(895, 'noventa', NULL),
-(877, 'nueve', NULL),
 (544, 'nuevos', NULL),
-(894, 'ochenta', NULL),
-(876, 'ocho', NULL),
 (354, 'ok', NULL),
-(879, 'once', NULL),
 (536, 'opcion', NULL),
 (769, 'orden', NULL),
 (445, 'orejera', NULL),
@@ -4171,7 +4109,6 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (819, 'prefijo_ruc', NULL),
 (716, 'presupuestos', NULL),
 (325, 'prince_de_crave', NULL),
-(883, 'quince', NULL),
 (696, 'r1', NULL),
 (697, 'r2', NULL),
 (698, 'r3', NULL),
@@ -4187,11 +4124,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (315, 'rite', NULL),
 (350, 'root', NULL),
 (694, 'saldo', NULL),
-(892, 'secenta', NULL),
-(874, 'seis', NULL),
-(893, 'sesenta', NULL),
 (433, 'sex', NULL),
-(875, 'siente', NULL),
 (328, 'silicone', NULL),
 (277, 'sin permiso', NULL),
 (316, 'slim_tube', NULL),
@@ -4200,24 +4133,18 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (691, 'sub_total', NULL),
 (738, 'sus_facturas', NULL),
 (240, 't_usuarios', NULL),
-(906, 'temas', NULL),
 (660, 'test', NULL),
 (777, 'tet', NULL),
 (330, 'thermosoft', NULL),
 (329, 'thermotec', NULL),
 (712, 'tipo', NULL),
 (759, 'total', NULL),
-(881, 'trece', NULL),
-(889, 'treinta', NULL),
-(871, 'tres', NULL),
 (778, 'tst', NULL),
 (154, 'txt', NULL),
 (626, 'types', NULL),
-(870, 'uno', NULL),
 (131, 'users', NULL),
 (583, 'usuario', NULL),
 (537, 'valor', NULL),
-(888, 'veinte', NULL),
 (374, 'vendedores', NULL),
 (300, 'ventilation_droite', NULL),
 (299, 'ventilation_gauche', NULL),
@@ -4280,7 +4207,7 @@ INSERT INTO `_idiomas` (`id`, `idioma`, `nombre`, `activo`, `orden`) VALUES
 (1, 'es_ES', 'Español', 1, 40),
 (3, 'fr_BE', 'Français (Belgique)', 0, 10),
 (4, 'nl_BE', 'Neerlandés (Bélgica)', 0, 20),
-(5, 'en_GB', 'Inglés', 1, 30),
+(5, 'en_GB', 'English', 1, 30),
 (7, 'it_IT', 'Italiano', 0, 40),
 (8, 'de_DE', 'Alemán', 0, 50);
 
@@ -4366,8 +4293,7 @@ INSERT INTO `_opciones` (`id`, `opcion`, `valor`, `grupo`) VALUES
 (41, 'balanza_thead', '{\"id\":\"id\",\"id_contacto\":\"id_contacto\",\"id_factura\":\"id_factura\",\"tipo\":\"tipo\",\"ref\":\"ref\",\"descripcion\":\"descripcion\",\"ce\":\"ce\",\"sub_total\":\"sub_total\",\"iva\":\"iva\",\"fecha\":\"fecha\",\"fecha_registro\":\"fecha_registro\",\"factura\":\"factura\",\"banco\":\"banco\",\"anulada\":\"anulada\",\"cod_anu\":\"cod_anu\"}', 0),
 (42, 'cp_ville_thead', '{\"vil_id\":\"vil_id\",\"vil_cp\":\"vil_cp\",\"vil_nom\":\"vil_nom\"}', 0),
 (47, 'paises_thead', '{\"Code\":\"Code\",\"name\":\"name\",\"continent\":\"continent\",\"Region\":\"Region\",\"SurfaceArea\":\"SurfaceArea\",\"IndepYear\":\"IndepYear\",\"Population\":\"Population\",\"LifeExpectancy\":\"LifeExpectancy\",\"GNP\":\"GNP\",\"GNPOld\":\"GNPOld\",\"LocalName\":\"LocalName\",\"GovernmentForm\":\"GovernmentForm\",\"HeadOfState\":\"HeadOfState\",\"Capital\":\"Capital\",\"code2\":\"code2\",\"prefijo_ruc\":\"prefijo_ruc\"}', 0),
-(64, 'plugins_thead', '{\"id\":\"id\",\"nombre\":\"nombre\",\"descripcion\":\"descripcion\",\"version\":\"version\",\"autor\":\"autor\",\"autor_email\":\"autor_email\",\"plugin_web\":\"plugin_web\",\"plugin_zip\":\"plugin_zip\",\"orden\":\"orden\",\"estatus\":\"estatus\"}', 0),
-(65, 'tema', 'loro', 2500);
+(64, 'plugins_thead', '{\"id\":\"id\",\"nombre\":\"nombre\",\"descripcion\":\"descripcion\",\"version\":\"version\",\"autor\":\"autor\",\"autor_email\":\"autor_email\",\"plugin_web\":\"plugin_web\",\"plugin_zip\":\"plugin_zip\",\"orden\":\"orden\",\"estatus\":\"estatus\"}', 0);
 
 -- --------------------------------------------------------
 
@@ -4466,8 +4392,7 @@ INSERT INTO `_permisos` (`id`, `grupo`, `pagina`, `permiso`) VALUES
 (297, 'root', 'paises', '1111'),
 (298, 'administradores', 'paises', '1110'),
 (350, 'root', 'plugins', '1111'),
-(351, 'administradores', 'plugins', '1110'),
-(352, 'administradores', '_contenido', '0000');
+(351, 'administradores', 'plugins', '1110');
 
 -- --------------------------------------------------------
 
@@ -5685,6 +5610,7 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5258, 'A pagar', 'en_GB', 'To pay'),
 (5259, 'Comunicicón extructurada', 'en_GB', 'Structured communication'),
 (5260, 'clientes', 'en_GB', ''),
+(5261, 'Nuevo pedido', 'en_GB', '---'),
 (5262, '% Tva', 'es_ES', '% Iva'),
 (5263, '2020', 'en_GB', '2020'),
 (5264, '30', 'en_GB', '30'),
@@ -5759,6 +5685,7 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5387, 'Descripción', 'es_ES', 'Descripción'),
 (5388, 'Precio U.', 'es_ES', 'Precio U.'),
 (5389, 'Total', 'es_ES', 'Total'),
+(5390, 'facturas', 'en_GB', '---'),
 (5391, 'balanza', 'es_ES', 'balanza'),
 (5392, 'Factura', 'es_ES', 'Factura'),
 (5393, 'Id_factura', 'es_ES', 'Id_factura'),
@@ -5791,6 +5718,61 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5420, 'Comunicación extructurada', 'es_ES', 'Comunicación extructurada'),
 (5421, 'Cod anu', 'es_ES', 'Cod anu'),
 (5422, 'borrar_item', 'es_ES', 'borrar_item'),
+(5423, 'Facturas', 'en_GB', '---'),
+(5424, 'Presupuestos', 'en_GB', '---'),
+(5425, 'Notac', 'en_GB', '---'),
+(5426, 'Balanza', 'en_GB', '---'),
+(5427, 'presupuestos', 'en_GB', '---'),
+(5428, 'notac', 'en_GB', '---'),
+(5429, 'balanza', 'en_GB', '---'),
+(5430, 'Presupuesto_items', 'en_GB', '---'),
+(5431, 'Paises', 'en_GB', '---'),
+(5432, 'Notac_items', 'en_GB', '---'),
+(5433, 'Factura_items', 'en_GB', '---'),
+(5434, 'Cp_ville', 'en_GB', '---'),
+(5435, 'Id_factura', 'en_GB', '---'),
+(5436, 'Id_contacto', 'en_GB', '---'),
+(5437, 'Sub_total', 'en_GB', '---'),
+(5438, 'Iva', 'en_GB', '---'),
+(5439, 'Anticipo', 'en_GB', '---'),
+(5440, 'Saldo', 'en_GB', '---'),
+(5441, 'Comentarios', 'en_GB', '---'),
+(5442, 'R1', 'en_GB', '---'),
+(5443, 'R2', 'en_GB', '---'),
+(5444, 'R3', 'en_GB', '---'),
+(5445, 'Fecha_cobro', 'en_GB', '---'),
+(5446, 'Ce', 'en_GB', '---'),
+(5447, 'ref', 'en_GB', '---'),
+(5448, 'id_factura', 'en_GB', '---'),
+(5449, 'id_contacto', 'en_GB', '---'),
+(5450, 'fecha_registro', 'en_GB', '---'),
+(5451, 'sub_total', 'en_GB', '---'),
+(5452, 'iva', 'en_GB', '---'),
+(5453, 'anticipo', 'en_GB', '---'),
+(5454, 'saldo', 'en_GB', '---'),
+(5455, 'comentarios', 'en_GB', '---'),
+(5456, 'r1', 'en_GB', '---'),
+(5457, 'r2', 'en_GB', '---'),
+(5458, 'r3', 'en_GB', '---'),
+(5459, 'fecha_cobro', 'en_GB', '---'),
+(5460, 'expira', 'en_GB', '---'),
+(5461, 'ce', 'en_GB', '---'),
+(5462, 'estatus', 'en_GB', '---'),
+(5463, 'Presupuesto', 'en_GB', '---'),
+(5464, 'Id_presupuesto', 'en_GB', '---'),
+(5465, 'Id_notac', 'en_GB', '---'),
+(5466, 'id_presupuesto', 'en_GB', '---'),
+(5467, 'id_notac', 'en_GB', '---'),
+(5468, 'Fecha_pago', 'en_GB', '---'),
+(5469, 'fecha_pago', 'en_GB', '---'),
+(5470, 'Banco', 'en_GB', '---'),
+(5471, 'Anulada', 'en_GB', '---'),
+(5472, 'Cod_anu', 'en_GB', '---'),
+(5473, 'tipo', 'en_GB', '---'),
+(5474, 'fecha', 'en_GB', '---'),
+(5475, 'banco', 'en_GB', '---'),
+(5476, 'anulada', 'en_GB', '---'),
+(5477, 'cod_anu', 'en_GB', '---'),
 (5478, 'Sus facturas', 'es_ES', 'Sus facturas'),
 (5479, 'sus_facturas', 'es_ES', 'sus_facturas'),
 (5480, 'Recordatorios', 'es_ES', 'Recordatorios'),
@@ -5801,18 +5783,38 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5485, 'Este es un comentarios publico', 'es_ES', 'Este es un comentarios publico'),
 (5486, 'Anular', 'es_ES', 'Anular'),
 (5487, 'Registrar cobros', 'es_ES', 'Registrar cobros'),
+(5488, 'Pdf', 'en_GB', '---'),
+(5489, 'Anular', 'en_GB', '---'),
+(5490, 'Cantidad', 'en_GB', '---'),
+(5491, 'Descripción', 'en_GB', '---'),
+(5492, '% iva', 'en_GB', '---'),
+(5493, 'Comunicación extructurada', 'en_GB', '---'),
+(5494, 'Registrar cobros', 'en_GB', '---'),
 (5495, 'Cliente', 'es_ES', 'Cliente'),
 (5496, 'Nota de crédito', 'es_ES', 'Nota de crédito'),
 (5497, 'Cobros', 'es_ES', 'Cobros'),
 (5498, 'Registo de cobros', 'es_ES', 'Registo de cobros'),
 (5499, 'Cambiar Cliente', 'es_ES', 'Cambiar Cliente'),
 (5500, 'Registrada', 'es_ES', 'Registrada'),
+(5501, 'Cliente', 'en_GB', '---'),
+(5502, 'Registrada', 'en_GB', '---'),
+(5503, 'Nota de crédito', 'en_GB', '---'),
+(5504, 'Registo de cobros', 'en_GB', '---'),
 (5505, '', 'es_ES', ''),
 (5509, 'Cobrada', 'es_ES', 'Cobrada'),
 (5510, 'anular', 'es_ES', 'anular'),
 (5511, 'No se puede registrar pagos en una factura anulada', 'es_ES', 'No se puede registrar pagos en una factura anulada'),
 (5512, 'Registrar pagos', 'es_ES', 'Registrar pagos'),
 (5513, 'Ud. no puede editar una factura anulada', 'es_ES', 'Ud. no puede editar una factura anulada'),
+(5514, 'Registrar pagos', 'en_GB', '---'),
+(5515, 'No se puede registrar pagos en una factura anulada', 'en_GB', '---'),
+(5516, 'anular', 'en_GB', '---'),
+(5517, 'Cambiar Cliente', 'en_GB', '---'),
+(5518, 'Este es un comentarios publico', 'en_GB', '---'),
+(5519, 'Comentarios publicos', 'en_GB', '---'),
+(5520, 'Registar', 'en_GB', '---'),
+(5521, 'factura_items', 'en_GB', '---'),
+(5522, 'editar_comentarios', 'en_GB', '---'),
 (5523, 'total', 'es_ES', 'total'),
 (5524, 'Subtotal', 'es_ES', 'Subtotal'),
 (5525, 'Pagado', 'es_ES', 'Pagado'),
@@ -5903,138 +5905,10 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5628, 'pdf', 'es_ES', 'pdf'),
 (5629, 'Clientse', 'es_ES', 'Clientse'),
 (5630, 'Magia_php', 'es_ES', 'Magia_php'),
+(5631, 'Magia_php', 'en_GB', '---'),
+(5632, 'Plugins', 'en_GB', '---'),
 (5633, 'editores', 'es_ES', 'editores'),
-(5634, 'escritores', 'es_ES', 'escritores'),
-(5635, 'Lunes', 'es_ES', 'Lunes'),
-(5636, 'Martes', 'es_ES', 'Martes'),
-(5637, 'Miercoles', 'es_ES', 'Miercoles'),
-(5638, 'Jueves', 'es_ES', 'Jueves'),
-(5639, 'Viernes', 'es_ES', 'Viernes'),
-(5640, 'Sábado', 'es_ES', 'Sábado'),
-(5641, 'Domingo', 'es_ES', 'Domingo'),
-(5642, 'Enero', 'es_ES', 'Enero'),
-(5643, 'Febrero', 'es_ES', 'Febrero'),
-(5644, 'Marzo', 'es_ES', 'Marzo'),
-(5645, 'Abril', 'es_ES', 'Abril'),
-(5646, 'Mayo', 'es_ES', 'Mayo'),
-(5647, 'Junio', 'es_ES', 'Junio'),
-(5648, 'Julio', 'es_ES', 'Julio'),
-(5649, 'Agosto', 'es_ES', 'Agosto'),
-(5650, 'Septiembre', 'es_ES', 'Septiembre'),
-(5651, 'Octubre', 'es_ES', 'Octubre'),
-(5652, 'Noviembre', 'es_ES', 'Noviembre'),
-(5653, 'Diciembre', 'es_ES', 'Diciembre'),
-(5666, 'Español', 'es_ES', 'Español'),
-(5667, 'Ingles', 'es_ES', 'Ingles'),
-(5668, 'Fancés', 'es_ES', 'Fancés'),
-(5669, 'Chino', 'es_ES', 'Chino'),
-(5670, 'Arabe', 'es_ES', 'Arabe'),
-(5671, 'Portugues', 'es_ES', 'Portugues'),
-(5672, 'Neerlandés', 'es_ES', 'Neerlandés'),
-(5680, 'uno', 'es_ES', 'uno'),
-(5681, 'tres', 'es_ES', 'tres'),
-(5682, 'cuatro', 'es_ES', 'cuatro'),
-(5683, 'cinco', 'es_ES', 'cinco'),
-(5684, 'seis', 'es_ES', 'seis'),
-(5685, 'siente', 'es_ES', 'siente'),
-(5686, 'ocho', 'es_ES', 'ocho'),
-(5687, 'nueve', 'es_ES', 'nueve'),
-(5688, 'diez', 'es_ES', 'diez'),
-(5689, 'once', 'es_ES', 'once'),
-(5690, 'doce', 'es_ES', 'doce'),
-(5691, 'trece', 'es_ES', 'trece'),
-(5692, 'catorce', 'es_ES', 'catorce'),
-(5693, 'quince', 'es_ES', 'quince'),
-(5694, 'diesiseis', 'es_ES', 'diesiseis'),
-(5695, 'diecisiete', 'es_ES', 'diecisiete'),
-(5696, 'dieciocho', 'es_ES', 'dieciocho'),
-(5697, 'diecinueve', 'es_ES', 'diecinueve'),
-(5698, 'veinte', 'es_ES', 'veinte'),
-(5699, 'treinta', 'es_ES', 'treinta'),
-(5700, 'cuarenta', 'es_ES', 'cuarenta'),
-(5701, 'cincuenta', 'es_ES', 'cincuenta'),
-(5702, 'secenta', 'es_ES', 'secenta'),
-(5703, 'sesenta', 'es_ES', 'sesenta'),
-(5704, 'ochenta', 'es_ES', 'ochenta'),
-(5705, 'noventa', 'es_ES', 'noventa'),
-(5706, 'cien', 'es_ES', 'cien'),
-(5707, 'cientos', 'es_ES', 'cientos'),
-(5708, 'mil', 'es_ES', 'mil'),
-(5768, '1er Recordatorio', 'en_GB', '1st Reminder'),
-(5769, '2do Recordatorio', 'en_GB', '2nd Reminder'),
-(5770, '3er Recordatorio', 'en_GB', '3rd Reminder'),
-(5771, 'Alguna descripción?', 'en_GB', 'Any description?'),
-(5772, 'Apellidos', 'en_GB', 'Surnames'),
-(5773, 'Alguna referencia?', 'en_GB', 'Any references?'),
-(5774, '+++123/4512/12312+++', 'en_GB', '+++123/4512/12312+++'),
-(5775, 'Abril', 'en_GB', 'April'),
-(5776, '% iva', 'en_GB', '% vat'),
-(5777, 'Anulada', 'en_GB', 'Cancel'),
-(5778, 'Magia_php', 'en_GB', 'Magia_php'),
-(5782, 'Agosto', 'en_GB', 'August'),
-(5783, 'Anticipo', 'en_GB', 'Advance'),
-(5784, 'Arabe', 'en_GB', 'Arab'),
-(5785, 'Anular', 'en_GB', 'Cancel'),
-(5786, '', 'en_GB', ''),
-(5794, 'Alemán', 'es_ES', 'Alemán'),
-(5795, 'Italiano', 'es_ES', 'Italiano'),
-(5796, 'English', 'es_ES', 'English'),
-(5797, 'Neerlandés (Bélgica)', 'es_ES', 'Neerlandés (Bélgica)'),
-(5798, 'Français (Belgique)', 'es_ES', 'Français (Belgique)'),
-(5799, 'Inglés', 'es_ES', 'Inglés'),
-(5800, 'Alemán', 'en_GB', 'German'),
-(5801, 'Plugins', 'en_GB', 'Plugins'),
-(5802, 'Cp_ville', 'en_GB', '---'),
-(5803, 'Paises', 'en_GB', 'Countries'),
-(5804, 'Italiano', 'en_GB', 'Italian'),
-(5805, 'Inglés', 'en_GB', 'English'),
-(5806, 'Neerlandés (Bélgica)', 'en_GB', 'Dutch (Belgium)'),
-(5807, 'Français (Belgique)', 'en_GB', 'French (Belgium)'),
-(5808, 'Español', 'en_GB', 'Spanish'),
-(5809, 'Traducido al', 'es_ES', 'Traducido al'),
-(5810, 'plugins', 'en_GB', '---'),
-(5811, 'Version', 'en_GB', '---'),
-(5812, 'Autor', 'en_GB', '---'),
-(5813, 'Autor_email', 'en_GB', '---'),
-(5814, 'Plugin_web', 'en_GB', '---'),
-(5815, 'Plugin_zip', 'en_GB', '---'),
-(5816, 'Plugin', 'en_GB', '---'),
-(5817, 'Descripción', 'en_GB', '---'),
-(5818, 'Versión instalada', 'en_GB', '---'),
-(5819, 'Última versión', 'en_GB', '---'),
-(5820, 'Autor email', 'en_GB', '---'),
-(5821, 'Plugin web', 'en_GB', '---'),
-(5822, 'Plugin zip', 'en_GB', '---'),
-(5823, 'editores', 'en_GB', '---'),
-(5824, 'escritores', 'en_GB', '---'),
-(5825, 'Ip', 'en_GB', '---'),
-(5826, 'Mac', 'en_GB', '---'),
-(5827, 'Comando', 'en_GB', '---'),
-(5828, 'Sospechoso', 'en_GB', '---'),
-(5829, 'fecha', 'en_GB', '---'),
-(5830, 'sospechoso', 'en_GB', '---'),
-(5831, 'cp_ville', 'en_GB', '---'),
-(5832, 'Vil_cp', 'en_GB', '---'),
-(5833, 'Vil_nom', 'en_GB', '---'),
-(5834, 'vil_id', 'en_GB', '---'),
-(5835, 'vil_cp', 'en_GB', '---'),
-(5836, 'vil_nom', 'en_GB', '---'),
-(5837, 'paises', 'en_GB', '---'),
-(5838, 'version', 'en_GB', '---'),
-(5839, 'autor', 'en_GB', '---'),
-(5840, 'autor_email', 'en_GB', '---'),
-(5841, 'plugin_web', 'en_GB', '---'),
-(5842, 'plugin_zip', 'en_GB', '---'),
-(5843, 'orden', 'en_GB', '---'),
-(5844, 'estatus', 'en_GB', '---'),
-(5845, 'Cambiar de grupo', 'en_GB', '---'),
-(5846, 'temas', 'en_GB', '---'),
-(5847, 'temas', 'es_ES', 'temas'),
-(5848, 'Temas', 'es_ES', 'Temas'),
-(5849, 'Buscar un tema', 'es_ES', 'Buscar un tema'),
-(5850, 'cambiar_tema', 'es_ES', 'cambiar_tema'),
-(5851, 'Temas', 'en_GB', '---'),
-(5852, 'cambiar_tema', 'en_GB', '---');
+(5634, 'escritores', 'es_ES', 'escritores');
 
 -- --------------------------------------------------------
 
@@ -6055,8 +5929,7 @@ CREATE TABLE `_usuarios` (
 --
 
 INSERT INTO `_usuarios` (`id`, `grupo`, `usuario`, `clave`, `estatus`) VALUES
-(26, 'root', 'robincoello@hotmail.com', '$2y$12$v5Lr3co19UKhcOXU8Nqa7egQdo76c8LDjpjYIdSnsT5PR4w.jEDqa', 1),
-(109, 'escritores', 'pato@colombia.com', '$2y$12$r58QkP5Y.ShdwqOi2X.XHumWUE/ZcNH.yknlq5YjhnntzGez4Dza6', 1);
+(26, 'root', 'robincoello@hotmail.com', '$2y$12$v5Lr3co19UKhcOXU8Nqa7egQdo76c8LDjpjYIdSnsT5PR4w.jEDqa', 1);
 
 --
 -- Indexes for dumped tables
@@ -6180,7 +6053,7 @@ ALTER TABLE `cambio_claves`
 -- AUTO_INCREMENT for table `contactos`
 --
 ALTER TABLE `contactos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `cp_ville`
 --
@@ -6190,7 +6063,7 @@ ALTER TABLE `cp_ville`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `plugins`
 --
@@ -6200,7 +6073,7 @@ ALTER TABLE `plugins`
 -- AUTO_INCREMENT for table `_contenido`
 --
 ALTER TABLE `_contenido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=910;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=851;
 --
 -- AUTO_INCREMENT for table `_grupos`
 --
@@ -6220,7 +6093,7 @@ ALTER TABLE `_menu`
 -- AUTO_INCREMENT for table `_opciones`
 --
 ALTER TABLE `_opciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 --
 -- AUTO_INCREMENT for table `_paginas`
 --
@@ -6230,17 +6103,17 @@ ALTER TABLE `_paginas`
 -- AUTO_INCREMENT for table `_permisos`
 --
 ALTER TABLE `_permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=353;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=352;
 --
 -- AUTO_INCREMENT for table `_traducciones`
 --
 ALTER TABLE `_traducciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5853;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5635;
 --
 -- AUTO_INCREMENT for table `_usuarios`
 --
 ALTER TABLE `_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
 -- Constraints for dumped tables
 --
