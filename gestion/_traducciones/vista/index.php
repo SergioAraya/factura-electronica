@@ -1,4 +1,4 @@
-<?php //include "tabs.php";   ?>
+<?php //include "tabs.php";    ?>
 <h2> 
     <span class="glyphicon glyphicon-<?php echo _menu_icono_segun_pagina($p); ?>"></span> 
 
@@ -6,13 +6,13 @@
 </h2>
 
 <p>
-Exportar <a href="index.php?p=_traducciones&c=export_sql">sql</a> 
-Exportar <a href="index.php?p=_traducciones&c=export_cvs">cvs</a> 
-Exportar <a href="index.php?p=_traducciones&c=export_google">google</a> 
+    Exportar <a href="index.php?p=_traducciones&c=export_sql">sql</a> 
+    Exportar <a href="index.php?p=_traducciones&c=export_cvs">cvs</a> 
+    Exportar <a href="index.php?p=_traducciones&c=export_google">google</a> 
 
 </p>
 
-
+<p><?php echo "$total_items items"; ?></p>
 <table class="table table-striped">
     <thead>
         <tr> 
@@ -25,7 +25,7 @@ Exportar <a href="index.php?p=_traducciones&c=export_google">google</a>
     <tbody>
 
         <tr>
-            <?php 
+            <?php
             include "./_traducciones/vista/tr_buscar.php";
             ?>
         </tr>
@@ -34,16 +34,25 @@ Exportar <a href="index.php?p=_traducciones&c=export_google">google</a>
         while ($_traducciones = mysql_fetch_array($sql)) {
             include "./_traducciones/reg/reg.php";
             include "./_traducciones/vista/tr_editar.php";
-            
+
             $i++;
         }
         ?>
-         <tr>
-            <?php 
-           // include "./_traducciones/vista/tr_anadir.php";
+        <tr>
+            <?php
+            // include "./_traducciones/vista/tr_anadir.php";
             ?>
         </tr>
     </tbody>
+    <tfoot>
+        <tr> 
+            <th><?php echo _t("Frase original"); ?></th> 
+            <th><?php echo _t("Idioma"); ?></th> 
+            <th><?php echo _t("Traduccion"); ?></th> 
+            <th><?php echo _t("Accion"); ?></th> 
+        </tr>
+    </tfoot>
+    
 </table> 
 
 <?php

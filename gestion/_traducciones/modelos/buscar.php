@@ -9,7 +9,7 @@
         WHERE  
             frase like '%$_traducciones_frase%' "
              . "AND  idioma like '%$_traducciones_idioma%' "
-             . "AND  traduccion like '%$_traducciones_traduccion%' ORDER BY id DESC  Limit $inicia, $cfg_limite_items_en_tablas     "; 
+             . "AND  traduccion like '%$_traducciones_traduccion%' ORDER BY frase   Limit $inicia, $cfg_limite_items_en_tablas     "; 
  }else{
      $comando = " SELECT *  
         FROM _traducciones  

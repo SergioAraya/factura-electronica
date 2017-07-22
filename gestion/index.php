@@ -19,6 +19,7 @@ include "../admin/menu.php";
 include "../admin/mensajes.php";
 include "../admin/paginacion.php";
 include "../admin/t_usuarios.php";
+include "../temas/pato/funciones.php";
 //include "../gestion/_opciones/funciones.php";
 ///require '../includes/PHPMailer-5.2.23/PHPMailerAutoload.php';
 _incluir_funciones();

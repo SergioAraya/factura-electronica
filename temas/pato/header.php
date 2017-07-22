@@ -34,15 +34,32 @@
             include "home/vista/nav_sup.php";
         }
         ?>
-        <div class="container-fluid"> <!-- 1 -->
+        <div class="container"> <!-- 1 -->
             <div class="row">	<!-- 2 -->
-                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- 3 -->                                        
 
+                <div class="col-sm-3  col-md-3 col-lg-3 "> <!-- 3 -->    
+                   
+                    <br>
+                    <?php 
+                      if (file_exists("../temas/pato/$p/sidebar_izq.php")) {
+                      include "../temas/pato/$p/sidebar_izq.php";
+                      } else {
+                      include "../temas/pato/home/sidebar_izq.php";
+                      }                                          
+                    ?>    
+                     <img src="../temas/pato/imagenes/pato.jpg">
+
+                </div>
+
+
+                <div class="col-sm-9  col-md-10 col-lg-9 "> <!-- 3 -->                                        
+                    <hr>
 
                     <ol class="breadcrumb">
                         <li>
                             <span class="glyphicon glyphicon-home"></span> 
-                            <a href="index.php"><?php _t("Inicio"); ?>
+                            <a href="index.php">
+                                <?php echo ucfirst(_opciones_valor_segun_opcion('tema')); ?>
                             </a>
                         </li>
                         <li class="active">
@@ -54,10 +71,13 @@
                         <li><a href="#"><?php _t("$c"); ?></a></li>
                     </ol>    
 
-                    <?php
-                    if (file_exists("$p/vista/menu_$c.php")) {
-                        include "$p/vista/menu_$c.php";
-                    } else {
-                        include "home/vista/sidebar.php";
-                    }
-                    ?>                    
+
+                    <?php /*
+                      if (file_exists("$p/vista/menu_$c.php")) {
+                      include "$p/vista/menu_$c.php";
+                      } else {
+                      include "home/vista/sidebar.php";
+                      }
+                     * 
+                     */
+                    ?>          
