@@ -28,11 +28,14 @@ $_usuarios_idioma = contactos_campo_segun_email('idioma', $_usuarios_usuario);
 
 $p = (isset($_REQUEST['p'])) ? $_REQUEST['p'] : "home";
 $c = (isset($_REQUEST['c'])) ? $_REQUEST['c'] : "index";
+
 // para las paginaciones de todas las paginas
 $pag = (isset($_REQUEST['pag'])) ? $_REQUEST['pag'] : 0;
-
+// header
 include "../temas/" . _opciones_valor_segun_opcion('tema') . "/header.php";
+//
 include './' . $p . '/controlador/' . $c . '.php';
+// footer
 include "../temas/" . _opciones_valor_segun_opcion('tema') . "/footer.php";
 ?>
 
