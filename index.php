@@ -1,8 +1,7 @@
-<?php 
- /**  
- magia_version: 0.0.11 
- **/ 
-
+<?php
+/**
+  magia_version: 0.0.11
+ * */
 //session_start("magia_php") ;
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
@@ -24,6 +23,12 @@ $aqui_seccion = "";
 $aqui_pagina = "";
 $p = (isset($_REQUEST["p"])) ? $_REQUEST["p"] : "empresas";
 $c = (isset($_REQUEST["c"])) ? $_REQUEST["c"] : "index";
+
+if(!file_exists('./admin/configuracion.php')){
+    header("Location: install.php");
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -80,38 +85,38 @@ $c = (isset($_REQUEST["c"])) ? $_REQUEST["c"] : "index";
             <!-- Three columns of text below the carousel -->
             <div class="row">
                 <div class="col-lg-3">
-                    
-                    
-                    
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    Cras justo odio
-  </a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">categoria</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-</div>
-                    
-                    
-                    
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    Cras justo odio
-  </a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-</div>
-                    
-                    
+
+
+
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">
+                            Cras justo odio
+                        </a>
+                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                        <a href="#" class="list-group-item">Morbi leo risus</a>
+                        <a href="#" class="list-group-item">categoria</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+
+
+
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">
+                            Cras justo odio
+                        </a>
+                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                        <a href="#" class="list-group-item">Morbi leo risus</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+
+
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
@@ -119,7 +124,7 @@ $c = (isset($_REQUEST["c"])) ? $_REQUEST["c"] : "index";
                         include "./gestion/$p/controlador/publico/$c.php";
                         ?>
                         <?php
-                      //  include "./gestion/empresas/controlador/publico/index.php";
+                        //  include "./gestion/empresas/controlador/publico/index.php";
                         ?>
                         <?php
                         //include "./gestion/empresas/controlador/publico/index.php";
@@ -194,4 +199,4 @@ $c = (isset($_REQUEST["c"])) ? $_REQUEST["c"] : "index";
 
     </body>
 </html>
-                
+

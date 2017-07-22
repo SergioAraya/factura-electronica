@@ -3,13 +3,13 @@
 $path_imagenes = "/var/www/html/";
 $config_tema = "pato"; 
 $config_debug = 0; 
-$config_nombre_web = "Magia PHP";
+$config_nombre_web = "Mago";
 $config_url = "https://github.com/robincoello/magia_php"; // sin / al final
 $config_direccion = "Av del codigo abierto 1970, \n1000 Bruselas, \nBégica";
 $config_tel = "+32(0)474 62 47 07";
 $config_logo = "logo.png";
 //
-$config_grupo_por_defecto = "centros";
+$config_grupo_por_defecto = 'centros';
 // si el numero de pedido es inferior a x cifras llenara con ceros en la parte izquierda 
 // cuantas cifras debe tener min?
 $config_ceros_bon = 6; 
@@ -18,7 +18,7 @@ $cfg_idioma  = "es_ES";
 $config_idioma  = $cfg_idioma; 
 // limite de lineas en las tablas de los diferentes items 
 $cfg_limite_items_en_tablas = 50; 
-date_default_timezone_set("Europe/Brussels");
+date_default_timezone_set('Europe/Brussels');
 # configuracion del email 
 # configuracion del email 
 # configuracion del email 
@@ -28,11 +28,11 @@ date_default_timezone_set("Europe/Brussels");
 # email_nombres y apellidos
 $config_email_nombre = "Robinson Coello S."; 
 # email_usuario, generalmente formato email
-$config_email_email = "robincoello@hotmail.com";
+$config_email_email = "robinson@facturas.be";
 // suele ser el mismo email
 $config_email_usuario = "robinson@facturas.be"; 
 # email_clave, la clave del email
-$config_email_clave = "tYQOWu3Y98"; 
+$config_email_clave = "HIhSu6IEuFDo"; 
 # email_pop, seridor entrante
 $config_email_pop = "mail.facturas.be";
 # email_pop_puerto
