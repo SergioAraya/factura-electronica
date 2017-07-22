@@ -1,7 +1,7 @@
 <?php
 // DATOS DE LA EMPRESA
 $path_imagenes = "/var/www/html/";
-$config_tema = "tema_simple"; 
+$config_tema = "pato"; 
 $config_debug = 0; 
 $config_nombre_web = "factura electro";
 $config_url = "https://github.com/robincoello/magia_php"; // sin / al final

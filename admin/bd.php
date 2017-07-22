@@ -11,8 +11,8 @@ switch ($_SERVER["SERVER_NAME"]) {
         $bd_bdatos = "factura-electronica";
         $bd_usuario = "root";
         $bd_clave = "root";
-        error_reporting(E_ALL);
-        ini_set("display_errors", 1);
+       // error_reporting(E_ALL);
+       // ini_set("display_errors", 1);
         break;
     case "http://www.misuperweb.be":
     case "audio.facturas.be":

@@ -9,13 +9,11 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
     if (isset($_REQUEST['a']) == 'crear') {
         include "./facturas/reg/post.php";
         $facturas_ref = genera_clave();
+        
         include "./facturas/modelos/crear.php";
-        
-        
-        
-        
+
         if (!$config_debug) {
-            echo '<meta http-equiv="refresh" content="0; url=index.php?p=' . $p . '&c=editar&facturas_id='. facturas_campo_segun_ref('id', $facturas_ref).'">';
+            echo '<meta http-equiv="refresh" content="0; url=index.php?p=' . $p . '&c=editar&facturas_id=' . facturas_campo_segun_ref('id', $facturas_ref) . '">';
         }
     } else {
         include "./facturas/vista/crear.php";

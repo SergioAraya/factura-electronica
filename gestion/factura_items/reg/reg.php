@@ -10,4 +10,4 @@ $factura_items_descripcion = $factura_items['descripcion'];
 $factura_items_valor = $factura_items['valor'];
 $factura_items_porcentaje_iva = $factura_items['porcentaje_iva'];
 //
-$factura_items_totaltvac = $factura_items['totaltvac'];
+//$factura_items_totaltvac = $factura_items['totaltvac'];

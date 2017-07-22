@@ -1,5 +1,5 @@
 <?php
-
+/*
 // Instanciation of inherited class
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -109,3 +109,4 @@ $pdf->Ln(10);
 $pdf->Output();
 
 
+*/

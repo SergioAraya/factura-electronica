@@ -1,9 +1,19 @@
-<?php 
- /**  
- magia_version: 0.0.11 
- **/ 
-
-
+<?php
+/**
+ * 
+ * @global type $conexion
+ * @global type $cfg_limite_items_en_tablas
+ * @global type $inicia
+ * @param type $p
+ * @param type $c
+ * @param type $inicia
+ * @param type $pagina_actual
+ * @return boolean|string
+ * @link https://github.com/robincoello/facturas Web del pluging
+ * @author Robinson Coello <robincoello@hotmail.com>
+ * @category facturas
+ * @example ejemplos/paginador.html description
+ */
 function paginacion($p, $c, $inicia = 0, $pagina_actual) {
     global $conexion, $cfg_limite_items_en_tablas, $inicia;
 
@@ -18,23 +28,28 @@ function paginacion($p, $c, $inicia = 0, $pagina_actual) {
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>';
-                $i = 0;
-                while ($i < $total_paginas) {                                                            
-                    $activo = (isset($pagina_actual) && $pagina_actual == $i ) ? ' class="active" ' : '';
-                  //  $html .= "<li $activo ><a href=\"index.php?p=$plugin&c=$controlador&pag=$i\">$i</a></li>";                    
-                    if( $i >= ($pagina_actual-4) && $i <= ($pagina_actual+4) ){                    
-                    $html .= "<li $activo ><a href=\"index.php?p=$p&c=$c&pag=$i\">$i</a></li>";                    
-                    }
-                    
-                    $i++;
-                }
-                $html .= '<li>
+    $i = 0;
+    while ($i < $total_paginas) {
+        $activo = (isset($pagina_actual) && $pagina_actual == $i ) ? ' class="active" ' : '';
+        //  $html .= "<li $activo ><a href=\"index.php?p=$plugin&c=$controlador&pag=$i\">$i</a></li>";                    
+        if ($i >= ($pagina_actual - 4) && $i <= ($pagina_actual + 4)) {
+            $html .= "<li $activo ><a href=\"index.php?p=$p&c=$c&pag=$i\">$i</a></li>";
+        }
+
+        $i++;
+    }
+    $html .= '<li>
                     <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             </ul>
-        </nav>';    
-    if($total_paginas){return $html;}else{    return false;}   
+        </nav>';
+    if ($total_paginas) {
+        return $html;
+    } else {
+        return false;
+    }
 }
+
 ?>
