@@ -1,6 +1,6 @@
 <tr>
-    <td><?php echo $reg['frase']; ?></td>
-    <td><?php echo $reg['idioma']; ?></td>
-    <td><?php echo $reg['traduccion']; ?></td> 
+    <td><?php echo $_traducciones['frase']; ?></td>
+    <td><?php echo $_traducciones['idioma']; ?></td>
+    <td><?php echo $_traducciones['traduccion']; ?></td> 
     <td></td>
 </tr>

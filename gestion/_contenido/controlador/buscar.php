@@ -8,7 +8,7 @@
      $b = mysql_real_escape_string($_REQUEST['b']);
      include "./_contenido/modelos/buscar.php"; 
      
-     include "./_contenido/vista/correccion.php"; 
+     include "./_contenido/vista/index.php"; 
  } else { 
      permisos_sin_permiso($accion,$pagina,$_usuarios_usuario); 
  } 

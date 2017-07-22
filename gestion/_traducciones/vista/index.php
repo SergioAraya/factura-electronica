@@ -40,7 +40,7 @@ Exportar <a href="index.php?p=_traducciones&c=export_google">google</a>
         ?>
          <tr>
             <?php 
-            include "./_traducciones/vista/tr_anadir.php";
+           // include "./_traducciones/vista/tr_anadir.php";
             ?>
         </tr>
     </tbody>

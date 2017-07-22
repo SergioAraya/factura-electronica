@@ -22,7 +22,7 @@ $porcentaje = '<div class="progress">
     echo ' <tr>
     <td>'.$i.'</td> 
  <td>'.$_idiomas_idioma.'</td> 
- <td>'.$_idiomas_nombre.'</td> 
+ <td>'._tr($_idiomas_nombre).'</td> 
  <td>'. number_format(_traducciones_total_segun_idioma($_idiomas_idioma),0).'</td> 
  <td>'.$porcentaje.'</td> 
  <td>'.$_idiomas_activo.'</td> 
