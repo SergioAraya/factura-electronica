@@ -11,4 +11,5 @@
 
 
 <a href="index.php?p=plugins">Plugins</a>
+<a href="index.php?p=home&c=temas">Temas</a>
 
