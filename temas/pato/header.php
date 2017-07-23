@@ -47,6 +47,18 @@
                       include "../temas/pato/home/sidebar_izq.php";
                       }                                          
                     ?>    
+
+                    <?php 
+                      if (file_exists("../temas/pato/$p/sidebar_$c.php")) {
+                      include "../temas/pato/$p/sidebar_$c.php";
+                      } else {
+                      //include "../temas/pato/home/sidebar_izq.php";
+                      }                                          
+                    ?>                      
+                    
+                    
+                    
+                    
                      <img src="../temas/pato/imagenes/pato.jpg">
 
                 </div>

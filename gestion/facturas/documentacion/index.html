@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>facturas | otro plugin de magia_php</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+<span>Overview</span>
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-facturas_add.html">facturas_add</a></li>
+				<li><a href="function-facturas_campo.html">facturas_campo</a></li>
+				<li><a href="function-facturas_campo_add.html">facturas_campo_add</a></li>
+				<li><a href="function-facturas_campo_segun_ref.html">facturas_campo_segun_ref</a></li>
+				<li><a href="function-facturas_campos_a_mostrar.html">facturas_campos_a_mostrar</a></li>
+				<li><a href="function-facturas_campos_disponibles.html">facturas_campos_disponibles</a></li>
+				<li><a href="function-facturas_cliente_direccion_sobre.html">facturas_cliente_direccion_sobre</a></li>
+				<li><a href="function-facturas_estatus.html">facturas_estatus</a></li>
+				<li><a href="function-facturas_estatus_add.html">facturas_estatus_add</a></li>
+				<li><a href="function-facturas_estatus_segun_codigo.html">facturas_estatus_segun_codigo</a></li>
+				<li><a href="function-facturas_numero_actual.html">facturas_numero_actual</a></li>
+				<li><a href="function-facturas_por_cobrar_add.html">facturas_por_cobrar_add</a></li>
+				<li><a href="function-facturas_tfoot.html">facturas_tfoot</a></li>
+				<li><a href="function-facturas_thead.html">facturas_thead</a></li>
+				<li><a href="function-paginacion.html">paginacion</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search" autofocus>
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li class="active">
+<span>Overview</span>			</li>
+			<li>
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content">
+	<h1>facturas | otro plugin de magia_php</h1>
+
+
+
+
+
+
+
+
+
+
+<table class="summary" id="functions">
+<caption>Functions summary</caption>
+<tr>
+	<td class="name"><a href="function-facturas_add.html">facturas_add</a></td>
+	<td>Crea las opciones del select de la tabla facturas</td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_campo.html">facturas_campo</a></td>
+	<td><p>Entrega un valor de la tabla facturas segun su identificador
+Ejemplo:</p>
+
+<pre><span class="xlang">&lt;?php</span>
+<span class="php-keyword1">echo</span> facturas_campo(<span class="php-quote">'ref'</span>, <span class="php-num">10</span>);
+<span class="php-comment">// me entrega la ref de la factura 10</span>
+<span class="xlang">?&gt;</span></pre></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_campo_add.html">facturas_campo_add</a></td>
+	<td>Crea un grupo de opciones para un select, se puede escojer el campo para el select</td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_campo_segun_ref.html">facturas_campo_segun_ref</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_campos_a_mostrar.html">facturas_campos_a_mostrar</a></td>
+	<td>Son los campos que se debe mostrar en la tabla del index</td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_campos_disponibles.html">facturas_campos_disponibles</a></td>
+	<td>Entrega los campos (COLUMNS) disponibles de la tabla facturas</td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_cliente_direccion_sobre.html">facturas_cliente_direccion_sobre</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_estatus.html">facturas_estatus</a></td>
+	<td>Array con los estatus posibles de una factura</td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_estatus_add.html">facturas_estatus_add</a></td>
+	<td><p>Crea un grupo de opciones para el select</p>
+
+<pre>&lt;select&gt;
+<span class="xlang">&lt;?php</span> facturas_estatus_add(-<span class="php-num">1</span>); <span class="xlang">?&gt;</span>
+&lt;/select&gt;</pre>
+
+<p>Resultado</p>
+
+<pre>&lt;select&gt;
+&lt;option value=<span class="php-quote">&quot;0&quot;</span>&gt;Registrada&lt;/option&gt;
+&lt;option value=<span class="php-quote">&quot;1&quot;</span>&gt;Cobrada&lt;/option&gt;
+&lt;option value=<span class="php-quote">&quot;-1&quot;</span> selected=<span class="php-quote">&quot;&quot;</span> &gt;Anulada&lt;/option&gt;
+&lt;/select&gt;</pre></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_estatus_segun_codigo.html">facturas_estatus_segun_codigo</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_numero_actual.html">facturas_numero_actual</a></td>
+	<td>Regresa el numero maximo actual de la tabla facturas, usado para saber la proxima factura</td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_por_cobrar_add.html">facturas_por_cobrar_add</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_tfoot.html">facturas_tfoot</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-facturas_thead.html">facturas_thead</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="name"><a href="function-paginacion.html">paginacion</a></td>
+	<td></td>
+</tr>
+</table>
+</div>
+
+	<div id="footer">
+		facturas | otro plugin de magia_php API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?33dd9a52bdd256a505b28b57e2097f9d080cf5fb"></script>
+<script src="elementlist.js?dddbc5d0632b3f2331e7697e66fe82863abdd4f5"></script>
+</body>
+</html>

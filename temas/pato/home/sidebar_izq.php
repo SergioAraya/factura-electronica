@@ -9,6 +9,7 @@
   </a>
 </div>
 
+<div class="list-group">
 
 <form method="get" action="index.php">
     <input type="hidden" name="p" value="<?php echo $p; ?>">
@@ -20,5 +21,9 @@
     </div>
     <button type="submit" class="btn btn-default"><?php _t("Buscar"); ?></button>
 </form>
+</div>
+
+
+
 
 

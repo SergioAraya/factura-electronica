@@ -34,26 +34,24 @@
             include "home/vista/nav_sup.php";
         }
         ?>
-        <div class="container"> <!-- 1 -->
-            <div class="row">	<!-- 2 -->
-                <div class="col-sm-12  col-md-10 col-lg-12"> <!-- 3 -->                                        
-                    <br>
-
-                    <ol class="breadcrumb">
-                        <li>
-                            <span class="glyphicon glyphicon-home"></span> 
-                            <a href="index.php"><?php _t("Inicio"); ?>
-                            </a>
-                        </li>
-                        <li class="active">
-                            <span class="glyphicon glyphicon-<?php echo _menu_icono_segun_pagina($p); ?>"></span> 
-                            <a href="<?php echo "index.php?p=$p"; ?>">
-                                <?php _t("$p"); ?>
-                            </a>
-                        </li>
-                        <li><a href="#"><?php _t("$c"); ?></a></li>
-                    </ol>    
-
+        <div class="container-fluid"> <!-- 1 -->
+            <div class="row">	<!-- 2 -->               
+                
+                <div class="col-sm-12  col-md-10 col-lg-12"> <!-- 3 -->       
+                    
+                                        
+                    <div class="col-lg-3">
+                         <br>
+                    <?php 
+                      if (file_exists("../temas/pato/$p/sidebar_izq.php")) {
+                      include "../temas/pato/$p/sidebar_izq.php";
+                      } else {
+                      include "../temas/pato/home/sidebar_izq.php";
+                      }                                          
+                    ?>    
+                    </div>
+                    <div class="col-lg-6">
+                        
 
 
                     
