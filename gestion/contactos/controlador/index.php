@@ -18,7 +18,12 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
         include "./contactos/modelos/index_mios.php";
     }
 
-    include "../temas/" . _opciones_valor_segun_opcion('tema') . "/contactos/index.php";
+         $archivo_tema = "../temas/". _opciones_valor_segun_opcion('tema')."/contactos/index.php";
+     if(file_exists($archivo_tema)){
+         include "$archivo_tema"; 
+     }else{
+         include "./contactos/vista/index.php"; 
+     }
 
 
 

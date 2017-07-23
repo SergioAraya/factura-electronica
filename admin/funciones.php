@@ -219,3 +219,25 @@ function logo() {
     global $config_logo;
     echo '<a href="index.php" class="thumbnail"><img src="../imagenes/' . $config_logo . '" alt=""></a>';
 }
+
+function gestion_bd_crear_tabla($bdatos) {
+    global $servidor, $bdatos, $usuario, $clave;
+// Create connection
+    $conn = new mysqli($servidor, $usuario, $clave, $bdatos);
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = explode(";", file_get_contents("base_datos.sql"));
+
+    foreach ($sql as $query) {
+
+        if ($conn->query($query) === TRUE) {
+            echo "<p>Table: creada con exito</p>";
+        } else {
+            echo "<p>Error creating table: $query[0] " . $conn->error . "</p>";
+        }
+    }
+    $conn->close();
+}

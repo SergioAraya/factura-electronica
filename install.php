@@ -7,38 +7,37 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 //include "z_verificar.php";
 /*
-include "admin/bd.php";
-include "admin/configuracion.php";
-include "admin/coneccion.php";
-include "admin/conec.php";
-include "admin/funciones.php";
-include "admin/getbootstrap.php";
-include "admin/permisos.php";
-include "admin/traductor.php";
-include "admin/contenido.php";
-include "admin/formularios.php";
-include "admin/menu.php";
-include "admin/paginacion.php";
-_incluir_funciones();
-$aqui_seccion = "";
-$aqui_pagina = "";
+  include "admin/bd.php";
+  include "admin/configuracion.php";
+  include "admin/coneccion.php";
+  include "admin/conec.php";
+  include "admin/funciones.php";
+  include "admin/getbootstrap.php";
+  include "admin/permisos.php";
+  include "admin/traductor.php";
+  include "admin/contenido.php";
+  include "admin/formularios.php";
+  include "admin/menu.php";
+  include "admin/paginacion.php";
+  _incluir_funciones();
+  $aqui_seccion = "";
+  $aqui_pagina = "";
  * 
  */
 include "admin/funciones.php";
-if(file_exists('./admin/configuracion.php')){
+if (file_exists('./admin/configuracion.php')) {
     header("Location: ./gestion/index.php");
     die("El archivo ./admin/configuracion.php ya ha sido creado,si quiere realizar una nueva instalacion debe borrarlo");
 }
- $a = (isset($_REQUEST["a"])) ? $_REQUEST["a"] : false;
- 
+$a = (isset($_REQUEST["a"])) ? $_REQUEST["a"] : false;
 
-function contenido($nombreweb,$emailadmin, $claveadmin ){
+function contenido_configuracion($nombreweb, $emailadmin, $claveadmin) {
     $c = '<?php
 // DATOS DE LA EMPRESA
 $path_imagenes = "/var/www/html/";
 $config_tema = "pato"; 
 $config_debug = 0; 
-$config_nombre_web = "'.$nombreweb.'";
+$config_nombre_web = "' . $nombreweb . '";
 $config_url = "https://github.com/robincoello/magia_php"; // sin / al final
 $config_direccion = "Av del codigo abierto 1970, \n1000 Bruselas, \nBégica";
 $config_tel = "+32(0)474 62 47 07";
@@ -63,11 +62,11 @@ date_default_timezone_set("Europe/Brussels");
 # email_nombres y apellidos
 $config_email_nombre = "Robinson Coello S."; 
 # email_usuario, generalmente formato email
-$config_email_email = "'.$emailadmin.'";
+$config_email_email = "' . $emailadmin . '";
 // suele ser el mismo email
 $config_email_usuario = "robinson@facturas.be"; 
 # email_clave, la clave del email
-$config_email_clave = "'.$claveadmin.'"; 
+$config_email_clave = "' . $claveadmin . '"; 
 # email_pop, seridor entrante
 $config_email_pop = "mail.facturas.be";
 # email_pop_puerto
@@ -103,52 +102,125 @@ $config_enviar_email_admin_scc = true; // solicita cambio de clave
 #
 $config_enviar_email_contacto_cambia_clave = true;
 $config_enviar_email_admin_cambia_clave = true;';
-    
+
     return $c;
 }
 
+function contenido_bd($servidor, $bdatos, $usuario, $clave) {
+    $c = '<?php 
+ /**  
+ magia_version: 0.0.11 
+ **/ 
 
+switch ($_SERVER["SERVER_NAME"]) {
+    case "127.0.0.1":
+    case "localhost":
+    //case "192.168.1.26": // aca la ip del servidor
+        $bd_servidor = "' . $servidor . '";
+        $bd_bdatos = "' . $bdatos . '";
+        $bd_usuario = "' . $usuario . '";
+        $bd_clave = "' . $clave . '";
+    //    error_reporting(E_ALL);
+    //    ini_set("display_errors", 1);
+        break;
+    case "http://www.misuperweb.be":
+    case "web.misuperweb.com":
+    case "123.456.789.012":
+        $bd_servidor = "localhost";
+        $bd_bdatos = "Web_base";
+        $bd_usuario = "user";
+        $bd_clave = "1!eQ.ed(Ung0";
+        break;
+    default:
+        break;
+}';
+    return $c;
+}
 
-function crear_archivo($nombre_archivo,$contenido){
-        // http://www.webioss.com/php/crear-y-escribir-en-un-archivo-con-php/
-        // para crar logs
+function form_instalacion() {
+    echo '
+                        <h1>Instalación</h1>
+                        <form action="?" method="post">
+                            <input type="hidden" name="a" value="instalar">
+                            
+                            <div class="form-group">
+                                <label for="servidor">Servidor</label>
+                                <input type="text" class="form-control" id="servidor" name="servidor" placeholder="localhost" value="localhost">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="basedatos">Base de datos</label>
+                                <input type="text" class="form-control" id="basedatos" name="bdatos" placeholder="magia" value="magia">
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <label for="usuario">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="root" value="root">
+                            </div>
+                                                        
+                            
+                            <div class="form-group">
+                                <label for="clave">Clave</label>
+                                <input type="text" class="form-control" id="clave" name="clave" placeholder="Clave de conección a la base de datos" value="clave">
+                            </div>
+                            
+
+                            <button type="submit" class="btn btn-default">Continuar</button>
+                        </form>';
+}
+
+function form_config() {
+    echo '
+                        <h1>Configuración</h1>
+                        <form action="?" method="post">
+                            <input type="hidden" name="a" value="configurar">                        
+                            
+                            <div class="form-group">
+                                <label for="nombreweb">Nombre del sitio web</label>
+                                <input type="text" class="form-control" id="nombreweb" name="nombreweb" placeholder="Magia PHP" value="Magia PHP">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="emailadmin">Email administrador</label>
+                                <input type="email" class="form-control" id="emailadmin" name="emailadmin" placeholder="" value="robincoello@hotmail.com">
+                            </div>
+                            
+                                                       
+                            
+                            <div class="form-group">
+                                <label for="claveadmin">Clave</label>
+                                <input type="text" class="form-control" id="claveadmin" name="claveadmin" placeholder="" value="'.  genera_clave().'">
+                            </div>
+                            
+
+                            <button type="submit" class="btn btn-default">Continuar</button>
+                        </form>
+                        ';
+}
+
+function crear_archivo($nombre_archivo, $contenido) {
+    // http://www.webioss.com/php/crear-y-escribir-en-un-archivo-con-php/
+    // para crar logs
     // $nombre_archivo = "./admin/configuracion.php"; 
- 
-    if(file_exists($nombre_archivo))
-    {
-        $mensaje =  "El Archivo $nombre_archivo se ha modificado";
+
+    if (file_exists($nombre_archivo)) {
+        $mensaje = "El Archivo $nombre_archivo se ha modificado";
+    } else {
+        $mensaje = "El Archivo $nombre_archivo no existe";
     }
- 
-    else
-    {
-        $mensaje =   "El Archivo $nombre_archivo no existe";
-    }
- 
-    if($archivo = fopen($nombre_archivo, "w"))
-    {
-        if(fwrite($archivo, $contenido))
-        {
+
+    if ($archivo = fopen($nombre_archivo, "w")) {
+        if (fwrite($archivo, $contenido)) {
             chmod($nombre_archivo, 0777);
             echo "Se ha ejecutado correctamente";
-        }
-        else
-        {
+        } else {
             echo "Ha habido un problema al crear el archivo";
         }
- 
+
         fclose($archivo);
     }
 }
-
-
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -161,7 +233,7 @@ function crear_archivo($nombre_archivo,$contenido){
         <meta name="author" content="">
         <link rel="icon" href="favicon.ico">
 
-        <title>Carousel Template for Bootstrap</title>
+        <title>Install</title>
 
         <!-- Bootstrap core CSS -->
         <link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -187,7 +259,7 @@ function crear_archivo($nombre_archivo,$contenido){
 
         <div class="navbar-wrapper">
             <div class="container">
-                <?php //include "nav_superior.php"; ?>
+<?php //include "nav_superior.php";  ?>
 
             </div>
         </div>
@@ -207,7 +279,7 @@ function crear_archivo($nombre_archivo,$contenido){
                 <div class="col-lg-3">
 
 
-                    
+
 
 
 
@@ -218,107 +290,77 @@ function crear_archivo($nombre_archivo,$contenido){
                     <div class="row">
 
                         <hr>
-                        
-                        <?php 
-                        
+
+<?php
 switch ($a) {
-    case 'instalar':  
-        $servidor   = (isset($_POST['servidor']))  ?$_POST['servidor']:false;
-        $basedatos  = (isset($_POST['basedatos'])) ?$_POST['basedatos']:false;
-        $usuario    = (isset($_POST['usuario']))   ?$_POST['usuario']:false;
-        $clave      = (isset($_POST['clave']))     ?$_POST['clave']:false;
-        if( !$servidor || !$basedatos || !$usuario || !$clave  ){
-            die("Debe llenar todos los datos");
+    case 'instalar':
+        $servidor = (isset($_POST['servidor'])) ? $_POST['servidor'] : false;
+        $bdatos = (isset($_POST['bdatos'])) ? $_POST['bdatos'] : false;
+        $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : false;
+        $clave = (isset($_POST['clave'])) ? $_POST['clave'] : false;
+        if (!$servidor || !$bdatos || !$usuario || !$clave) {
+            die("Debe !$servidor || !$bdatos || !$usuario || !$clave llenar todos los datos");
         }
-        // copiamos la base de datos                 
+
+
+        gestion_bd_crear_tabla($bdatos);
+
+
+        $file = "./admin/bd.php";
+
+        if (!file_exists($file)) {
+            crear_archivo($file, contenido_bd($servidor, $bdatos, $usuario, $clave));
+        }
+
+        // copiamos la base de datos   
+
+        if (!file_exists($file)) {
+            form_config();
+        }
+
+
+
+
         break;
 
-    case 'configurar':   
+    case 'configurar':
         // creamos el archivo de configuracion        
-        $nombreweb  = (isset($_POST['nombreweb']))  ?($_POST['nombreweb']):false;
-        $emailadmin = (isset($_POST['emailadmin'])) ?($_POST['emailadmin']):false;
-        $claveadmin = (isset($_POST['claveadmin'])) ?($_POST['claveadmin']):false;
-        
-        if( !$nombreweb || !$emailadmin || !$claveadmin  ){
+        $nombreweb = (isset($_POST['nombreweb'])) ? ($_POST['nombreweb']) : false;
+        $emailadmin = (isset($_POST['emailadmin'])) ? ($_POST['emailadmin']) : false;
+        $claveadmin = (isset($_POST['claveadmin'])) ? ($_POST['claveadmin']) : false;
+
+        if (!$nombreweb || !$emailadmin || !$claveadmin) {
             die("Debe llenar todos los datos");
         }
-        
-        $configuracion = "./admin/configuracion.php"; 
-        
-        if(!file_exists($configuracion)){         
-           crear_archivo($configuracion, contenido($nombreweb, $emailadmin, $claveadmin));
+
+        $file = "./admin/configuracion.php";
+
+        if (!file_exists($file)) {
+            crear_archivo($file, contenido_configuracion($nombreweb, $emailadmin, $claveadmin));
         }
-        
+
         break;
 
     default:
+
         break;
+}
+?>
+
+
+
+
+<?php 
+if(!file_exists("./admin/bd.php")){
+    form_instalacion();
+}
+
+if(file_exists("./admin/bd.php") && !file_exists("./admin/configuracion.php")){
+    form_config();
 }
 
 
-                        ?>
-
-                        <h1>Instalación</h1>
-                        <form action="?" method="post">
-                            <input type="hidden" name="a" value="instalar">
-                            
-                            <div class="form-group">
-                                <label for="servidor">Servidor</label>
-                                <input type="text" class="form-control" id="servidor" name="servidor" placeholder="localhost" value="localhost">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="basedatos">Base de datos</label>
-                                <input type="text" class="form-control" id="basedatos" name="basedatos" placeholder="magia" value="magia">
-                            </div>
-                            
-                            
-                            <div class="form-group">
-                                <label for="usuario">Base de datos</label>
-                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="root" value="root">
-                            </div>
-                                                        
-                            
-                            <div class="form-group">
-                                <label for="clave">Clave</label>
-                                <input type="text" class="form-control" id="clave" name="clave" placeholder="Clave de conección a la base de datos" value="clave">
-                            </div>
-                            
-
-                            <button type="submit" class="btn btn-default">Continuar</button>
-                        </form>
-
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <h1>Configuración</h1>
-                        <form action="?" method="post">
-                            <input type="hidden" name="a" value="configurar">                        
-                            
-                            <div class="form-group">
-                                <label for="nombreweb">Nombre del sitio web</label>
-                                <input type="text" class="form-control" id="nombreweb" name="nombreweb" placeholder="Magia PHP" value="Magia PHP">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="emailadmin">Email administrador</label>
-                                <input type="email" class="form-control" id="emailadmin" name="emailadmin" placeholder="" value="robincoello@hotmail.com">
-                            </div>
-                            
-                                                       
-                            
-                            <div class="form-group">
-                                <label for="claveadmin">Clave</label>
-                                <input type="text" class="form-control" id="claveadmin" name="claveadmin" placeholder="" value="<?php echo  genera_clave(); ?>">
-                            </div>
-                            
-
-                            <button type="submit" class="btn btn-default">Continuar</button>
-                        </form>
-                        
-
-
+?>
 
 
 

@@ -14,6 +14,7 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
         
         
         include "./_opciones/modelos/cambiar_tema.php";
+         echo '<META http-equiv="refresh" content="0; URL=index.php?p=home&c=temas">';
         
     } 
     
