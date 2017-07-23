@@ -3,7 +3,7 @@
 $path_imagenes = "/var/www/html/";
 $config_tema = "pato"; 
 $config_debug = 0; 
-$config_nombre_web = "Magia PHP";
+$config_nombre_web = "Web test";
 $config_url = "https://github.com/robincoello/magia_php"; // sin / al final
 $config_direccion = "Av del codigo abierto 1970, \n1000 Bruselas, \nBégica";
 $config_tel = "+32(0)474 62 47 07";
@@ -32,7 +32,7 @@ $config_email_email = "robincoello@hotmail.com";
 // suele ser el mismo email
 $config_email_usuario = "robinson@facturas.be"; 
 # email_clave, la clave del email
-$config_email_clave = "tYQOWu3Y98"; 
+$config_email_clave = "iUaFIATFc9"; 
 # email_pop, seridor entrante
 $config_email_pop = "mail.facturas.be";
 # email_pop_puerto
