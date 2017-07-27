@@ -14,14 +14,6 @@ function magia_version() {
     return "0.0.11";
 }
 
-function m($v1, $v2) {
-    return ($v1 == $v2) ? TRUE : FALSE;
-}
-
-function x() {
-    global $r1, $r2;
-    return($r1 != $r2) ? die(sms(EL)) : false;
-}
 
 /**
  * Nos da el valor segun $tabla, $id, $campo

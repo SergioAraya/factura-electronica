@@ -1,6 +1,11 @@
 <?php
 
-// atencion	//	ayuda//	alto//	info//	ok
+/**
+ * Caja de mensajes
+ * @package mensajes
+ * @param type $tipo [atencion, ayuda, alto, info, ok] 
+ * @param type $sms
+ */
 function mensaje($tipo, $sms) {
 
     $tipo = strtolower($tipo); // pasamos todo a minusculas
@@ -52,7 +57,11 @@ function mensaje($tipo, $sms) {
             break;
     }
 }
-
+/**
+ * Un alias de mensaje()
+ * @package mensajes
+ * @param type $sms
+ */
 function sms($sms) {
     mensaje('alto', $sms);
 }

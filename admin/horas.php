@@ -1,11 +1,13 @@
 <?php
 
-// recibe horas, minutos y regresa en un formato determinado
+
 /**
- * 
+ * Recibe horas, minutos y regresa en un formato determinado
+ * @package horas
  * @param type $h es un entero entre 0 y 24
  * @param type $m es un entero entre 0 y 86400
  * @return type Resultado sera 17 h 30
+ * 
  */
 function hora($h, $m) {
     $seg = ($m * 60) + (($h * 60) * 60);
@@ -26,6 +28,7 @@ function hora($h, $m) {
 /* de los 63000 segundos que estan en la BD los convierto en horas y minutos 17h30 */
 /**
  * Recibe segundos y lo convierto en formato horas
+ * @package horas
  * @param type $s
  * @return type
  */
@@ -96,8 +99,11 @@ function horas_add($h) {
     }
 }
 
-##################################################################
 
+/**
+ * Opciones de los minutos para un select
+ * @param type $m
+ */
 function min_add($m) {
     $m_s = sacar_min_add($m);
     for ($i = 0; $i < 60; $i = $i + 15) {
@@ -113,7 +119,11 @@ function min_add($m) {
 }
 
 ################################################
-
+/**
+ * 
+ * @param type $segundos
+ * @return string
+ */
 function am_pm($segundos) {
     if ($segundos > 43200) {
         return "PM";
