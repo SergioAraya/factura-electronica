@@ -4,7 +4,7 @@ switch ($_SERVER["SERVER_NAME"]) {
     case "localhost":
     //case "192.168.1.26":
         $bd_servidor = "localhost";
-        $bd_bdatos = "bb";
+        $bd_bdatos = "magophp";
         $bd_usuario = "root";
         $bd_clave = "root";
         error_reporting(E_ALL);

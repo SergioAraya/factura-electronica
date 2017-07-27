@@ -1,8 +1,18 @@
 <?php
-
 /**
-  magia_version: 0.0.8
- * */
+ * Entrega el valor del $campo de la tabla segun el $id del contacto
+ * Si queremos tener el nombre del contacto 10 podemos hacer lo siguiente
+ * <pre>contactos_campo('nombre',10);</pre>
+ * esto lo podemos asignar a una variable 
+ * <pre>$contacto_nombre = contactos_campo('nombre',10);</pre>
+ * o se le puede pasar a una funcion que necesite el nombre del contacto 
+ * <pre>mi_funcion(contactos_campo('nombre',10));</pre>
+ * 
+ * @global type $conexion
+ * @param type $campo El nombre del campo que existe en la base de datos 'contactos'
+ * @param type $id El identificador del contacto
+ * @return boolean Regresa el valor del campo si este es encontrado, sino regresa false
+ */
 function contactos_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
@@ -38,8 +48,15 @@ function contactos_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$contactos[$campo]\">$contactos[$campo]</option> \n";
     }
 }
-
-function contactos_add($selecionado = "", $excluir = "") {
+/**
+ * 
+ * @global type $conexion
+ * @global type $_usuarios_usuario
+ * @global type $_usuarios_grupo
+ * @param type $selecionado
+ * @param type $excluir
+ */
+function contactos_add($selecionado = "", $excluir = array()) {
     global $conexion, $_usuarios_usuario, $_usuarios_grupo;
 
     // grupo segun usuario 
@@ -61,11 +78,19 @@ function contactos_add($selecionado = "", $excluir = "") {
         } else {
             echo "";
         }
+        
+        
         if ($excluir == $contactos[0] || $contactos['estatus'] == 0) {
             echo " disabled ";
         } else {
             echo "";
         }
+        
+        if(in_array($contactos['id'], $excluir)){
+            echo " disabled ";
+        }
+        
+        
         //echo "value=\"$contactos[0]\">$contactos[0]</option>";
         echo "value=\"$contactos[0]\">" . strtoupper($contactos['empresa']) . " - $contactos[contacto] ($contactos[email])</option>";
     }
@@ -83,7 +108,11 @@ function contactos_sin_usuario_add($selecionado = "", $excluir = "") {
         } // fi tiene login 
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @return boolean
+ */
 function contactos_numero_actual() {
     global $conexion;
     $sql = mysql_query(
@@ -118,7 +147,13 @@ function contactos_tiene_login($email) {
         return false;
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $email
+ * @return boolean
+ */
 function contactos_campo_segun_email($campo, $email) {
     global $conexion;
     $sql = mysql_query(
@@ -132,7 +167,10 @@ function contactos_campo_segun_email($campo, $email) {
         return false;
     }
 }
-
+/**
+ * 
+ * @param type $orden
+ */
 function contactos_tabla_index_titulo($orden) {
 
     $columnas_disponibles = array(
@@ -162,7 +200,12 @@ function contactos_tabla_index_titulo($orden) {
         echo '<th> ' . _tr(ucfirst($value)) . '</th> ';
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $estatus
+ * @return boolean
+ */
 function contactos_total_segun_estatus($estatus) {
     global $conexion;
     $sql = mysql_query(
