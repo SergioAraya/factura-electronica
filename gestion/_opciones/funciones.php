@@ -1,8 +1,12 @@
 <?php
-
 /**
-  magia_version: 0.0.8
- * */
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $id
+ * @return boolean
+ * @package opciones
+ */
 function _opciones_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
@@ -17,6 +21,15 @@ function _opciones_campo($campo, $id) {
         return false;
     }
 }
+/**
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $label
+ * @param type $selecionado
+ * @param type $excluir
+ * @package opciones
+ */
 function _opciones_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -39,7 +52,13 @@ function _opciones_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$_opciones[$campo]\">$_opciones[$campo]</option> \n";
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $selecionado
+ * @param type $excluir
+ * @package opciones
+ */
 function _opciones_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -64,7 +83,12 @@ function _opciones_add($selecionado = "", $excluir = "") {
     }
 }
 
-/**/
+/**
+ * 
+ * @global type $conexion
+ * @return boolean
+ * @package opciones
+ */
 
 function _opciones_numero_actual() {
     global $conexion;
@@ -78,7 +102,13 @@ function _opciones_numero_actual() {
         return false;
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @return type
+ * @package opciones
+ * @uses _opciones_thead Para mostrar los campos
+ */
 function _opciones_campos_disponibles() {
     global $conexion;
     $data = array();
@@ -92,9 +122,11 @@ function _opciones_campos_disponibles() {
 }
 
 /**
- * Son los campos que se debe mostrar en la tabla del index
+  * Son los campos que se debe mostrar en la tabla del index
  * @global type $conexion
  * @return type
+ * @package opciones
+ * @uses _opciones_thead Description _opciones_thead Usa para determianr que campos debe mostrarse
  */
 function _opciones_campos_a_mostrar() {
     global $conexion;
@@ -105,7 +137,10 @@ function _opciones_campos_a_mostrar() {
 
     return json_decode($reg[0], true);
 }
-
+/**
+ * @package opciones
+ * 
+ */
 function _opciones_thead() {
     $campo_disponibles = _opciones_campos_disponibles();
     $_opciones_campos_a_mostrar = _opciones_campos_a_mostrar();
@@ -124,7 +159,7 @@ function _opciones_thead() {
 }
 
 /**
- * 
+ * @package opciones
  */
 function _opciones_tfoot() {
     _opciones_thead();

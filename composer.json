@@ -8,5 +8,7 @@
             "email": "robincoello@hotmail.com"
         }
     ],
-    "require": {}
+
+    "require": {
+    }
 }

@@ -1,8 +1,12 @@
 <?php
-
 /**
-  magia_version: 0.0.8
- * */
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $id
+ * @return boolean
+ * @package grupos
+ */
 function _grupos_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
@@ -17,7 +21,15 @@ function _grupos_campo($campo, $id) {
         return false;
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $label
+ * @param type $selecionado
+ * @param type $excluir
+ * @package grupos
+ */
 function _grupos_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -40,7 +52,13 @@ function _grupos_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$_grupos[$campo]\">$_grupos[$campo]</option> \n";
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $selecionado
+ * @param type $excluir
+ * @package grupos
+ */
 function _grupos_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -65,7 +83,12 @@ function _grupos_add($selecionado = "", $excluir = "") {
         echo "value=\"$_grupos_grupo\">" . ucfirst(_tr($_grupos_grupo)) . "</option>";
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @return boolean
+ * @package grupos
+ */
 function _grupos_numero_actual() {
     global $conexion;
     $sql = mysql_query(
@@ -78,7 +101,12 @@ function _grupos_numero_actual() {
         return false;
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @return array
+ * @package grupos
+ */
 function _grupos_array_grupos() {
     global $conexion;
     $sql = mysql_query(
@@ -94,7 +122,12 @@ function _grupos_array_grupos() {
 
     return $g;
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @return array
+ * @package grupos
+ */
 function _grupos_array() {
     global $conexion;
 
@@ -114,10 +147,18 @@ function _grupos_array() {
  * Alias de _grupos_array()
  * @global type $conexion
  * @return array
+ * @package grupos
  */
 function _grupos() {
     return _grupos_array();
 }
+/**
+ * 
+ * @global type $conexion
+ * @param type $grupo
+ * @return boolean
+ * @package grupos
+ */
 function _grupos_existe($grupo) {
     global $conexion;
     $sql = mysql_query(

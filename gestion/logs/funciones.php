@@ -1,15 +1,16 @@
 <?php
-
 /**
-  magia_version: 0.0.8
- * */
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $id
+ * @return boolean
+ */
 function logs_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
             "SELECT $campo FROM logs WHERE id = $id   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
     $reg = mysql_fetch_array($sql);
-
-
 
     if ($reg[$campo]) {
         return $reg[$campo];
@@ -17,7 +18,15 @@ function logs_campo($campo, $id) {
         return false;
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $label
+ * @param type $selecionado
+ * @param type $excluir
+ * @package logs_select
+ */
 function logs_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -40,7 +49,13 @@ function logs_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$logs[$campo]\">$logs[$campo]</option> \n";
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $selecionado
+ * @param type $excluir
+ * @package logs_select
+ */
 function logs_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(

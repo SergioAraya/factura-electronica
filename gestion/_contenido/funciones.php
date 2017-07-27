@@ -1,15 +1,17 @@
 <?php
-
 /**
-  magia_version: 0.0.8
- * */
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $id
+ * @return boolean
+ * @package contenido
+ */
 function _contenido_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
             "SELECT $campo FROM _contenido WHERE id = $id   ", $conexion) or die("Error: _contenido_campo()" . mysql_error());
     $reg = mysql_fetch_array($sql);
-
-
 
     if ($reg[$campo]) {
         return $reg[$campo];
@@ -17,7 +19,23 @@ function _contenido_campo($campo, $id) {
         return false;
     }
 }
-
+/**
+ * Entrega los valores de la columna $campo de la tabla _menu para inputs para un select 
+ * @Ejemplo
+ * <pre>
+ * <select>
+* <?php _contenido_campo_add(); ?>
+ * <select>
+ * </pre>
+ * @Resultado
+ * 
+ * @global type $conexion
+ * @param type $campo
+ * @param type $label
+ * @param type $selecionado
+ * @param type $excluir
+ * @package contenido_select
+ */
 function _contenido_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -40,7 +58,13 @@ function _contenido_campo_add($campo, $label, $selecionado = "", $excluir = "") 
         echo "value=\"$_contenido[$campo]\">$_contenido[$campo]</option> \n";
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @param type $selecionado
+ * @param type $excluir
+ * @package contenido_select
+ */
 function _contenido_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -64,7 +88,12 @@ function _contenido_add($selecionado = "", $excluir = "") {
         echo "value=\"$_contenido[frase]\">$_contenido[frase]</option>";
     }
 }
-
+/**
+ * 
+ * @global type $conexion
+ * @return boolean
+ * @package contenido
+ */
 function _contenido_numero_actual() {
     global $conexion;
     $sql = mysql_query(
