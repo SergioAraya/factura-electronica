@@ -1,5 +1,5 @@
 <?php
-include "../admin/bd.php";
+include "../admin/configuracion.php";
 include "../admin/coneccion.php";
 if (isset($_SESSION['s_username'])) {
     $username = "$_SESSION[s_username]";    

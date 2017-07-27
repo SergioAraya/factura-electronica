@@ -1,29 +1,4 @@
 <?php
-/**
-  magia_version: 0.0.11
- * */
-//session_start("magia_php") ;
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-//include "z_verificar.php";
-/*
-  include "admin/bd.php";
-  include "admin/configuracion.php";
-  include "admin/coneccion.php";
-  include "admin/conec.php";
-  include "admin/funciones.php";
-  include "admin/getbootstrap.php";
-  include "admin/permisos.php";
-  include "admin/traductor.php";
-  include "admin/contenido.php";
-  include "admin/formularios.php";
-  include "admin/menu.php";
-  include "admin/paginacion.php";
-  _incluir_funciones();
-  $aqui_seccion = "";
-  $aqui_pagina = "";
- * 
- */
 include "admin/funciones.php";
 if (file_exists('./admin/configuracion.php')) {
     header("Location: ./gestion/index.php");
@@ -31,13 +6,35 @@ if (file_exists('./admin/configuracion.php')) {
 }
 $a = (isset($_REQUEST["a"])) ? $_REQUEST["a"] : false;
 
-function contenido_configuracion($nombreweb, $emailadmin, $claveadmin) {
+function contenido_configuracion($servidor, $bdatos, $usuario, $clave) {
     $c = '<?php
+switch ($_SERVER["SERVER_NAME"]) {
+    case "127.0.0.1":
+    case "localhost":
+    //case "192.168.1.26":
+        $bd_servidor = "'.$servidor.'";
+        $bd_bdatos = "'.$bdatos.'";
+        $bd_usuario = "'.$usuario.'";
+        $bd_clave = "'.$clave.'";
+    //    error_reporting(E_ALL);
+    //    ini_set("display_errors", 1);
+        break;
+    case "http://www.misuperweb.be":
+    case "audio.facturas.be":
+    case "123.456.789.012":
+        $bd_servidor = "localhost";
+        $bd_bdatos = "Web_base";
+        $bd_usuario = "user";
+        $bd_clave = "1!eQ.ed(Ung0";
+        break;
+    default:
+        break;
+}        
 // DATOS DE LA EMPRESA
 $path_imagenes = "/var/www/html/";
 $config_tema = "pato"; 
 $config_debug = 0; 
-$config_nombre_web = "' . $nombreweb . '";
+$config_nombre_web = "Magia PHP";
 $config_url = "https://github.com/robincoello/magia_php"; // sin / al final
 $config_direccion = "Av del codigo abierto 1970, \n1000 Bruselas, \nBégica";
 $config_tel = "+32(0)474 62 47 07";
@@ -62,11 +59,11 @@ date_default_timezone_set("Europe/Brussels");
 # email_nombres y apellidos
 $config_email_nombre = "Robinson Coello S."; 
 # email_usuario, generalmente formato email
-$config_email_email = "' . $emailadmin . '";
+$config_email_email = "info@web.com";
 // suele ser el mismo email
 $config_email_usuario = "robinson@facturas.be"; 
 # email_clave, la clave del email
-$config_email_clave = "' . $claveadmin . '"; 
+$config_email_clave = "125d4d4d4d4d4d4d4"; 
 # email_pop, seridor entrante
 $config_email_pop = "mail.facturas.be";
 # email_pop_puerto
@@ -106,36 +103,7 @@ $config_enviar_email_admin_cambia_clave = true;';
     return $c;
 }
 
-function contenido_bd($servidor, $bdatos, $usuario, $clave) {
-    $c = '<?php 
- /**  
- magia_version: 0.0.11 
- **/ 
 
-switch ($_SERVER["SERVER_NAME"]) {
-    case "127.0.0.1":
-    case "localhost":
-    //case "192.168.1.26": // aca la ip del servidor
-        $bd_servidor = "' . $servidor . '";
-        $bd_bdatos = "' . $bdatos . '";
-        $bd_usuario = "' . $usuario . '";
-        $bd_clave = "' . $clave . '";
-    //    error_reporting(E_ALL);
-    //    ini_set("display_errors", 1);
-        break;
-    case "http://www.misuperweb.be":
-    case "web.misuperweb.com":
-    case "123.456.789.012":
-        $bd_servidor = "localhost";
-        $bd_bdatos = "Web_base";
-        $bd_usuario = "user";
-        $bd_clave = "1!eQ.ed(Ung0";
-        break;
-    default:
-        break;
-}';
-    return $c;
-}
 
 function form_instalacion() {
     echo '
@@ -165,34 +133,12 @@ function form_instalacion() {
                                 <input type="text" class="form-control" id="clave" name="clave" placeholder="Clave de conección a la base de datos" value="clave">
                             </div>
                             
+                            
+                         
 
-                            <button type="submit" class="btn btn-default">Continuar</button>
-                        </form>';
-}
+                            
+                            
 
-function form_config() {
-    echo '
-                        <h1>Configuración</h1>
-                        <form action="?" method="post">
-                            <input type="hidden" name="a" value="configurar">                        
-                            
-                            <div class="form-group">
-                                <label for="nombreweb">Nombre del sitio web</label>
-                                <input type="text" class="form-control" id="nombreweb" name="nombreweb" placeholder="Magia PHP" value="Magia PHP">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="emailadmin">Email administrador</label>
-                                <input type="email" class="form-control" id="emailadmin" name="emailadmin" placeholder="" value="robincoello@hotmail.com">
-                            </div>
-                            
-                                                       
-                            
-                            <div class="form-group">
-                                <label for="claveadmin">Clave</label>
-                                <input type="text" class="form-control" id="claveadmin" name="claveadmin" placeholder="" value="'.  genera_clave().'">
-                            </div>
-                            
 
                             <button type="submit" class="btn btn-default">Continuar</button>
                         </form>
@@ -265,25 +211,11 @@ function crear_archivo($nombre_archivo, $contenido) {
         </div>
 
 
-
-
-
-        <!-- Marketing messaging and featurettes
-        ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
         <div class="container marketing">
 
             <!-- Three columns of text below the carousel -->
             <div class="row">
                 <div class="col-lg-3">
-
-
-
-
-
-
-
 
                 </div>
                 <div class="col-lg-9">
@@ -303,41 +235,15 @@ switch ($a) {
         }
 
 
-        gestion_bd_crear_tabla($bdatos);
+       // gestion_bd_crear_tabla($bdatos);
 
-
-        $file = "./admin/bd.php";
-
-        if (!file_exists($file)) {
-            crear_archivo($file, contenido_bd($servidor, $bdatos, $usuario, $clave));
-        }
-
-        // copiamos la base de datos   
-
-        if (!file_exists($file)) {
-            form_config();
-        }
-
-
-
-
-        break;
-
-    case 'configurar':
-        // creamos el archivo de configuracion        
-        $nombreweb = (isset($_POST['nombreweb'])) ? ($_POST['nombreweb']) : false;
-        $emailadmin = (isset($_POST['emailadmin'])) ? ($_POST['emailadmin']) : false;
-        $claveadmin = (isset($_POST['claveadmin'])) ? ($_POST['claveadmin']) : false;
-
-        if (!$nombreweb || !$emailadmin || !$claveadmin) {
-            die("Debe llenar todos los datos");
-        }
 
         $file = "./admin/configuracion.php";
 
         if (!file_exists($file)) {
-            crear_archivo($file, contenido_configuracion($nombreweb, $emailadmin, $claveadmin));
+            crear_archivo($file, contenido_configuracion($servidor, $bdatos, $usuario, $clave));
         }
+
 
         break;
 
@@ -351,13 +257,11 @@ switch ($a) {
 
 
 <?php 
-if(!file_exists("./admin/bd.php")){
+if(!file_exists("./admin/configuracion.php")){
     form_instalacion();
 }
 
-if(file_exists("./admin/bd.php") && !file_exists("./admin/configuracion.php")){
-    form_config();
-}
+
 
 
 ?>

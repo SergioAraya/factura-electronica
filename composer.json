@@ -1,0 +1,12 @@
+{
+    "name": "robincoello/magophp",
+    "description": "Crear sitios web facil",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Robinson",
+            "email": "robincoello@hotmail.com"
+        }
+    ],
+    "require": {}
+}

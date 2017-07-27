@@ -7,7 +7,7 @@
     <div class="row">
         
         <?php
-        $temas = array('loro','pato','conejo','condor');
+        $temas = array('loro','pato','conejo','condor','admin2');
         
         $i=0;
         while ($i < count($temas)) {
