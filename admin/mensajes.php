@@ -1,10 +1,9 @@
 <?php
-
 /**
- * Caja de mensajes
+ * Crea un mensaje, si se pasa el $tipo vacio crea como si fuera mensaje tipo: 'info'
  * @package mensajes
- * @param type $tipo [atencion, ayuda, alto, info, ok] 
- * @param type $sms
+ * @param type $tipo Puede ser [atencion, ayuda, alto, info, ok, (vacio)]
+ * @param type $sms Mensaje a ser enviado, este es traducido
  */
 function mensaje($tipo, $sms) {
 
@@ -58,7 +57,8 @@ function mensaje($tipo, $sms) {
     }
 }
 /**
- * Un alias de mensaje()
+ * Un alias de mensaje() de tipo 'alto'
+ * @package mensajes
  * @package mensajes
  * @param type $sms
  */

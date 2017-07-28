@@ -143,7 +143,7 @@ function plugins_lista() {
            echo  $line = fgets($fp) . "<br>";
            $key[0] = explode(":", $line);
             
-            array_push($data, $data[]);
+            //array_push($data, $data[]);
         }
 
         fclose($fp);
