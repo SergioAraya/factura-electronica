@@ -1,3 +1,20 @@
+<?php 
+plugins_lista();
+
+ $claves = preg_split("/[\s:\s]+/", "hypertext language: http:// programming");
+
+print_r($claves);
+
+?>
+
+
+
+
+
+
+
+
+
 <?php /**
   magia_version: 0.0.11
  * */ ?>

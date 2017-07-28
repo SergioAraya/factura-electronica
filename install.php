@@ -235,7 +235,7 @@ switch ($a) {
         }
 
 
-       // gestion_bd_crear_tabla($bdatos);
+        gestion_bd_crear_tabla($bdatos);
 
 
         $file = "./admin/configuracion.php";

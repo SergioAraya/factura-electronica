@@ -131,6 +131,30 @@ function plugins_tfoot() {
     plugins_thead();
 }
 
+function plugins_lista() {
+    $filename = "../gestion/_contenido/index.php";
+    $data = array();
+    
+    if (file_exists($filename)) {
+
+        $v = file_get_contents($filename);
+        $fp = fopen($filename, "r");
+        while (!feof($fp)) {
+           echo  $line = fgets($fp) . "<br>";
+           $key[0] = explode(":", $line);
+            
+            array_push($data, $data[]);
+        }
+
+        fclose($fp);
+        echo "<pre>"; 
+        var_dump($data);
+        echo "</pre>";
+    } else {
+        return "index.php no existe";
+    }
+}
+
 /**
  * Lee el arvivo version en la carpeta del plugin 
  * @param type $plugin
@@ -168,17 +192,12 @@ function plugins_instalar($plugins_nombre, $plugins_plugin_zip) {
     // borramos la carpeta temporal 
     // verificamos que exista todos los ficheros adecuados 
     // ar permisos adecuados a cada archivo
-    
-    
-    
-    
-    
 //http://php.net/manual/en/ziparchive.extractto.php
 //http://php.net/manual/es/class.ziparchive.php
     // agrego mi usuario al grupo apache
-    
-    
-    
+
+
+
     $plugin_a_instalar = $plugins_plugin_zip;
     echo "<h2>Empezamos a borrar</h2>";
     $filename = "../gestion/facturas";
@@ -199,80 +218,74 @@ function plugins_instalar($plugins_nombre, $plugins_plugin_zip) {
     if (!@copy($zipfile, "$path/$archivo_comprimido")) {
         $errors = error_get_last();
         echo "COPY ERROR: " . $errors['type'];
-        echo "<br />\n" . $errors['message'];                
+        echo "<br />\n" . $errors['message'];
     } else {
         chmod("$path/facturas", 0777);
         echo "<p>File $archivo_comprimido copied from remote!</p>";
     }
-   
-    
 
 
-$zip = new ZipArchive;
-if ($zip->open($zipfile) === true) {
-                   
-    for($i = 0; $i < $zip->numFiles; $i++) {
-                        
-        $zip->extractTo("$path/", array($zip->getNameIndex($i)));
-                       
-        // here you can run a custom function for the particular extracted file
-                       
+
+
+    $zip = new ZipArchive;
+    if ($zip->open($zipfile) === true) {
+
+        for ($i = 0; $i < $zip->numFiles; $i++) {
+
+            $zip->extractTo("$path/", array($zip->getNameIndex($i)));
+
+            // here you can run a custom function for the particular extracted file
+        }
+
+        $zip->close();
     }
-                   
-    $zip->close();
-                   
-}
 
 
 
 
 // descomprime 
-/*
-    $zipArchive = new ZipArchive();
-    $result = $zipArchive->open($archivo_comprimido);
-    if ($result === TRUE) {
-        $zipArchive->extractTo("$path/facturas/");
-        $zipArchive->close();
-        // Do something else on success
-        echo "<p>ok descomprimodo en $path/facturas</p>";
-    } else {
-        echo "<p>error al descomprimir: $archivo_comprimido</p>";
-        // Do something on error
-    }*/
+    /*
+      $zipArchive = new ZipArchive();
+      $result = $zipArchive->open($archivo_comprimido);
+      if ($result === TRUE) {
+      $zipArchive->extractTo("$path/facturas/");
+      $zipArchive->close();
+      // Do something else on success
+      echo "<p>ok descomprimodo en $path/facturas</p>";
+      } else {
+      echo "<p>error al descomprimir: $archivo_comprimido</p>";
+      // Do something on error
+      } */
 }
 
 // dest shouldn't have a trailing slash
-function zip_flatten ( $zipfile, $dest='.' )
-{
+function zip_flatten($zipfile, $dest = '.') {
     $zip = new ZipArchive;
-    if ( $zip->open( $zipfile ) )
-    {
-        for ( $i=0; $i < $zip->numFiles; $i++ )
-        {
+    if ($zip->open($zipfile)) {
+        for ($i = 0; $i < $zip->numFiles; $i++) {
             $entry = $zip->getNameIndex($i);
-            if ( substr( $entry, -1 ) == '/' ) continue; // skip directories
-           
-            $fp = $zip->getStream( $entry );
-            $ofp = fopen( $dest.'/'.basename($entry), 'w' );
-           
-            if ( ! $fp )
+            if (substr($entry, -1) == '/')
+                continue; // skip directories
+
+            $fp = $zip->getStream($entry);
+            $ofp = fopen($dest . '/' . basename($entry), 'w');
+
+            if (!$fp)
                 throw new Exception('Unable to extract the file.');
-           
-            while ( ! feof( $fp ) )
-                fwrite( $ofp, fread($fp, 8192) );
-           
+
+            while (!feof($fp))
+                fwrite($ofp, fread($fp, 8192));
+
             fclose($fp);
             fclose($ofp);
         }
 
-                $zip->close();
-    }
-    else
+        $zip->close();
+    } else
         return false;
-   
-    return $zip;
-} 
 
+    return $zip;
+}
 
 function delete_dir($src) {
     $dir = opendir($src);
