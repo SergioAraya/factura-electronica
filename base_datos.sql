@@ -4367,7 +4367,7 @@ INSERT INTO `_opciones` (`id`, `opcion`, `valor`, `grupo`) VALUES
 (42, 'cp_ville_thead', '{\"vil_id\":\"vil_id\",\"vil_cp\":\"vil_cp\",\"vil_nom\":\"vil_nom\"}', 0),
 (47, 'paises_thead', '{\"Code\":\"Code\",\"name\":\"name\",\"continent\":\"continent\",\"Region\":\"Region\",\"SurfaceArea\":\"SurfaceArea\",\"IndepYear\":\"IndepYear\",\"Population\":\"Population\",\"LifeExpectancy\":\"LifeExpectancy\",\"GNP\":\"GNP\",\"GNPOld\":\"GNPOld\",\"LocalName\":\"LocalName\",\"GovernmentForm\":\"GovernmentForm\",\"HeadOfState\":\"HeadOfState\",\"Capital\":\"Capital\",\"code2\":\"code2\",\"prefijo_ruc\":\"prefijo_ruc\"}', 0),
 (64, 'plugins_thead', '{\"id\":\"id\",\"nombre\":\"nombre\",\"descripcion\":\"descripcion\",\"version\":\"version\",\"autor\":\"autor\",\"autor_email\":\"autor_email\",\"plugin_web\":\"plugin_web\",\"plugin_zip\":\"plugin_zip\",\"orden\":\"orden\",\"estatus\":\"estatus\"}', 0),
-(65, 'tema', 'loro', 2500);
+(65, 'tema', 'condor', 2500);
 
 -- --------------------------------------------------------
 

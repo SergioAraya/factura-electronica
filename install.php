@@ -235,13 +235,23 @@ switch ($a) {
         }
 
 
-        gestion_bd_crear_tabla($bdatos);
+        
 
 
         $file = "./admin/configuracion.php";
 
         if (!file_exists($file)) {
             crear_archivo($file, contenido_configuracion($servidor, $bdatos, $usuario, $clave));
+            
+            // solo si se ha creado el archivo de configuracion llenamos la base de datos 
+            if(file_exists($file)){                
+                gestion_bd_crear_tabla($bdatos);
+            }else{
+                echo "<p>El archivo $file no ha podido ser creado, no se puede seguir con la creacion de la base de datos</p>"; 
+                echo "<p>Esto suele pasar por que no tiene permisos de escritura en su carpeta actual</p>"; 
+                echo "<p>Solucion: chmod -R 777 web (donde web es la carpeta donde desea instalar el sistema</p>"; 
+            }
+            
         }
 
 
