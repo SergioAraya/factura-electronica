@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -7,6 +8,12 @@
  * @return boolean
  * @package grupos
  */
+=======
+
+/**
+  magia_version: 0.0.8
+ * */
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
@@ -21,6 +28,7 @@ function _grupos_campo($campo, $id) {
         return false;
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -30,6 +38,9 @@ function _grupos_campo($campo, $id) {
  * @param type $excluir
  * @package grupos
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -52,6 +63,7 @@ function _grupos_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$_grupos[$campo]\">$_grupos[$campo]</option> \n";
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -59,6 +71,9 @@ function _grupos_campo_add($campo, $label, $selecionado = "", $excluir = "") {
  * @param type $excluir
  * @package grupos
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -83,12 +98,16 @@ function _grupos_add($selecionado = "", $excluir = "") {
         echo "value=\"$_grupos_grupo\">" . ucfirst(_tr($_grupos_grupo)) . "</option>";
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
  * @return boolean
  * @package grupos
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_numero_actual() {
     global $conexion;
     $sql = mysql_query(
@@ -101,12 +120,16 @@ function _grupos_numero_actual() {
         return false;
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
  * @return array
  * @package grupos
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_array_grupos() {
     global $conexion;
     $sql = mysql_query(
@@ -122,12 +145,16 @@ function _grupos_array_grupos() {
 
     return $g;
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
  * @return array
  * @package grupos
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_array() {
     global $conexion;
 
@@ -147,11 +174,15 @@ function _grupos_array() {
  * Alias de _grupos_array()
  * @global type $conexion
  * @return array
+<<<<<<< HEAD
  * @package grupos
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
  */
 function _grupos() {
     return _grupos_array();
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -159,6 +190,8 @@ function _grupos() {
  * @return boolean
  * @package grupos
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _grupos_existe($grupo) {
     global $conexion;
     $sql = mysql_query(

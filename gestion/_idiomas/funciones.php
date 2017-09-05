@@ -1,6 +1,7 @@
 <?php
 
 /**
+<<<<<<< HEAD
  * 
  * @global type $conexion
  * @param type $campo
@@ -8,6 +9,10 @@
  * @return boolean
  * @package idiomas
  */
+=======
+  magia_version: 0.0.8
+ * */
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _idiomas_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
@@ -23,6 +28,7 @@ function _idiomas_campo($campo, $id) {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -30,6 +36,8 @@ function _idiomas_campo($campo, $id) {
  * @return boolean
  * @package idiomas
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _idiomas_segun_iso($iso) {
     global $conexion;
     $sql = mysql_query(
@@ -43,6 +51,7 @@ function _idiomas_segun_iso($iso) {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -52,6 +61,8 @@ function _idiomas_segun_iso($iso) {
  * @param type $excluir
  * @package idiomas
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _idiomas_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -75,6 +86,7 @@ function _idiomas_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -82,6 +94,8 @@ function _idiomas_campo_add($campo, $label, $selecionado = "", $excluir = "") {
  * @param type $excluir
  * @package idiomas
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _idiomas_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -106,12 +120,15 @@ function _idiomas_add($selecionado = "", $excluir = "") {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
  * @return boolean
  * @package idiomas
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _idiomas_numero_actual() {
     global $conexion;
     $sql = mysql_query(
@@ -124,12 +141,18 @@ function _idiomas_numero_actual() {
         return false;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 /**
  * entrega los idiomas activos
  * @global type $conexion
  * @return array
+<<<<<<< HEAD
  * @package idiomas
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
  */
 function _idiomas_array() {
     global $conexion;
@@ -142,16 +165,23 @@ function _idiomas_array() {
     while ($reg = mysql_fetch_array($sql)) {
 
         array_push($g, $reg['idioma']);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     }
 
     return $g;
 }
+<<<<<<< HEAD
 
 /**
  * 
  * @return type
  * @package idiomas
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _idiomas() {
     return _idiomas_array();
 }

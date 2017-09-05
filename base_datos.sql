@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- phpMyAdmin SQL Dump
 -- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: Jul 22, 2017 at 01:25 PM
+=======
+-- Generation Time: Jul 19, 2017 at 12:25 PM
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- Server version: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -17,9 +25,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+<<<<<<< HEAD
 -- Database: `magophp`
 --
 
+=======
+-- Database: `factura-electronica`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balanza`
+--
+
+CREATE TABLE `balanza` (
+  `id` int(11) NOT NULL,
+  `id_contacto` int(11) NOT NULL,
+  `id_factura` int(11) DEFAULT NULL,
+  `tipo` int(11) NOT NULL,
+  `ref` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ce` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `sub_total` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `iva` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `fecha` date DEFAULT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `factura` int(11) DEFAULT NULL,
+  `banco` int(11) DEFAULT NULL,
+  `anulada` int(11) DEFAULT NULL,
+  `cod_anu` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `balanza`
+--
+
+INSERT INTO `balanza` (`id`, `id_contacto`, `id_factura`, `tipo`, `ref`, `descripcion`, `ce`, `sub_total`, `iva`, `fecha`, `fecha_registro`, `factura`, `banco`, `anulada`, `cod_anu`) VALUES
+(5, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
+(6, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
+(7, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
+(8, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1),
+(9, 34, 5, -1, '1', '11', '11', '1020.00000', '1.00000', '2017-12-11', '2017-07-19 00:31:16', 1, 1, 1, 1);
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- --------------------------------------------------------
 
 --
@@ -70,8 +119,14 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id`, `idioma`, `tipo_documento`, `ruc_prefijo`, `numero_documento`, `empresa`, `contacto`, `saludo`, `direccion`, `cpostal`, `ciudad`, `provincia`, `pais`, `tel`, `fax`, `email`, `notas`, `tipo`, `fecha_registro`, `es_contacto`, `estrellas`, `estatus`) VALUES
+<<<<<<< HEAD
 (34, 'en_GB', 'Pasaporte', 'BE', '1020304050', 'Facturas.be', 'Robinson Coello S.', 'Mr.', 'Av de codigo 1970', '1020', 'Bruxelles', '', 'Belgique', '+32474624707', '', 'robincoello@hotmail.com', 'Nada que decir', 0, '2017-06-21 08:50:22', '', 1, 1),
 (39, 'es_ES', 'null', 'BE', '', '', '', 'M.', '', '', '', 'null', 'Belgique', '', 'null', 'pato@colombia.com', '', 0, '2017-07-22 13:20:29', NULL, 1, 1);
+=======
+(34, 'es_ES', 'Pasaporte', 'BE', '1020304050', 'Facturas.be', 'Robinson Coello S.', 'Mr.', 'Av de codigo 1970', '1020', 'Bruxelles', '', 'Belgique', '+32474624707', '', 'robincoello@hotmail.com', 'Nada que decir', 0, '2017-06-21 08:50:22', '', 1, 1),
+(35, 'es_ES', 'null', 'BE', '', 'Empresa', 'Patico Cadavid', 'M.', 'Calle del muerto', '1200', 'Cali', 'null', 'Colombie', '', 'null', 'pato@colombia.com', '', 0, '2017-07-19 00:35:24', '', 1, 1),
+(36, 'en_GB', 'null', 'BE', '', '', '', 'M.', '', '', '', 'null', 'Belgique', '', 'null', 'casa@master.com', '', 0, '2017-07-19 02:11:59', NULL, 1, 1);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -2996,6 +3051,79 @@ INSERT INTO `cp_ville` (`vil_id`, `vil_cp`, `vil_nom`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
+-- Table structure for table `facturas`
+--
+
+CREATE TABLE `facturas` (
+  `id` int(11) NOT NULL,
+  `ref` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_presupuesto` int(11) DEFAULT NULL,
+  `id_notac` int(11) DEFAULT NULL,
+  `id_contacto` int(11) NOT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sub_total` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `iva` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `anticipo` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `saldo` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `comentarios` text COLLATE utf8_unicode_ci,
+  `r1` date DEFAULT NULL,
+  `r2` date DEFAULT NULL,
+  `r3` date DEFAULT NULL,
+  `fecha_cobro` date DEFAULT NULL,
+  `expira` int(11) DEFAULT '0',
+  `ce` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estatus` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `facturas`
+--
+
+INSERT INTO `facturas` (`id`, `ref`, `id_presupuesto`, `id_notac`, `id_contacto`, `fecha_registro`, `sub_total`, `iva`, `anticipo`, `saldo`, `comentarios`, `r1`, `r2`, `r3`, `fecha_cobro`, `expira`, `ce`, `estatus`) VALUES
+(5, '120120', NULL, NULL, 34, '2017-07-18 22:01:31', '0.00000', '0.00000', '0.00000', '0.00000', 'deme', '2017-07-11', NULL, NULL, NULL, 0, '+++123/45698/987++++', 0),
+(6, '', NULL, NULL, 34, '2017-07-18 23:15:41', '0.00000', '0.00000', '0.00000', '0.00000', NULL, NULL, NULL, NULL, NULL, 0, NULL, 20),
+(7, '44', 5, 1, 34, '2017-07-18 23:21:10', '4.00000', '4.00000', '4.00000', '4.00000', '140', '2017-07-11', '2017-07-11', '2017-07-11', '2017-07-11', 4, '4', 10),
+(9, 'dssdsedzsd', 3, NULL, 35, '2017-07-19 01:08:09', '0.00000', '0.00000', '0.00000', '0.00000', 'Este es un comentarios publico', NULL, NULL, NULL, NULL, 0, '+++123/45698/456+++', -1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `factura_items`
+--
+
+CREATE TABLE `factura_items` (
+  `id` int(11) NOT NULL,
+  `ref_factura` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `cantidad` int(11) UNSIGNED NOT NULL,
+  `descripcion` text COLLATE utf8_unicode_ci NOT NULL,
+  `valor` decimal(20,5) NOT NULL,
+  `porcentaje_iva` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `factura_items`
+--
+
+INSERT INTO `factura_items` (`id`, `ref_factura`, `cantidad`, `descripcion`, `valor`, `porcentaje_iva`) VALUES
+(9, '44', 1, '1', '1.00000', 10),
+(12, '120120', 1, 'casa', '251.00000', 10),
+(13, '120120', 1, 'cambio de casa', '100000.00000', 10),
+(15, '120120', 1, 'carton para laventa de materiales de contruccioncarton para laventa de materiales de contruccioncarton para laventa de materiales de contruccion', '251.00000', 10),
+(23, 'dssdsedzsd', 1, 'casa de pere', '250.00000', 10),
+(24, '', 1, 'demos', '20.00000', 10),
+(25, '', 20, '20', '20.00000', 10),
+(26, '', 55, '5', '5.00000', 10),
+(28, 'dssdsedzsd', 1, 'casa de pe', '5410.00000', 10),
+(29, 'dssdsedzsd', 1, 'demenagemnt', '250.00000', 10),
+(30, 'dssdsedzsd', 150, 'lapices de colores', '0.10000', 20),
+(31, 'dssdsedzsd', 20, 'demos', '120.00000', 10);
+
+-- --------------------------------------------------------
+
+--
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- Table structure for table `logs`
 --
 
@@ -3019,6 +3147,7 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `fecha`, `usuario`, `grupo`, `ip`, `mac`, `p`, `c`, `a`, `comando`, `argumento`, `sospechoso`) VALUES
+<<<<<<< HEAD
 (1, '2017-07-22 10:02:00', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5808\",\"_traducciones_frase\":\"Espa\\u00f1ol\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Spanish\"}', '5808', ''),
 (2, '2017-07-22 10:02:21', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5804\",\"_traducciones_frase\":\"Italiano\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Italian\"}', '5804', ''),
 (3, '2017-07-22 10:02:39', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5805\",\"_traducciones_frase\":\"Ingl\\u00e9s\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"English\"}', '5805', ''),
@@ -3026,6 +3155,62 @@ INSERT INTO `logs` (`id`, `fecha`, `usuario`, `grupo`, `ip`, `mac`, `p`, `c`, `a
 (5, '2017-07-22 10:03:56', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5803\",\"_traducciones_frase\":\"Paises\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Countries\"}', '5803', ''),
 (6, '2017-07-22 10:04:07', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5801\",\"_traducciones_frase\":\"Plugins\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Plugins\"}', '5801', ''),
 (7, '2017-07-22 10:04:23', 'robincoello@hotmail.com', 'root', '::1', '', '_traducciones', '', 'editar', '{\"p\":\"_traducciones\",\"c\":\"editar\",\"a\":\"editar\",\"_traducciones_id\":\"5806\",\"_traducciones_frase\":\"Neerland\\u00e9s (B\\u00e9lgica)\",\"_traducciones_idioma\":\"en_GB\",\"_traducciones_traduccion\":\"Dutch (Belgium)\"}', '5806', '');
+=======
+(1, '2017-07-19 01:13:49', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"345\",\"_permisos_grupo\":\"centros\",\"_permisos_pagina\":\"facturas\",\"ver\":\"1\",\"crear\":\"0\",\"editar\":\"0\",\"borrar\":\"0\"}', '345', ''),
+(2, '2017-07-19 01:16:53', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"346\",\"_permisos_grupo\":\"centros\",\"_permisos_pagina\":\"facturas_otros\",\"ver\":\"0\",\"crear\":\"0\",\"editar\":\"0\",\"borrar\":\"0\"}', '346', ''),
+(3, '2017-07-19 01:20:51', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"347\",\"_permisos_grupo\":\"root\",\"_permisos_pagina\":\"facturas_otros\",\"ver\":\"1\",\"crear\":\"1\",\"editar\":\"1\",\"borrar\":\"1\"}', '347', ''),
+(4, '2017-07-19 01:43:15', 'robincoello@hotmail.com', 'root', '::1', '', '_permisos', '', 'editar', '{\"p\":\"_permisos\",\"c\":\"editar\",\"a\":\"editar\",\"_permisos_id\":\"214\",\"_permisos_grupo\":\"centros\",\"_permisos_pagina\":\"contactos\",\"ver\":\"1\",\"crear\":\"0\",\"editar\":\"0\",\"borrar\":\"0\"}', '214', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notac`
+--
+
+CREATE TABLE `notac` (
+  `id` int(11) NOT NULL,
+  `ref` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_factura` int(11) DEFAULT NULL,
+  `id_contacto` int(11) NOT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_pago` date DEFAULT NULL,
+  `sub_total` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `iva` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `comentarios` text COLLATE utf8_unicode_ci,
+  `estatus` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `notac`
+--
+
+INSERT INTO `notac` (`id`, `ref`, `id_factura`, `id_contacto`, `fecha_registro`, `fecha_pago`, `sub_total`, `iva`, `comentarios`, `estatus`) VALUES
+(1, '2010', NULL, 34, '2017-07-18 22:15:34', NULL, '100.00000', '0.00000', NULL, 0),
+(3, '12010', NULL, 34, '2017-07-18 22:16:14', NULL, '250.00000', '0.00000', NULL, 0),
+(4, '445445', NULL, 34, '2017-07-18 22:16:54', NULL, '0.00000', '0.00000', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notac_items`
+--
+
+CREATE TABLE `notac_items` (
+  `id` int(9) NOT NULL,
+  `ref_notac` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `cantidad` int(9) UNSIGNED NOT NULL,
+  `descripcion` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `valor` decimal(20,2) NOT NULL,
+  `porcentaje_iva` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `notac_items`
+--
+
+INSERT INTO `notac_items` (`id`, `ref_notac`, `cantidad`, `descripcion`, `valor`, `porcentaje_iva`) VALUES
+(1, '12010', 1, '1', '100.00', 1);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -3300,6 +3485,7 @@ INSERT INTO `paises` (`Code`, `name`, `continent`, `Region`, `SurfaceArea`, `Ind
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `plugins`
 --
 
@@ -3322,6 +3508,59 @@ CREATE TABLE `plugins` (
 
 INSERT INTO `plugins` (`id`, `nombre`, `descripcion`, `version`, `autor`, `autor_email`, `plugin_web`, `plugin_zip`, `orden`, `estatus`) VALUES
 (2, 'facturas', 'gestion de facturas', '0.0.2', 'robinson', 'robincoello@hotmail.com', 'https://github.com/robincoello/facturas', 'https://codeload.github.com/robincoello/facturas/zip/0.0.3', 10, 1);
+=======
+-- Table structure for table `presupuestos`
+--
+
+CREATE TABLE `presupuestos` (
+  `id` int(11) NOT NULL,
+  `ref` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id_factura` int(11) DEFAULT NULL,
+  `id_contacto` int(11) NOT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sub_total` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `iva` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `anticipo` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `saldo` decimal(20,5) NOT NULL DEFAULT '0.00000',
+  `comentarios` text COLLATE utf8_unicode_ci,
+  `r1` date DEFAULT NULL,
+  `r2` date DEFAULT NULL,
+  `r3` date DEFAULT NULL,
+  `fecha_cobro` date DEFAULT NULL,
+  `expira` int(11) DEFAULT '0',
+  `ce` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estatus` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `presupuestos`
+--
+
+INSERT INTO `presupuestos` (`id`, `ref`, `id_factura`, `id_contacto`, `fecha_registro`, `sub_total`, `iva`, `anticipo`, `saldo`, `comentarios`, `r1`, `r2`, `r3`, `fecha_cobro`, `expira`, `ce`, `estatus`) VALUES
+(5, '120120', NULL, 34, '2017-07-18 22:01:31', '0.00000', '0.00000', '0.00000', '0.00000', NULL, NULL, NULL, NULL, NULL, 0, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `presupuesto_items`
+--
+
+CREATE TABLE `presupuesto_items` (
+  `id` int(11) NOT NULL,
+  `ref_presupuesto` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `cantidad` int(9) UNSIGNED NOT NULL,
+  `descripcion` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `valor` decimal(20,2) NOT NULL,
+  `porcentaje_iva` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `presupuesto_items`
+--
+
+INSERT INTO `presupuesto_items` (`id`, `ref_presupuesto`, `cantidad`, `descripcion`, `valor`, `porcentaje_iva`) VALUES
+(1, '120120', 1, '1', '1.00', 1);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -3345,7 +3584,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (378, '% Traducción', NULL),
 (645, '% Tva', NULL),
 (727, '% iva', NULL),
+<<<<<<< HEAD
 (791, '+++123/4512/12312+++', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (183, '+322123456', NULL),
 (180, '000.111.222', NULL),
 (420, '1', NULL),
@@ -3366,7 +3608,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (611, '888888', NULL),
 (284, 'A', NULL),
 (653, 'A pagar', NULL),
+<<<<<<< HEAD
 (854, 'Abril', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (272, 'Acceso no permitido', NULL),
 (270, 'Acceso restrinjido', NULL),
 (18, 'Accion', NULL),
@@ -3377,12 +3622,17 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (588, 'Actualizaciones', NULL),
 (652, 'Adelanto', NULL),
 (498, 'Administración', NULL),
+<<<<<<< HEAD
 (858, 'Agosto', NULL),
 (538, 'Agregar', NULL),
 (151, 'Al crear un nuevo grupo debe también configurar los permisos que este tendra en el sistema', NULL),
 (899, 'Alemán', NULL),
 (789, 'Alguna descripción?', NULL),
 (788, 'Alguna referencia?', NULL),
+=======
+(538, 'Agregar', NULL),
+(151, 'Al crear un nuevo grupo debe también configurar los permisos que este tendra en el sistema', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (135, 'Alto', NULL),
 (85, 'Anti ruido', NULL),
 (99, 'Anti-Bactérie', NULL),
@@ -3390,21 +3640,30 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (709, 'Anulada', NULL),
 (745, 'Anular', NULL),
 (661, 'Apellidos', NULL),
+<<<<<<< HEAD
 (867, 'Arabe', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (276, 'Area restinjida', NULL),
 (286, 'Argumento', NULL),
 (492, 'Atencion', NULL),
 (133, 'Atención', NULL),
 (508, 'Atentamente', NULL),
+<<<<<<< HEAD
 (830, 'Autor', NULL),
 (839, 'Autor email', NULL),
 (831, 'Autor_email', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (188, 'Av. Louise 265', NULL),
 (134, 'Ayuda', NULL),
 (179, 'BE', NULL),
 (670, 'Balanza', NULL),
 (708, 'Banco', NULL),
+<<<<<<< HEAD
 (763, 'Bancos', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (648, 'Base htva', NULL),
 (225, 'Belgique', NULL),
 (36, 'Bloqueado', NULL),
@@ -3426,8 +3685,11 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (13, 'Buscar', NULL),
 (461, 'Buscar traducción', NULL),
 (398, 'Buscar un contacto', NULL),
+<<<<<<< HEAD
 (908, 'Buscar un tema', NULL),
 (793, 'Buscar una factura', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (253, 'Busqueda detallada', NULL),
 (283, 'C', NULL),
 (358, 'Cambiar', NULL),
@@ -3443,6 +3705,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (577, 'Cambio de clave solicitado', NULL),
 (582, 'Cambio_claves', NULL),
 (638, 'Campo', NULL),
+<<<<<<< HEAD
 (772, 'Campo de patico', NULL),
 (356, 'Cancelar', NULL),
 (704, 'Cantidad', NULL),
@@ -3450,6 +3713,12 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (685, 'Ce', NULL),
 (66, 'Centro auditivo', NULL),
 (866, 'Chino', NULL),
+=======
+(356, 'Cancelar', NULL),
+(704, 'Cantidad', NULL),
+(685, 'Ce', NULL),
+(66, 'Centro auditivo', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (162, 'Ciudad', NULL),
 (40, 'Clave', NULL),
 (200, 'Clave Actual', NULL),
@@ -3458,13 +3727,19 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (513, 'Clave perdida', NULL),
 (351, 'Claves nueva y repetición no son iguales', NULL),
 (747, 'Cliente', NULL),
+<<<<<<< HEAD
 (847, 'Clientse', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (754, 'Cobrada', NULL),
 (749, 'Cobros', NULL),
 (735, 'Cod anu', NULL),
 (710, 'Cod_anu', NULL),
+<<<<<<< HEAD
 (815, 'Code', NULL),
 (813, 'Code2', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (390, 'Codigo', NULL),
 (575, 'Codigo_usado', NULL),
 (116, 'Codo suave', NULL),
@@ -3476,7 +3751,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (729, 'Comentarios publicos', NULL),
 (734, 'Comunicación extructurada', NULL),
 (654, 'Comunicicón extructurada', NULL),
+<<<<<<< HEAD
 (782, 'Con factura', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (474, 'Condiciones', NULL),
 (89, 'Conduit seul', NULL),
 (579, 'Config', NULL),
@@ -3487,7 +3765,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (217, 'Contactos sin usuario', NULL),
 (369, 'Contenido', NULL),
 (15, 'Contexto', NULL),
+<<<<<<< HEAD
 (801, 'Continent', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (88, 'Coquille', NULL),
 (113, 'Cordon', NULL),
 (424, 'Correcciones', NULL),
@@ -3496,7 +3777,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (418, 'Crear', NULL),
 (460, 'Crear factura', NULL),
 (619, 'Creo', NULL),
+<<<<<<< HEAD
 (765, 'Cuenta', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (571, 'Cuenta activada', NULL),
 (572, 'Cuenta bloqueada', NULL),
 (244, 'Cuenta bloqueada, no puede realizar pedidos', NULL),
@@ -3521,17 +3805,25 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (105, 'Derecha', NULL),
 (438, 'Desactivar', NULL),
 (533, 'Desarrollo', NULL),
+<<<<<<< HEAD
 (771, 'Descricion', NULL),
 (27, 'Descripcion', NULL),
 (705, 'Descripción', NULL),
 (787, 'Descripcións', NULL),
 (828, 'Descripcón', NULL),
+=======
+(27, 'Descripcion', NULL),
+(705, 'Descripción', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (64, 'Detalles', NULL),
 (519, 'Detalles de su cuenta', NULL),
 (339, 'Detalles del pedido', NULL),
 (459, 'Detalles del pedido editado', NULL),
 (457, 'Detalles pedido editado', NULL),
+<<<<<<< HEAD
 (862, 'Diciembre', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (160, 'Direccion', NULL),
 (227, 'Dirección', NULL),
 (637, 'Domingo', NULL),
@@ -3568,8 +3860,11 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (24, 'Empresa', NULL),
 (226, 'Empresa SPRL', NULL),
 (258, 'En proceso', NULL),
+<<<<<<< HEAD
 (851, 'Enero', NULL),
 (901, 'English', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (500, 'Entrar', NULL),
 (261, 'Enviado', NULL),
 (259, 'Enviado a contacto', NULL),
@@ -3582,9 +3877,13 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (463, 'Escoja', NULL),
 (466, 'Escoja una opción', NULL),
 (462, 'Escoja uno', NULL),
+<<<<<<< HEAD
 (786, 'Escoje', NULL),
 (475, 'Escriba aca su email', NULL),
 (863, 'Español', NULL),
+=======
+(475, 'Escriba aca su email', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (144, 'Esta acción puede comprometar la seguridad de su web, esta seguro?', NULL),
 (30, 'Estatus', NULL),
 (511, 'Estatus actualizado, email enviado a contacto', NULL),
@@ -3599,6 +3898,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (170, 'Estrellas', NULL),
 (642, 'Expira', NULL),
 (640, 'Factura', NULL),
+<<<<<<< HEAD
 (794, 'Factura id', NULL),
 (668, 'Factura_items', NULL),
 (667, 'Facturas', NULL),
@@ -3606,6 +3906,11 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (865, 'Fancés', NULL),
 (166, 'Fax', NULL),
 (852, 'Febrero', NULL),
+=======
+(668, 'Factura_items', NULL),
+(667, 'Facturas', NULL),
+(166, 'Fax', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (28, 'Fecha', NULL),
 (703, 'Fecha cobro', NULL),
 (726, 'Fecha pago', NULL),
@@ -3615,6 +3920,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (168, 'Fecha_registro', NULL),
 (574, 'Fecha_solicitud', NULL),
 (115, 'Fil nylon', NULL),
+<<<<<<< HEAD
 (792, 'Filtrar', NULL),
 (256, 'Formato texto', NULL),
 (903, 'Français (Belgique)', NULL),
@@ -3624,19 +3930,31 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (808, 'GNPOld', NULL),
 (580, 'Gestion', NULL),
 (810, 'GovernmentForm', NULL),
+=======
+(256, 'Formato texto', NULL),
+(14, 'Frase', NULL),
+(578, 'Frase original', NULL),
+(580, 'Gestion', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (74, 'Grave', NULL),
 (20, 'Grupo', NULL),
 (195, 'Grupos que el sistema tiene', NULL),
 (387, 'Hay una nueva versión, <b><a href=\"index.php?p=actualizaciones\"></a></b> aca para actualizar su sistema', NULL),
 (388, 'Hay una nueva versión, <b><a href=\"index.php?p=actualizaciones\">aca</a></b> para actualizar su sistema', NULL),
 (386, 'Hay una nueva versión, click aca para actualizar su sistema', NULL),
+<<<<<<< HEAD
 (811, 'HeadOfState', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (616, 'Historial', NULL),
 (112, 'Hoka', NULL),
 (343, 'Hola', NULL),
 (650, 'Htva', NULL),
 (192, 'ID', NULL),
+<<<<<<< HEAD
 (766, 'Iban', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (57, 'Icono', NULL),
 (197, 'Id', NULL),
 (675, 'Id_contacto', NULL),
@@ -3647,31 +3965,45 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (44, 'Idioma', NULL),
 (145, 'Idiomas', NULL),
 (117, 'Implante', NULL),
+<<<<<<< HEAD
 (762, 'Imprimir', NULL),
 (804, 'IndepYear', NULL),
 (426, 'Index', NULL),
 (136, 'Info', NULL),
 (864, 'Ingles', NULL),
 (904, 'Inglés', NULL),
+=======
+(426, 'Index', NULL),
+(136, 'Info', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (570, 'Ingresar al sistema', NULL),
 (8, 'Inicio', NULL),
 (87, 'Invisible', NULL),
 (593, 'Invitación para usar nuestro sistema', NULL),
 (595, 'Ip', NULL),
 (92, 'Iros', NULL),
+<<<<<<< HEAD
 (900, 'Italiano', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (453, 'Item', NULL),
 (345, 'Items', NULL),
 (677, 'Iva', NULL),
 (103, 'Izquierda', NULL),
 (634, 'Jueves', NULL),
+<<<<<<< HEAD
 (857, 'Julio', NULL),
 (856, 'Junio', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (55, 'Label', NULL),
 (464, 'Legere', NULL),
 (205, 'Letras, números, signos [&é#§çà, etc]', NULL),
 (204, 'Letras, números, signos[&é#§çà, etc]', NULL),
+<<<<<<< HEAD
 (806, 'LifeExpectancy', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (72, 'Ligera', NULL),
 (12, 'Lista', NULL),
 (16, 'Lista de _contenido', NULL),
@@ -3688,7 +4020,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (31, 'Lista de pedidos', NULL),
 (209, 'Lista de usuarios', NULL),
 (558, 'Llene todos los campos', NULL),
+<<<<<<< HEAD
 (809, 'LocalName', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (189, 'Login', NULL),
 (7, 'Logout', NULL),
 (581, 'Logs', NULL),
@@ -3696,6 +4031,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (458, 'Los datos aca expuestos son los nuevos datos del pedido', NULL),
 (630, 'Lunes', NULL),
 (596, 'Mac', NULL),
+<<<<<<< HEAD
 (848, 'Magia_php', NULL),
 (108, 'Marques', NULL),
 (632, 'Martes', NULL),
@@ -3703,6 +4039,12 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (94, 'Materiales', NULL),
 (621, 'Materials', NULL),
 (855, 'Mayo', NULL),
+=======
+(108, 'Marques', NULL),
+(632, 'Martes', NULL),
+(94, 'Materiales', NULL),
+(621, 'Materials', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (73, 'Media', NULL),
 (633, 'Miercoles', NULL),
 (269, 'Mis pedidos', NULL),
@@ -3712,10 +4054,14 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (643, 'Modo de pago', NULL),
 (447, 'Molle', NULL),
 (465, 'Moyenne', NULL),
+<<<<<<< HEAD
 (800, 'Name', NULL),
 (83, 'Natation', NULL),
 (869, 'Neerlandés', NULL),
 (902, 'Neerlandés (Bélgica)', NULL),
+=======
+(83, 'Natation', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (211, 'No', NULL),
 (138, 'No disponible', NULL),
 (522, 'No se pudo borrar este usuario', NULL),
@@ -3730,11 +4076,17 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (67, 'Nombre del contacto', NULL),
 (222, 'Nombres y apellidos', NULL),
 (748, 'Nota de crédito', NULL),
+<<<<<<< HEAD
 (797, 'Nota de crédito relacionada', NULL),
 (666, 'Notac', NULL),
 (665, 'Notac_items', NULL),
 (29, 'Notas', NULL),
 (861, 'Noviembre', NULL),
+=======
+(666, 'Notac', NULL),
+(665, 'Notac_items', NULL),
+(29, 'Notas', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (17, 'Nueva', NULL),
 (359, 'Nueva Clave', NULL),
 (201, 'Nueva clave', NULL),
@@ -3762,12 +4114,17 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (178, 'Numero de tva', NULL),
 (174, 'Numero documento', NULL),
 (158, 'Numero_documento', NULL),
+<<<<<<< HEAD
 (795, 'Nùumero de factura', NULL),
 (182, 'Número TVA', NULL),
 (798, 'Número de factura', NULL),
 (796, 'Número de presupuesto relacionado', NULL),
 (252, 'Número no existe', NULL),
 (860, 'Octubre', NULL),
+=======
+(182, 'Número TVA', NULL),
+(252, 'Número no existe', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (137, 'Ok', NULL),
 (238, 'Olvido el email', NULL),
 (431, 'Olvido el nombre del grupo', NULL),
@@ -3784,7 +4141,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (101, 'Otro 2', NULL),
 (282, 'P', NULL),
 (54, 'Padre', NULL),
+<<<<<<< HEAD
 (761, 'Pagado', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (48, 'Pagina', NULL),
 (114, 'Pailletes', NULL),
 (164, 'Pais', NULL),
@@ -3807,6 +4167,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (251, 'Pedidos Editar', NULL),
 (71, 'Perdida auditiva', NULL),
 (49, 'Permiso', NULL),
+<<<<<<< HEAD
 (842, 'Plugin', NULL),
 (840, 'Plugin web', NULL),
 (841, 'Plugin zip', NULL),
@@ -3821,6 +4182,13 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (868, 'Portugues', NULL),
 (646, 'Precio U.', NULL),
 (814, 'Prefijo_ruc', NULL),
+=======
+(569, 'Ponga el siguiente código', NULL),
+(242, 'Por defecto se asignara el grupo centros a todo nuevo usuario', NULL),
+(733, 'Porcentaje iva', NULL),
+(722, 'Porcentaje_iva', NULL),
+(646, 'Precio U.', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (672, 'Presupuesto', NULL),
 (663, 'Presupuesto_items', NULL),
 (662, 'Presupuestos', NULL),
@@ -3840,7 +4208,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (732, 'Ref factura', NULL),
 (641, 'Ref pedido', NULL),
 (721, 'Ref_factura', NULL),
+<<<<<<< HEAD
 (802, 'Region', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (730, 'Registar', NULL),
 (750, 'Registo de cobros', NULL),
 (752, 'Registrada', NULL),
@@ -3870,7 +4241,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (95, 'Résine', NULL),
 (679, 'Saldo', NULL),
 (159, 'Saludo', NULL),
+<<<<<<< HEAD
 (859, 'Septiembre', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (212, 'Si', NULL),
 (568, 'Si desea cambiar de clave, ingrese en:', NULL),
 (567, 'Si no desea cambiar la clave, no haya nada', NULL),
@@ -3883,7 +4257,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (494, 'Si,borrar', NULL),
 (469, 'Siguiente', NULL),
 (96, 'Silicone', NULL),
+<<<<<<< HEAD
 (783, 'Sin factura', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (81, 'Slim Tube', NULL),
 (443, 'Solo los pedidos con estatus Registrado pueden ser editados', NULL),
 (442, 'Solo los pedidos con estatus Registradopueden ser editados', NULL),
@@ -3893,15 +4270,21 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (76, 'Suave', NULL),
 (647, 'Sub total', NULL),
 (676, 'Sub_total', NULL),
+<<<<<<< HEAD
 (760, 'Subtotal', NULL),
 (803, 'SurfaceArea', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (737, 'Sus facturas', NULL),
 (422, 'System code is incorrect', NULL),
 (423, 'System code is incorrect (Licence error)', NULL),
 (636, 'Sábado', NULL),
 (220, 'TVA', NULL),
 (165, 'Tel', NULL),
+<<<<<<< HEAD
 (907, 'Temas', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (659, 'Test', NULL),
 (98, 'Thermosoft', NULL),
 (97, 'Thermotec', NULL),
@@ -3914,12 +4297,18 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (280, 'Todos', NULL),
 (651, 'Total', NULL),
 (649, 'Total tva', NULL),
+<<<<<<< HEAD
 (776, 'Totales', NULL),
 (775, 'Totaless', NULL),
 (124, 'Traduccion', NULL),
 (368, 'Traducción', NULL),
 (377, 'Traducido', NULL),
 (905, 'Traducido al', NULL),
+=======
+(124, 'Traduccion', NULL),
+(368, 'Traducción', NULL),
+(377, 'Traducido', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (190, 'Tva', NULL),
 (620, 'Types', NULL),
 (53, 'Ubicacion', NULL),
@@ -3953,11 +4342,15 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (104, 'Ventilation Droite', NULL),
 (207, 'Ver', NULL),
 (561, 'Verifique su email', NULL),
+<<<<<<< HEAD
 (829, 'Version', NULL),
 (843, 'Versión instalada', NULL),
 (635, 'Viernes', NULL),
 (821, 'Vil_cp', NULL),
 (822, 'Vil_nom', NULL),
+=======
+(635, 'Viernes', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (267, 'Ya no puede editar este pedido', NULL),
 (510, 'Ya puede realizar pedidos', NULL),
 (11, '_contenido', NULL),
@@ -3970,7 +4363,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (123, '_traducciones', NULL),
 (38, '_usuarios', NULL),
 (292, 'a', NULL),
+<<<<<<< HEAD
 (773, 'a pagar 50% adelantado 50% a la entrega', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (362, 'aa', NULL),
 (34, 'aaaa-mm-dd', NULL),
 (402, 'acción', NULL),
@@ -3987,11 +4383,16 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (604, 'argumento', NULL),
 (428, 'atraducir', NULL),
 (540, 'auto_registro', NULL),
+<<<<<<< HEAD
 (835, 'autor', NULL),
 (836, 'autor_email', NULL),
 (706, 'balanza', NULL),
 (713, 'banco', NULL),
 (764, 'bancos', NULL),
+=======
+(706, 'balanza', NULL),
+(713, 'banco', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (363, 'bb', NULL),
 (545, 'bloqueados', NULL),
 (541, 'borrados', NULL),
@@ -4006,6 +4407,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (360, 'cambiar_clave_otros', NULL),
 (263, 'cambiar_estatus', NULL),
 (375, 'cambiar_idioma', NULL),
+<<<<<<< HEAD
 (909, 'cambiar_tema', NULL),
 (573, 'cambio_claves', NULL),
 (724, 'cantidad', NULL),
@@ -4022,6 +4424,17 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (655, 'clientes', NULL),
 (715, 'cod_anu', NULL),
 (818, 'code2', NULL),
+=======
+(573, 'cambio_claves', NULL),
+(724, 'cantidad', NULL),
+(432, 'casa', NULL),
+(701, 'ce', NULL),
+(384, 'centro', NULL),
+(348, 'centros', NULL),
+(400, 'ciudad', NULL),
+(655, 'clientes', NULL),
+(715, 'cod_anu', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (584, 'codigo', NULL),
 (586, 'codigo_usado', NULL),
 (603, 'comando', NULL),
@@ -4040,13 +4453,17 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (365, 'contactos_otros', NULL),
 (521, 'contactos_pais', NULL),
 (553, 'contactos_tel', NULL),
+<<<<<<< HEAD
 (817, 'continent', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (322, 'coquille', NULL),
 (334, 'cordon', NULL),
 (425, 'correccion', NULL),
 (337, 'coude_soupe', NULL),
 (304, 'couleur_droite', NULL),
 (301, 'couleur_gauche', NULL),
+<<<<<<< HEAD
 (820, 'cp_ville', NULL),
 (32, 'crear', NULL),
 (890, 'cuarenta', NULL),
@@ -4063,21 +4480,33 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (884, 'diesiseis', NULL),
 (878, 'diez', NULL),
 (880, 'doce', NULL),
+=======
+(32, 'crear', NULL),
+(317, 'custom_dume', NULL),
+(440, 'demo', NULL),
+(591, 'descripcion', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (319, 'dormir', NULL),
 (434, 'dos', NULL),
 (298, 'du_numero', NULL),
 (313, 'dure', NULL),
 (61, 'editar', NULL),
 (731, 'editar_comentarios', NULL),
+<<<<<<< HEAD
 (849, 'editores', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (592, 'ejecutar', NULL),
 (152, 'email', NULL),
 (612, 'empeador', NULL),
 (383, 'empresa', NULL),
 (324, 'epaulemnent', NULL),
+<<<<<<< HEAD
 (784, 'escoje_factura', NULL),
 (781, 'escoje_tipo', NULL),
 (850, 'escritores', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (234, 'esss', NULL),
 (702, 'estatus', NULL),
 (700, 'expira', NULL),
@@ -4100,7 +4529,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (401, 'grupo', NULL),
 (333, 'hoka', NULL),
 (9, 'home', NULL),
+<<<<<<< HEAD
 (768, 'iban', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (399, 'id', NULL),
 (689, 'id_contacto', NULL),
 (711, 'id_factura', NULL),
@@ -4111,7 +4543,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (10, 'index', NULL),
 (531, 'info', NULL),
 (184, 'info@mail.com', NULL),
+<<<<<<< HEAD
 (845, 'instalar', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (321, 'invisible', NULL),
 (601, 'ip', NULL),
 (326, 'iros', NULL),
@@ -4123,17 +4558,24 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (602, 'mac', NULL),
 (302, 'marques', NULL),
 (625, 'materials', NULL),
+<<<<<<< HEAD
 (898, 'mil', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (332, 'mix', NULL),
 (303, 'models', NULL),
 (312, 'molle', NULL),
 (310, 'moyenne', NULL),
+<<<<<<< HEAD
 (816, 'name', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (318, 'natation', NULL),
 (590, 'nombre', NULL),
 (717, 'notac', NULL),
 (450, 'notas', NULL),
 (305, 'notes', NULL),
+<<<<<<< HEAD
 (895, 'noventa', NULL),
 (877, 'nueve', NULL),
 (544, 'nuevos', NULL),
@@ -4151,6 +4593,15 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (799, 'paises', NULL),
 (307, 'payant', NULL),
 (846, 'pdf', NULL),
+=======
+(544, 'nuevos', NULL),
+(354, 'ok', NULL),
+(536, 'opcion', NULL),
+(445, 'orejera', NULL),
+(290, 'p', NULL),
+(335, 'pailletes', NULL),
+(307, 'payant', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (22, 'pedidos', NULL),
 (297, 'pedidos_contacto', NULL),
 (294, 'pedidos_email', NULL),
@@ -4164,6 +4615,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (449, 'perdida_auditiva', NULL),
 (364, 'permisos', NULL),
 (444, 'perte_auditive', NULL),
+<<<<<<< HEAD
 (837, 'plugin_web', NULL),
 (838, 'plugin_zip', NULL),
 (826, 'plugins', NULL),
@@ -4172,6 +4624,11 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (716, 'presupuestos', NULL),
 (325, 'prince_de_crave', NULL),
 (883, 'quince', NULL),
+=======
+(725, 'porcentaje_iva', NULL),
+(716, 'presupuestos', NULL),
+(325, 'prince_de_crave', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (696, 'r1', NULL),
 (697, 'r2', NULL),
 (698, 'r3', NULL),
@@ -4179,7 +4636,10 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (557, 'recup_clave_veri_code', NULL),
 (686, 'ref', NULL),
 (723, 'ref_factura', NULL),
+<<<<<<< HEAD
 (790, 'registrar_pago_desde_factura', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (528, 'registro', NULL),
 (308, 'remake', NULL),
 (589, 'requiere', NULL),
@@ -4187,11 +4647,15 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (315, 'rite', NULL),
 (350, 'root', NULL),
 (694, 'saldo', NULL),
+<<<<<<< HEAD
 (892, 'secenta', NULL),
 (874, 'seis', NULL),
 (893, 'sesenta', NULL),
 (433, 'sex', NULL),
 (875, 'siente', NULL),
+=======
+(433, 'sex', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (328, 'silicone', NULL),
 (277, 'sin permiso', NULL),
 (316, 'slim_tube', NULL),
@@ -4200,6 +4664,7 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (691, 'sub_total', NULL),
 (738, 'sus_facturas', NULL),
 (240, 't_usuarios', NULL),
+<<<<<<< HEAD
 (906, 'temas', NULL),
 (660, 'test', NULL),
 (777, 'tet', NULL),
@@ -4218,22 +4683,39 @@ INSERT INTO `_contenido` (`id`, `frase`, `contexto`) VALUES
 (583, 'usuario', NULL),
 (537, 'valor', NULL),
 (888, 'veinte', NULL),
+=======
+(660, 'test', NULL),
+(330, 'thermosoft', NULL),
+(329, 'thermotec', NULL),
+(712, 'tipo', NULL),
+(154, 'txt', NULL),
+(626, 'types', NULL),
+(131, 'users', NULL),
+(583, 'usuario', NULL),
+(537, 'valor', NULL),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (374, 'vendedores', NULL),
 (300, 'ventilation_droite', NULL),
 (299, 'ventilation_gauche', NULL),
 (127, 'ver', NULL),
 (539, 'verif_email', NULL),
+<<<<<<< HEAD
 (834, 'version', NULL),
 (824, 'vil_cp', NULL),
 (823, 'vil_id', NULL),
 (825, 'vil_nom', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (146, 'xx_XX', NULL),
 (624, 'yypes', NULL),
 (559, 'zz_sccc', NULL),
 (562, 'zz_vccc', NULL),
 (527, 'zzz', NULL),
 (613, 'zzzz', NULL),
+<<<<<<< HEAD
 (844, 'Última versión', NULL),
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (397, 'Último ingreso', NULL);
 
 -- --------------------------------------------------------
@@ -4254,9 +4736,15 @@ CREATE TABLE `_grupos` (
 
 INSERT INTO `_grupos` (`id`, `grupo`, `orden`) VALUES
 (11, 'root', 40),
+<<<<<<< HEAD
 (12, 'administradores', 30),
 (13, 'editores', 20),
 (14, 'escritores', 10);
+=======
+(12, 'administradores', 20),
+(13, 'centros', 10),
+(14, 'gerente', 30);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -4280,7 +4768,11 @@ INSERT INTO `_idiomas` (`id`, `idioma`, `nombre`, `activo`, `orden`) VALUES
 (1, 'es_ES', 'Español', 1, 40),
 (3, 'fr_BE', 'Français (Belgique)', 0, 10),
 (4, 'nl_BE', 'Neerlandés (Bélgica)', 0, 20),
+<<<<<<< HEAD
 (5, 'en_GB', 'Inglés', 1, 30),
+=======
+(5, 'en_GB', 'English', 1, 30),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (7, 'it_IT', 'Italiano', 0, 40),
 (8, 'de_DE', 'Alemán', 0, 50);
 
@@ -4305,6 +4797,7 @@ CREATE TABLE `_menu` (
 --
 
 INSERT INTO `_menu` (`id`, `ubicacion`, `padre`, `label`, `url`, `icono`, `orden`) VALUES
+<<<<<<< HEAD
 (49, 'top', 'magia_php', '_contenido', '?p=_contenido&c=index', 'book', 0),
 (50, 'top', 'magia_php', '_grupos', '?p=_grupos&c=index', 'list-alt', 0),
 (51, 'top', 'magia_php', '_idiomas', '?p=_idiomas&c=index', 'globe', 0),
@@ -4321,6 +4814,30 @@ INSERT INTO `_menu` (`id`, `ubicacion`, `padre`, `label`, `url`, `icono`, `orden
 (79, 'top', 'config', 'paises', '?p=paises&c=index', 'folder-close', 0),
 (95, 'top', 'magia_php', 'plugins', '?p=plugins&c=index', 'folder-close', 0),
 (97, 'top', 'gestion', 'contactos', '?p=contactos', 'user', 10);
+=======
+(49, 'top', 'config', '_contenido', '?p=_contenido&c=index', 'book', 0),
+(50, 'top', 'config', '_grupos', '?p=_grupos&c=index', 'list-alt', 0),
+(51, 'top', 'config', '_idiomas', '?p=_idiomas&c=index', 'globe', 0),
+(52, 'top', 'config', '_menu', '?p=_menu&c=index', 'th-list', 0),
+(53, 'top', 'config', '_paginas', '?p=_paginas&c=index', 'duplicate', 0),
+(54, 'top', 'config', '_permisos', '?p=_permisos&c=index', 'tasks', 0),
+(55, 'top', 'config', '_traducciones', '?p=_traducciones&c=index', 'wrench', 0),
+(56, 'top', 'config', '_usuarios', '?p=_usuarios&c=index', 'user', 30),
+(59, 'sidebar', 'gestion', 'contactos', '?p=contactos&c=index', 'briefcase', 20),
+(61, 'top', 'config', 'logs', '?p=logs&c=index', 'duplicate', 0),
+(64, 'top', 'config', '_opciones', '?p=_opciones&c=index', 'folder-close', 0),
+(67, 'top', 'config', 'cambio_claves', '?p=cambio_claves&c=index', 'folder-close', 0),
+(68, 'top', 'config', 'actualizaciones', '?p=actualizaciones&c=index', 'folder-close', 0),
+(73, 'sidebar', 'config', 'balanza', '?p=balanza&c=index', 'folder-close', 40),
+(74, 'top', 'config', 'cp_ville', '?p=cp_ville&c=index', 'folder-close', 0),
+(75, 'top', 'config', 'factura_items', '?p=factura_items&c=index', 'folder-close', 0),
+(76, 'sidebar', 'config', 'facturas', '?p=facturas&c=index', 'folder-close', 10),
+(77, 'sidebar', 'config', 'notac', '?p=notac&c=index', 'folder-close', 30),
+(78, 'top', 'config', 'notac_items', '?p=notac_items&c=index', 'folder-close', 0),
+(79, 'top', 'config', 'paises', '?p=paises&c=index', 'folder-close', 0),
+(81, 'sidebar', 'config', 'presupuestos', '?p=presupuestos&c=index', 'folder-close', 20),
+(89, 'top', 'config', 'presupuesto_items', '?p=presupuesto_items&c=index', 'folder-close', 0);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -4340,7 +4857,11 @@ CREATE TABLE `_opciones` (
 --
 
 INSERT INTO `_opciones` (`id`, `opcion`, `valor`, `grupo`) VALUES
+<<<<<<< HEAD
 (1, 'nombre_web', 'Mago php', 10),
+=======
+(1, 'nombre_web', 'Magia_PHP', 10),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (2, 'url', 'https://github.com/robincoello/magia_php', 10),
 (3, 'direccion', 'Av del codigo abierto 1970, \\n1000 Bruselas, \\nBégica\"', 10),
 (4, 'tel', '+32(0) 474 62 4707', 10),
@@ -4358,16 +4879,36 @@ INSERT INTO `_opciones` (`id`, `opcion`, `valor`, `grupo`) VALUES
 (23, '_opciones_thead', '{\"id\":\"id\",\"opcion\":\"opcion\",\"valor\":\"valor\",\"codigo\":\"codigo\"}', 1000),
 (25, 'debug', '0', 9000),
 (28, 'grupo_por_defecto', 'centros', 10),
+<<<<<<< HEAD
 (30, 'desarrollo', '0', 9000),
 (31, 'cambio_claves_thead', '{\"id\":\"id\",\"usuario\":\"usuario\",\"codigo\":\"codigo\",\"fecha_solicitud\":\"fecha_solicitud\",\"codigo_usado\":\"codigo_usado\"}', 1000),
 (34, 'logs_thead', '{\"id\":\"id\",\"fecha\":\"fecha\",\"usuario\":\"usuario\",\"p\":\"pre\",\"c\":\"c\",\"a\":\"a\",\"sospechoso\":\"sospechoso\"}', 1000),
+=======
+(29, 'ceros_bon', '6', 10),
+(30, 'desarrollo', '0', 9000),
+(31, 'cambio_claves_thead', '{\"id\":\"id\",\"usuario\":\"usuario\",\"codigo\":\"codigo\",\"fecha_solicitud\":\"fecha_solicitud\",\"codigo_usado\":\"codigo_usado\"}', 1000),
+(33, 'actualizaciones_thead', '{\"id\":\"id\",\"codigo\":\"codigo\",\"requiere\":\"requiere\",\"nombre\":\"nombre\",\"descripcion\":\"descripcion\",\"ejecutar\":\"ejecutar\"}', 1000),
+(34, 'logs_thead', '{\"id\":\"id\",\"fecha\":\"fecha\",\"usuario\":\"usuario\",\"p\":\"pre\",\"c\":\"c\",\"a\":\"a\",\"sospechoso\":\"sospechoso\"}', 1000),
+(35, 'test_thead', '{\"id\":\"id\",\"nombre\":\"nombre\",\"apellidos\":\"apellidos\"}', 0),
+(38, 'categorias_thead', '{\"id\":\"id\",\"categoria\":\"categoria\",\"orden\":\"orden\"}', 1000),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (39, 'eventos_thead', '{\"id\":\"id\",\"id_categoria\":\"id_categoria\",\"id_contacto\":\"id_contacto\",\"titulo\":\"titulo\",\"descripcion\":\"descripcion\",\"fecha_inicio\":\"fecha_inicio\",\"fecha_fin\":\"fecha_fin\",\"precio\":\"precio\",\"orden\":\"orden\",\"estatus\":\"estatus\"}', 0),
 (40, 'lugares_thead', '{\"id\":\"id\",\"lugar\":\"lugar\",\"orden\":\"orden\",\"estatus\":\"estatus\"}', 0),
 (41, 'balanza_thead', '{\"id\":\"id\",\"id_contacto\":\"id_contacto\",\"id_factura\":\"id_factura\",\"tipo\":\"tipo\",\"ref\":\"ref\",\"descripcion\":\"descripcion\",\"ce\":\"ce\",\"sub_total\":\"sub_total\",\"iva\":\"iva\",\"fecha\":\"fecha\",\"fecha_registro\":\"fecha_registro\",\"factura\":\"factura\",\"banco\":\"banco\",\"anulada\":\"anulada\",\"cod_anu\":\"cod_anu\"}', 0),
 (42, 'cp_ville_thead', '{\"vil_id\":\"vil_id\",\"vil_cp\":\"vil_cp\",\"vil_nom\":\"vil_nom\"}', 0),
+<<<<<<< HEAD
 (47, 'paises_thead', '{\"Code\":\"Code\",\"name\":\"name\",\"continent\":\"continent\",\"Region\":\"Region\",\"SurfaceArea\":\"SurfaceArea\",\"IndepYear\":\"IndepYear\",\"Population\":\"Population\",\"LifeExpectancy\":\"LifeExpectancy\",\"GNP\":\"GNP\",\"GNPOld\":\"GNPOld\",\"LocalName\":\"LocalName\",\"GovernmentForm\":\"GovernmentForm\",\"HeadOfState\":\"HeadOfState\",\"Capital\":\"Capital\",\"code2\":\"code2\",\"prefijo_ruc\":\"prefijo_ruc\"}', 0),
 (64, 'plugins_thead', '{\"id\":\"id\",\"nombre\":\"nombre\",\"descripcion\":\"descripcion\",\"version\":\"version\",\"autor\":\"autor\",\"autor_email\":\"autor_email\",\"plugin_web\":\"plugin_web\",\"plugin_zip\":\"plugin_zip\",\"orden\":\"orden\",\"estatus\":\"estatus\"}', 0),
 (65, 'tema', 'condor', 2500);
+=======
+(43, 'factura_items_thead', '{\"id\":\"id\",\"ref_factura\":\"ref_factura\",\"cantidad\":\"cantidad\",\"descripcion\":\"descripcion\",\"valor\":\"valor\",\"porcentaje_iva\":\"porcentaje_iva\"}', 0),
+(44, 'facturas_thead', '{\"id\":\"id\",\n\"id_presupuesto\":\"id_presupuesto\",\n\"id_notac\":\"id_notac\",\n\"id_contacto\":\"id_contacto\",\n\"fecha_registro\":\"fecha_registro\",\n\"saldo\":\"saldo\",\n\"expira\":\"expira\",\n\"estatus\":\"estatus\"\n}', 0),
+(45, 'notac_thead', '{\"id\":\"id\",\"ref\":\"ref\",\"id_factura\":\"id_factura\",\"id_contacto\":\"id_contacto\",\"fecha_registro\":\"fecha_registro\",\"fecha_pago\":\"fecha_pago\",\"sub_total\":\"sub_total\",\"iva\":\"iva\",\"comentarios\":\"comentarios\",\"estatus\":\"estatus\"}', 0),
+(46, 'notac_items_thead', '{\"id\":\"id\",\"ref_notac\":\"ref_notac\",\"cantidad\":\"cantidad\",\"descripcion\":\"descripcion\",\"valor\":\"valor\",\"porcentaje_iva\":\"porcentaje_iva\"}', 0),
+(47, 'paises_thead', '{\"Code\":\"Code\",\"name\":\"name\",\"continent\":\"continent\",\"Region\":\"Region\",\"SurfaceArea\":\"SurfaceArea\",\"IndepYear\":\"IndepYear\",\"Population\":\"Population\",\"LifeExpectancy\":\"LifeExpectancy\",\"GNP\":\"GNP\",\"GNPOld\":\"GNPOld\",\"LocalName\":\"LocalName\",\"GovernmentForm\":\"GovernmentForm\",\"HeadOfState\":\"HeadOfState\",\"Capital\":\"Capital\",\"code2\":\"code2\",\"prefijo_ruc\":\"prefijo_ruc\"}', 0),
+(48, 'presupuesto_items_thead', '{\"id\":\"id\",\"ref_presupuesto\":\"ref_presupuesto\",\"cantidad\":\"cantidad\",\"descripcion\":\"descripcion\",\"valor\":\"valor\",\"porcentaje_iva\":\"porcentaje_iva\"}', 0),
+(49, 'presupuestos_thead', '{\"id\":\"id\",\"ref\":\"ref\",\"id_factura\":\"id_factura\",\"id_contacto\":\"id_contacto\",\"fecha_registro\":\"fecha_registro\",\"sub_total\":\"sub_total\",\"iva\":\"iva\",\"anticipo\":\"anticipo\",\"saldo\":\"saldo\",\"comentarios\":\"comentarios\",\"r1\":\"r1\",\"r2\":\"r2\",\"r3\":\"r3\",\"fecha_cobro\":\"fecha_cobro\",\"expira\":\"expira\",\"ce\":\"ce\",\"estatus\":\"estatus\"}', 0);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -4394,10 +4935,16 @@ INSERT INTO `_paginas` (`id`, `pagina`) VALUES
 (58, '_permisos'),
 (59, '_traducciones'),
 (60, '_usuarios'),
+<<<<<<< HEAD
+=======
+(74, 'actualizaciones'),
+(85, 'balanza'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (63, 'cambiar_clave'),
 (72, 'cambiar_clave_otros'),
 (73, 'cambiar_idioma'),
 (78, 'cambio_claves'),
+<<<<<<< HEAD
 (62, 'contactos'),
 (64, 'contactos_otros'),
 (86, 'cp_ville'),
@@ -4406,6 +4953,26 @@ INSERT INTO `_paginas` (`id`, `pagina`) VALUES
 (91, 'paises'),
 (105, 'plugins'),
 (68, 't_usuarios');
+=======
+(82, 'categorias'),
+(62, 'contactos'),
+(64, 'contactos_otros'),
+(86, 'cp_ville'),
+(87, 'factura_items'),
+(88, 'facturas'),
+(103, 'facturas_otros'),
+(65, 'home'),
+(70, 'logs'),
+(89, 'notac'),
+(90, 'notac_items'),
+(91, 'paises'),
+(69, 'pedidos_estatus'),
+(66, 'pedidos_otros'),
+(92, 'presupuesto_items'),
+(93, 'presupuestos'),
+(68, 't_usuarios'),
+(79, 'test');
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -4426,6 +4993,7 @@ CREATE TABLE `_permisos` (
 
 INSERT INTO `_permisos` (`id`, `grupo`, `pagina`, `permiso`) VALUES
 (164, 'root', '_contenido', '1111'),
+<<<<<<< HEAD
 (168, 'root', '_grupos', '1111'),
 (172, 'root', '_idiomas', '1111'),
 (176, 'root', '_menu', '1111'),
@@ -4446,10 +5014,56 @@ INSERT INTO `_permisos` (`id`, `grupo`, `pagina`, `permiso`) VALUES
 (214, 'editores', 'contactos', '1000'),
 (215, 'root', 't_usuarios', '1111'),
 (216, 'administradores', 't_usuarios', '1110'),
+=======
+(165, 'administradores', '_contenido', '0000'),
+(167, 'centros', '_contenido', '0000'),
+(168, 'root', '_grupos', '1111'),
+(169, 'administradores', '_grupos', '0000'),
+(171, 'centros', '_grupos', '0000'),
+(172, 'root', '_idiomas', '1111'),
+(173, 'administradores', '_idiomas', '0000'),
+(175, 'centros', '_idiomas', '0000'),
+(176, 'root', '_menu', '1111'),
+(177, 'administradores', '_menu', '0000'),
+(179, 'centros', '_menu', '0000'),
+(180, 'root', '_paginas', '1111'),
+(181, 'administradores', '_paginas', '0000'),
+(183, 'centros', '_paginas', '0000'),
+(184, 'root', '_permisos', '1111'),
+(185, 'administradores', '_permisos', '0000'),
+(187, 'centros', '_permisos', '0000'),
+(188, 'root', '_traducciones', '1111'),
+(189, 'administradores', '_traducciones', '0000'),
+(191, 'centros', '_traducciones', '0000'),
+(192, 'root', '_usuarios', '1111'),
+(193, 'administradores', '_usuarios', '0000'),
+(195, 'centros', '_usuarios', '0000'),
+(200, 'root', 'contactos', '1111'),
+(201, 'administradores', 'contactos', '1110'),
+(202, 'centros', 'cambiar_clave', '1110'),
+(203, 'administradores', 'cambiar_clave', '1110'),
+(204, 'root', 'cambiar_clave', '1111'),
+(205, 'centros', 'home', '1000'),
+(206, 'root', 'pedidos_otros', '1111'),
+(207, 'administradores', 'pedidos_otros', '1110'),
+(208, 'centros', 'pedidos_otros', '0000'),
+(209, 'root', 'home', '1111'),
+(210, 'administradores', 'contactos_otros', '1110'),
+(211, 'root', 'contactos_otros', '1111'),
+(213, 'centros', 'contactos_otros', '0000'),
+(214, 'centros', 'contactos', '1000'),
+(215, 'root', 't_usuarios', '1111'),
+(216, 'administradores', 't_usuarios', '1110'),
+(217, 'centros', 'pedidos_estatus', '0000'),
+(218, 'administradores', 'pedidos_estatus', '1110'),
+(219, 'root', 'pedidos_estatus', '1111'),
+(220, 'gerente', 'pedidos_estatus', '1111'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (221, 'root', 'logs', '1111'),
 (222, 'administradores', 'logs', '1110'),
 (223, 'root', 'cambiar_clave_otros', '1111'),
 (224, 'administradores', 'home', '1110'),
+<<<<<<< HEAD
 (225, 'escritores', 'home', '1110'),
 (232, 'root', 'cambiar_idioma', '1111'),
 (233, 'escritores', 'cambiar_idioma', '1110'),
@@ -4468,6 +5082,50 @@ INSERT INTO `_permisos` (`id`, `grupo`, `pagina`, `permiso`) VALUES
 (350, 'root', 'plugins', '1111'),
 (351, 'administradores', 'plugins', '1110'),
 (352, 'administradores', '_contenido', '0000');
+=======
+(225, 'gerente', 'home', '1110'),
+(226, 'gerente', '_contenido', '1000'),
+(227, 'gerente', '_grupos', '1110'),
+(230, 'gerente', '_idiomas', '1111'),
+(231, 'gerente', '_menu', '0000'),
+(232, 'root', 'cambiar_idioma', '1111'),
+(233, 'gerente', 'cambiar_idioma', '1110'),
+(234, 'centros', 'cambiar_idioma', '1110'),
+(235, 'administradores', 'cambiar_idioma', '1110'),
+(238, 'administradores', 'cambiar_clave_otros', '1110'),
+(239, 'centros', 'cambiar_clave_otros', '0000'),
+(240, 'gerente', 'cambiar_clave_otros', '0000'),
+(241, 'root', 'actualizaciones', '1111'),
+(242, 'administradores', 'actualizaciones', '1110'),
+(243, 'root', '_opciones', '1111'),
+(244, 'administradores', '_opciones', '0000'),
+(255, 'root', 'cambio_claves', '1111'),
+(256, 'administradores', 'cambio_claves', '1110'),
+(258, 'root', 'test', '1111'),
+(259, 'administradores', 'test', '1110'),
+(270, 'root', 'categorias', '111'),
+(273, 'root', 'balanza', '1111'),
+(274, 'administradores', 'balanza', '1110'),
+(277, 'root', 'cp_ville', '1111'),
+(278, 'administradores', 'cp_ville', '1110'),
+(281, 'root', 'factura_items', '1111'),
+(282, 'administradores', 'factura_items', '1110'),
+(285, 'root', 'facturas', '1111'),
+(286, 'administradores', 'facturas', '1110'),
+(289, 'root', 'notac', '1111'),
+(290, 'administradores', 'notac', '1110'),
+(293, 'root', 'notac_items', '1111'),
+(294, 'administradores', 'notac_items', '1110'),
+(297, 'root', 'paises', '1111'),
+(298, 'administradores', 'paises', '1110'),
+(301, 'root', 'presupuesto_items', '1111'),
+(302, 'administradores', 'presupuesto_items', '1110'),
+(305, 'root', 'presupuestos', '1111'),
+(306, 'administradores', 'presupuestos', '1110'),
+(345, 'centros', 'facturas', '1000'),
+(346, 'centros', 'facturas_otros', '0000'),
+(347, 'root', 'facturas_otros', '1111');
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -5685,6 +6343,10 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5258, 'A pagar', 'en_GB', 'To pay'),
 (5259, 'Comunicicón extructurada', 'en_GB', 'Structured communication'),
 (5260, 'clientes', 'en_GB', ''),
+<<<<<<< HEAD
+=======
+(5261, 'Nuevo pedido', 'en_GB', '---'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (5262, '% Tva', 'es_ES', '% Iva'),
 (5263, '2020', 'en_GB', '2020'),
 (5264, '30', 'en_GB', '30'),
@@ -5759,6 +6421,10 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5387, 'Descripción', 'es_ES', 'Descripción'),
 (5388, 'Precio U.', 'es_ES', 'Precio U.'),
 (5389, 'Total', 'es_ES', 'Total'),
+<<<<<<< HEAD
+=======
+(5390, 'facturas', 'en_GB', '---'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (5391, 'balanza', 'es_ES', 'balanza'),
 (5392, 'Factura', 'es_ES', 'Factura'),
 (5393, 'Id_factura', 'es_ES', 'Id_factura'),
@@ -5791,6 +6457,64 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5420, 'Comunicación extructurada', 'es_ES', 'Comunicación extructurada'),
 (5421, 'Cod anu', 'es_ES', 'Cod anu'),
 (5422, 'borrar_item', 'es_ES', 'borrar_item'),
+<<<<<<< HEAD
+=======
+(5423, 'Facturas', 'en_GB', '---'),
+(5424, 'Presupuestos', 'en_GB', '---'),
+(5425, 'Notac', 'en_GB', '---'),
+(5426, 'Balanza', 'en_GB', '---'),
+(5427, 'presupuestos', 'en_GB', '---'),
+(5428, 'notac', 'en_GB', '---'),
+(5429, 'balanza', 'en_GB', '---'),
+(5430, 'Presupuesto_items', 'en_GB', '---'),
+(5431, 'Paises', 'en_GB', '---'),
+(5432, 'Notac_items', 'en_GB', '---'),
+(5433, 'Factura_items', 'en_GB', '---'),
+(5434, 'Cp_ville', 'en_GB', '---'),
+(5435, 'Id_factura', 'en_GB', '---'),
+(5436, 'Id_contacto', 'en_GB', '---'),
+(5437, 'Sub_total', 'en_GB', '---'),
+(5438, 'Iva', 'en_GB', '---'),
+(5439, 'Anticipo', 'en_GB', '---'),
+(5440, 'Saldo', 'en_GB', '---'),
+(5441, 'Comentarios', 'en_GB', '---'),
+(5442, 'R1', 'en_GB', '---'),
+(5443, 'R2', 'en_GB', '---'),
+(5444, 'R3', 'en_GB', '---'),
+(5445, 'Fecha_cobro', 'en_GB', '---'),
+(5446, 'Ce', 'en_GB', '---'),
+(5447, 'ref', 'en_GB', '---'),
+(5448, 'id_factura', 'en_GB', '---'),
+(5449, 'id_contacto', 'en_GB', '---'),
+(5450, 'fecha_registro', 'en_GB', '---'),
+(5451, 'sub_total', 'en_GB', '---'),
+(5452, 'iva', 'en_GB', '---'),
+(5453, 'anticipo', 'en_GB', '---'),
+(5454, 'saldo', 'en_GB', '---'),
+(5455, 'comentarios', 'en_GB', '---'),
+(5456, 'r1', 'en_GB', '---'),
+(5457, 'r2', 'en_GB', '---'),
+(5458, 'r3', 'en_GB', '---'),
+(5459, 'fecha_cobro', 'en_GB', '---'),
+(5460, 'expira', 'en_GB', '---'),
+(5461, 'ce', 'en_GB', '---'),
+(5462, 'estatus', 'en_GB', '---'),
+(5463, 'Presupuesto', 'en_GB', '---'),
+(5464, 'Id_presupuesto', 'en_GB', '---'),
+(5465, 'Id_notac', 'en_GB', '---'),
+(5466, 'id_presupuesto', 'en_GB', '---'),
+(5467, 'id_notac', 'en_GB', '---'),
+(5468, 'Fecha_pago', 'en_GB', '---'),
+(5469, 'fecha_pago', 'en_GB', '---'),
+(5470, 'Banco', 'en_GB', '---'),
+(5471, 'Anulada', 'en_GB', '---'),
+(5472, 'Cod_anu', 'en_GB', '---'),
+(5473, 'tipo', 'en_GB', '---'),
+(5474, 'fecha', 'en_GB', '---'),
+(5475, 'banco', 'en_GB', '---'),
+(5476, 'anulada', 'en_GB', '---'),
+(5477, 'cod_anu', 'en_GB', '---'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (5478, 'Sus facturas', 'es_ES', 'Sus facturas'),
 (5479, 'sus_facturas', 'es_ES', 'sus_facturas'),
 (5480, 'Recordatorios', 'es_ES', 'Recordatorios'),
@@ -5801,17 +6525,35 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5485, 'Este es un comentarios publico', 'es_ES', 'Este es un comentarios publico'),
 (5486, 'Anular', 'es_ES', 'Anular'),
 (5487, 'Registrar cobros', 'es_ES', 'Registrar cobros'),
+<<<<<<< HEAD
+=======
+(5488, 'Pdf', 'en_GB', '---'),
+(5489, 'Anular', 'en_GB', '---'),
+(5490, 'Cantidad', 'en_GB', '---'),
+(5491, 'Descripción', 'en_GB', '---'),
+(5492, '% iva', 'en_GB', '---'),
+(5493, 'Comunicación extructurada', 'en_GB', '---'),
+(5494, 'Registrar cobros', 'en_GB', '---'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (5495, 'Cliente', 'es_ES', 'Cliente'),
 (5496, 'Nota de crédito', 'es_ES', 'Nota de crédito'),
 (5497, 'Cobros', 'es_ES', 'Cobros'),
 (5498, 'Registo de cobros', 'es_ES', 'Registo de cobros'),
 (5499, 'Cambiar Cliente', 'es_ES', 'Cambiar Cliente'),
 (5500, 'Registrada', 'es_ES', 'Registrada'),
+<<<<<<< HEAD
+=======
+(5501, 'Cliente', 'en_GB', '---'),
+(5502, 'Registrada', 'en_GB', '---'),
+(5503, 'Nota de crédito', 'en_GB', '---'),
+(5504, 'Registo de cobros', 'en_GB', '---'),
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 (5505, '', 'es_ES', ''),
 (5509, 'Cobrada', 'es_ES', 'Cobrada'),
 (5510, 'anular', 'es_ES', 'anular'),
 (5511, 'No se puede registrar pagos en una factura anulada', 'es_ES', 'No se puede registrar pagos en una factura anulada'),
 (5512, 'Registrar pagos', 'es_ES', 'Registrar pagos'),
+<<<<<<< HEAD
 (5513, 'Ud. no puede editar una factura anulada', 'es_ES', 'Ud. no puede editar una factura anulada'),
 (5523, 'total', 'es_ES', 'total'),
 (5524, 'Subtotal', 'es_ES', 'Subtotal'),
@@ -6035,6 +6777,9 @@ INSERT INTO `_traducciones` (`id`, `frase`, `idioma`, `traduccion`) VALUES
 (5850, 'cambiar_tema', 'es_ES', 'cambiar_tema'),
 (5851, 'Temas', 'en_GB', '---'),
 (5852, 'cambiar_tema', 'en_GB', '---');
+=======
+(5513, 'Ud. no puede editar una factura anulada', 'es_ES', 'Ud. no puede editar una factura anulada');
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 -- --------------------------------------------------------
 
@@ -6055,14 +6800,30 @@ CREATE TABLE `_usuarios` (
 --
 
 INSERT INTO `_usuarios` (`id`, `grupo`, `usuario`, `clave`, `estatus`) VALUES
+<<<<<<< HEAD
 (26, 'root', 'robincoello@hotmail.com', '$2y$12$v5Lr3co19UKhcOXU8Nqa7egQdo76c8LDjpjYIdSnsT5PR4w.jEDqa', 1),
 (109, 'escritores', 'pato@colombia.com', '$2y$12$r58QkP5Y.ShdwqOi2X.XHumWUE/ZcNH.yknlq5YjhnntzGez4Dza6', 1);
+=======
+(26, 'root', 'robincoello@hotmail.com', '$2y$12$3lnUh.FbwS4frwYGd92LwuPQ0Dyup0J2dQJnyEAj.jQ8QdEcQO9VG', 1),
+(105, 'centros', 'pato@colombia.com', '$2y$12$oBwLugOqpvS0m5e35wAGYuRjvY1mX3txtunIzcfOkAvDqERQuDfLS', 1),
+(106, 'centros', 'casa@master.com', '$2y$12$.X1Tq/8h6eMEVhXZmlekUOgzyZXOas8qrZbdq.qGfTswWPgBMwx6K', 1);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 --
 -- Indexes for dumped tables
 --
 
 --
+<<<<<<< HEAD
+=======
+-- Indexes for table `balanza`
+--
+ALTER TABLE `balanza`
+  ADD UNIQUE KEY `id_transaccion` (`id`),
+  ADD KEY `id_contacto` (`id_contacto`);
+
+--
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- Indexes for table `cambio_claves`
 --
 ALTER TABLE `cambio_claves`
@@ -6082,23 +6843,77 @@ ALTER TABLE `cp_ville`
   ADD PRIMARY KEY (`vil_id`);
 
 --
+<<<<<<< HEAD
+=======
+-- Indexes for table `facturas`
+--
+ALTER TABLE `facturas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ref` (`ref`),
+  ADD UNIQUE KEY `ref_2` (`ref`,`id_contacto`),
+  ADD KEY `id_contacto` (`id_contacto`);
+
+--
+-- Indexes for table `factura_items`
+--
+ALTER TABLE `factura_items`
+  ADD UNIQUE KEY `id_item` (`id`),
+  ADD KEY `ref_factura` (`ref_factura`);
+
+--
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
+=======
+-- Indexes for table `notac`
+--
+ALTER TABLE `notac`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ref` (`ref`),
+  ADD KEY `id_contacto` (`id_contacto`);
+
+--
+-- Indexes for table `notac_items`
+--
+ALTER TABLE `notac_items`
+  ADD UNIQUE KEY `id_item` (`id`),
+  ADD KEY `ref_notac` (`ref_notac`);
+
+--
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- Indexes for table `paises`
 --
 ALTER TABLE `paises`
   ADD PRIMARY KEY (`Code`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `plugins`
 --
 ALTER TABLE `plugins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nombre` (`nombre`);
+=======
+-- Indexes for table `presupuestos`
+--
+ALTER TABLE `presupuestos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ref` (`ref`),
+  ADD UNIQUE KEY `ref_2` (`ref`,`id_contacto`),
+  ADD KEY `id_contacto` (`id_contacto`);
+
+--
+-- Indexes for table `presupuesto_items`
+--
+ALTER TABLE `presupuesto_items`
+  ADD UNIQUE KEY `id_item` (`id`),
+  ADD KEY `presupuesto_items_ibfk_1` (`ref_presupuesto`);
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 --
 -- Indexes for table `_contenido`
@@ -6172,21 +6987,38 @@ ALTER TABLE `_usuarios`
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `cambio_claves`
 --
 ALTER TABLE `cambio_claves`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+=======
+-- AUTO_INCREMENT for table `balanza`
+--
+ALTER TABLE `balanza`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `cambio_claves`
+--
+ALTER TABLE `cambio_claves`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `contactos`
 --
 ALTER TABLE `contactos`
+<<<<<<< HEAD
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+=======
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `cp_ville`
 --
 ALTER TABLE `cp_ville`
   MODIFY `vil_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2902;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
@@ -6196,11 +7028,51 @@ ALTER TABLE `logs`
 --
 ALTER TABLE `plugins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+-- AUTO_INCREMENT for table `facturas`
+--
+ALTER TABLE `facturas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `factura_items`
+--
+ALTER TABLE `factura_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+--
+-- AUTO_INCREMENT for table `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `notac`
+--
+ALTER TABLE `notac`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `notac_items`
+--
+ALTER TABLE `notac_items`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `presupuestos`
+--
+ALTER TABLE `presupuestos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `presupuesto_items`
+--
+ALTER TABLE `presupuesto_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_contenido`
 --
 ALTER TABLE `_contenido`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=910;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=759;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_grupos`
 --
@@ -6210,42 +7082,115 @@ ALTER TABLE `_grupos`
 -- AUTO_INCREMENT for table `_idiomas`
 --
 ALTER TABLE `_idiomas`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_menu`
 --
 ALTER TABLE `_menu`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_opciones`
 --
 ALTER TABLE `_opciones`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_paginas`
 --
 ALTER TABLE `_paginas`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_permisos`
 --
 ALTER TABLE `_permisos`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=353;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_traducciones`
 --
 ALTER TABLE `_traducciones`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5853;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5514;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- AUTO_INCREMENT for table `_usuarios`
 --
 ALTER TABLE `_usuarios`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 --
 -- Constraints for dumped tables
 --
 
 --
+<<<<<<< HEAD
+=======
+-- Constraints for table `balanza`
+--
+ALTER TABLE `balanza`
+  ADD CONSTRAINT `balanza_ibfk_1` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id`);
+
+--
+-- Constraints for table `facturas`
+--
+ALTER TABLE `facturas`
+  ADD CONSTRAINT `facturas_ibfk_1` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id`);
+
+--
+-- Constraints for table `factura_items`
+--
+ALTER TABLE `factura_items`
+  ADD CONSTRAINT `factura_items_ibfk_1` FOREIGN KEY (`ref_factura`) REFERENCES `facturas` (`ref`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `notac`
+--
+ALTER TABLE `notac`
+  ADD CONSTRAINT `notac_ibfk_1` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id`);
+
+--
+-- Constraints for table `notac_items`
+--
+ALTER TABLE `notac_items`
+  ADD CONSTRAINT `notac_items_ibfk_1` FOREIGN KEY (`ref_notac`) REFERENCES `notac` (`ref`);
+
+--
+-- Constraints for table `presupuestos`
+--
+ALTER TABLE `presupuestos`
+  ADD CONSTRAINT `presupuestos_ibfk_1` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id`);
+
+--
+-- Constraints for table `presupuesto_items`
+--
+ALTER TABLE `presupuesto_items`
+  ADD CONSTRAINT `presupuesto_items_ibfk_1` FOREIGN KEY (`ref_presupuesto`) REFERENCES `presupuestos` (`ref`) ON UPDATE CASCADE;
+
+--
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 -- Constraints for table `_permisos`
 --
 ALTER TABLE `_permisos`

@@ -9,6 +9,7 @@
     <?php echo _t("Lista de _contenido"); ?> <a type="button" class="btn btn-primary navbar-btn" href="?p=_contenido&c=crear"> <?php _t("Nueva"); ?></a>
 </h2>
 
+<<<<<<< HEAD
 <?php 
 /*<a href="?p=_contenido"><?php _t('Index'); ?></a> | 
 <a href="?p=_contenido&c=correccion"><?php _t('Correcciones'); ?></a> | 
@@ -16,6 +17,11 @@
 ?>
 
 
+=======
+<a href="?p=_contenido"><?php _t('Index'); ?></a> | 
+<a href="?p=_contenido&c=correccion"><?php _t('Correcciones'); ?></a> | 
+<a href="?p=_contenido&c=atraducir"><?php _t('No traducidas'); ?></a>
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 <?php
 include "form_buscar.php";
 ?>

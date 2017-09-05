@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 plugins_lista();
 
@@ -15,6 +16,8 @@ print_r($claves);
 
 
 
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 <?php /**
   magia_version: 0.0.11
  * */ ?>

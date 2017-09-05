@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 /**
  * Regresa la cantidad de dias entre dos fechas
@@ -12,10 +13,20 @@
  * @return type
  */
 function fechas_dias_transcurridos($fecha_i, $fecha_f) {
+=======
+function dias_transcurridos($fecha_i, $fecha_f) {
+    /*
+      // Ejemplo de uso:
+      echo dias_transcurridos('2012-07-01','2012-07-18');
+      // Salida : 17
+     */
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     $dias = (strtotime($fecha_i) - strtotime($fecha_f)) / 86400;
     $dias = abs($dias);
     $dias = floor($dias);
     return $dias;
+<<<<<<< HEAD
 }
 
 /**
@@ -43,3 +54,6 @@ function fechas_sumar($fecha1, $fecha2) {
 function fechas_restar($fecha, $menosFecha) {
     return $fechaRestada;
 }
+=======
+}
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42

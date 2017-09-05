@@ -67,10 +67,13 @@
            id="_menu_icono" 
            placeholder="<?php _t("folder-open"); ?>" value=""   > 
        <a href="http://getbootstrap.com/components/#glyphicons" target="new">http://getbootstrap.com/components/#glyphicons</a>
+<<<<<<< HEAD
        
        https://glyphsearch.com/?query=pdf
        
        
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
      </div> 
    </div> 
 

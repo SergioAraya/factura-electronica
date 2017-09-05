@@ -17,12 +17,16 @@ if (permisos_tiene_permiso($accion, $pagina, $_usuarios_grupo)) {
     
     include "./contactos/modelos/buscar.php";
 
+<<<<<<< HEAD
          $archivo_tema = "../temas/". _opciones_valor_segun_opcion('tema')."/contactos/index.php";
      if(file_exists($archivo_tema)){
          include "$archivo_tema"; 
      }else{
          include "./contactos/vista/index.php"; 
      }
+=======
+    include "./contactos/vista/index.php";
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 } else {
     permisos_sin_permiso($accion, $pagina, $_usuarios_usuario);
 } 

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -6,18 +7,30 @@
  * @param type $id
  * @return boolean
  */
+=======
+
+/**
+  magia_version: 0.0.8
+ * */
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function logs_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
             "SELECT $campo FROM logs WHERE id = $id   ", $conexion) or error(__DIR__, __FILE__, __LINE__);
     $reg = mysql_fetch_array($sql);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     if ($reg[$campo]) {
         return $reg[$campo];
     } else {
         return false;
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -27,6 +40,9 @@ function logs_campo($campo, $id) {
  * @param type $excluir
  * @package logs_select
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function logs_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -49,6 +65,7 @@ function logs_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$logs[$campo]\">$logs[$campo]</option> \n";
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -56,6 +73,9 @@ function logs_campo_add($campo, $label, $selecionado = "", $excluir = "") {
  * @param type $excluir
  * @package logs_select
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function logs_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(

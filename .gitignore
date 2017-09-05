@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 /nbproject
 /vendor
+=======
+/nbproject/private/
+/vendor/
+/gestion/mg_facturas/nbproject/private/
+/gestion/factura_items/nbproject/private/
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42

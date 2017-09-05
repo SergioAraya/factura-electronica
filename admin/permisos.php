@@ -21,7 +21,10 @@ function permisos_obtiene_permiso($p, $g) {
  * @param type $pagina
  * @param type $grupo
  * @return boolean
+<<<<<<< HEAD
  * @uses 
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
  */
 function permisos_tiene_permiso($accion, $pagina, $grupo) {
     global $r1, $r2;

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -7,6 +8,12 @@
  * @return boolean
  * @package opciones
  */
+=======
+
+/**
+  magia_version: 0.0.8
+ * */
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _opciones_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
@@ -21,6 +28,7 @@ function _opciones_campo($campo, $id) {
         return false;
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -30,6 +38,8 @@ function _opciones_campo($campo, $id) {
  * @param type $excluir
  * @package opciones
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _opciones_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -52,6 +62,7 @@ function _opciones_campo_add($campo, $label, $selecionado = "", $excluir = "") {
         echo "value=\"$_opciones[$campo]\">$_opciones[$campo]</option> \n";
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -59,6 +70,9 @@ function _opciones_campo_add($campo, $label, $selecionado = "", $excluir = "") {
  * @param type $excluir
  * @package opciones
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _opciones_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -83,12 +97,16 @@ function _opciones_add($selecionado = "", $excluir = "") {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
  * @return boolean
  * @package opciones
  */
+=======
+/**/
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 function _opciones_numero_actual() {
     global $conexion;
@@ -102,6 +120,7 @@ function _opciones_numero_actual() {
         return false;
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -109,6 +128,9 @@ function _opciones_numero_actual() {
  * @package opciones
  * @uses _opciones_thead Para mostrar los campos
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _opciones_campos_disponibles() {
     global $conexion;
     $data = array();
@@ -122,11 +144,17 @@ function _opciones_campos_disponibles() {
 }
 
 /**
+<<<<<<< HEAD
   * Son los campos que se debe mostrar en la tabla del index
  * @global type $conexion
  * @return type
  * @package opciones
  * @uses _opciones_thead Description _opciones_thead Usa para determianr que campos debe mostrarse
+=======
+ * Son los campos que se debe mostrar en la tabla del index
+ * @global type $conexion
+ * @return type
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
  */
 function _opciones_campos_a_mostrar() {
     global $conexion;
@@ -137,10 +165,14 @@ function _opciones_campos_a_mostrar() {
 
     return json_decode($reg[0], true);
 }
+<<<<<<< HEAD
 /**
  * @package opciones
  * 
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _opciones_thead() {
     $campo_disponibles = _opciones_campos_disponibles();
     $_opciones_campos_a_mostrar = _opciones_campos_a_mostrar();
@@ -159,7 +191,11 @@ function _opciones_thead() {
 }
 
 /**
+<<<<<<< HEAD
  * @package opciones
+=======
+ * 
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
  */
 function _opciones_tfoot() {
     _opciones_thead();

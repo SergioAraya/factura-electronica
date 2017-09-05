@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <?php
 /*
+=======
+<?php/*
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 switch ($_SERVER['SERVER_NAME']) {
     case "127.0.0.1":
     case "localhost":

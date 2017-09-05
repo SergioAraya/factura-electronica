@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 include "../admin/configuracion.php";
+=======
+include "../admin/bd.php";
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 include "../admin/coneccion.php";
 if (isset($_SESSION['s_username'])) {
     $username = "$_SESSION[s_username]";    

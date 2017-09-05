@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -7,18 +8,30 @@
  * @return boolean
  * @package contenido
  */
+=======
+
+/**
+  magia_version: 0.0.8
+ * */
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _contenido_campo($campo, $id) {
     global $conexion;
     $sql = mysql_query(
             "SELECT $campo FROM _contenido WHERE id = $id   ", $conexion) or die("Error: _contenido_campo()" . mysql_error());
     $reg = mysql_fetch_array($sql);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     if ($reg[$campo]) {
         return $reg[$campo];
     } else {
         return false;
     }
 }
+<<<<<<< HEAD
 /**
  * Entrega los valores de la columna $campo de la tabla _menu para inputs para un select 
  * @Ejemplo
@@ -36,6 +49,9 @@ function _contenido_campo($campo, $id) {
  * @param type $excluir
  * @package contenido_select
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _contenido_campo_add($campo, $label, $selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -58,6 +74,7 @@ function _contenido_campo_add($campo, $label, $selecionado = "", $excluir = "") 
         echo "value=\"$_contenido[$campo]\">$_contenido[$campo]</option> \n";
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
@@ -65,6 +82,9 @@ function _contenido_campo_add($campo, $label, $selecionado = "", $excluir = "") 
  * @param type $excluir
  * @package contenido_select
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _contenido_add($selecionado = "", $excluir = "") {
     global $conexion;
     $sql = mysql_query(
@@ -88,12 +108,16 @@ function _contenido_add($selecionado = "", $excluir = "") {
         echo "value=\"$_contenido[frase]\">$_contenido[frase]</option>";
     }
 }
+<<<<<<< HEAD
 /**
  * 
  * @global type $conexion
  * @return boolean
  * @package contenido
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function _contenido_numero_actual() {
     global $conexion;
     $sql = mysql_query(

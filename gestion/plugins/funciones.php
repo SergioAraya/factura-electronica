@@ -131,6 +131,7 @@ function plugins_tfoot() {
     plugins_thead();
 }
 
+<<<<<<< HEAD
 function plugins_lista() {
     $filename = "../gestion/_contenido/index.php";
     $data = array();
@@ -155,6 +156,8 @@ function plugins_lista() {
     }
 }
 
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 /**
  * Lee el arvivo version en la carpeta del plugin 
  * @param type $plugin
@@ -192,12 +195,26 @@ function plugins_instalar($plugins_nombre, $plugins_plugin_zip) {
     // borramos la carpeta temporal 
     // verificamos que exista todos los ficheros adecuados 
     // ar permisos adecuados a cada archivo
+<<<<<<< HEAD
 //http://php.net/manual/en/ziparchive.extractto.php
 //http://php.net/manual/es/class.ziparchive.php
     // agrego mi usuario al grupo apache
 
 
 
+=======
+    
+    
+    
+    
+    
+//http://php.net/manual/en/ziparchive.extractto.php
+//http://php.net/manual/es/class.ziparchive.php
+    // agrego mi usuario al grupo apache
+    
+    
+    
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     $plugin_a_instalar = $plugins_plugin_zip;
     echo "<h2>Empezamos a borrar</h2>";
     $filename = "../gestion/facturas";
@@ -218,11 +235,16 @@ function plugins_instalar($plugins_nombre, $plugins_plugin_zip) {
     if (!@copy($zipfile, "$path/$archivo_comprimido")) {
         $errors = error_get_last();
         echo "COPY ERROR: " . $errors['type'];
+<<<<<<< HEAD
         echo "<br />\n" . $errors['message'];
+=======
+        echo "<br />\n" . $errors['message'];                
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     } else {
         chmod("$path/facturas", 0777);
         echo "<p>File $archivo_comprimido copied from remote!</p>";
     }
+<<<<<<< HEAD
 
 
 
@@ -239,11 +261,32 @@ function plugins_instalar($plugins_nombre, $plugins_plugin_zip) {
 
         $zip->close();
     }
+=======
+   
+    
+
+
+$zip = new ZipArchive;
+if ($zip->open($zipfile) === true) {
+                   
+    for($i = 0; $i < $zip->numFiles; $i++) {
+                        
+        $zip->extractTo("$path/", array($zip->getNameIndex($i)));
+                       
+        // here you can run a custom function for the particular extracted file
+                       
+    }
+                   
+    $zip->close();
+                   
+}
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 
 
 
 // descomprime 
+<<<<<<< HEAD
     /*
       $zipArchive = new ZipArchive();
       $result = $zipArchive->open($archivo_comprimido);
@@ -276,16 +319,63 @@ function zip_flatten($zipfile, $dest = '.') {
             while (!feof($fp))
                 fwrite($ofp, fread($fp, 8192));
 
+=======
+/*
+    $zipArchive = new ZipArchive();
+    $result = $zipArchive->open($archivo_comprimido);
+    if ($result === TRUE) {
+        $zipArchive->extractTo("$path/facturas/");
+        $zipArchive->close();
+        // Do something else on success
+        echo "<p>ok descomprimodo en $path/facturas</p>";
+    } else {
+        echo "<p>error al descomprimir: $archivo_comprimido</p>";
+        // Do something on error
+    }*/
+}
+
+// dest shouldn't have a trailing slash
+function zip_flatten ( $zipfile, $dest='.' )
+{
+    $zip = new ZipArchive;
+    if ( $zip->open( $zipfile ) )
+    {
+        for ( $i=0; $i < $zip->numFiles; $i++ )
+        {
+            $entry = $zip->getNameIndex($i);
+            if ( substr( $entry, -1 ) == '/' ) continue; // skip directories
+           
+            $fp = $zip->getStream( $entry );
+            $ofp = fopen( $dest.'/'.basename($entry), 'w' );
+           
+            if ( ! $fp )
+                throw new Exception('Unable to extract the file.');
+           
+            while ( ! feof( $fp ) )
+                fwrite( $ofp, fread($fp, 8192) );
+           
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
             fclose($fp);
             fclose($ofp);
         }
 
+<<<<<<< HEAD
         $zip->close();
     } else
         return false;
 
     return $zip;
 }
+=======
+                $zip->close();
+    }
+    else
+        return false;
+   
+    return $zip;
+} 
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 function delete_dir($src) {
     $dir = opendir($src);

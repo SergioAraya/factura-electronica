@@ -1,3 +1,126 @@
+<<<<<<< HEAD
+=======
+<?php /**
+  magia_version: 0.0.8
+ * */ ?>
+<?php //include "tabs.php";       ?>
+
+
+
+<?php
+/*
+  <a class="btn btn-default btn-xs"
+  role="button"
+  data-toggle="collapse"
+  href="#collapseExample"
+  aria-expanded="false"
+  aria-controls="collapseExample">
+  <?php _t('Opciones'); ?>
+  </a>
+
+
+  <div class="collapse" id="collapseExample">
+  <div class="well">
+
+  <p><?php _t('Columnas disponibles'); ?></p>
+
+
+  <form class="form-inline">
+  <?php
+  $columnas_disponibles = array(
+  "id"=>"1",
+  "empresa"=>"4",
+  "contacto"=>"3",
+  "email"=>"2",
+  );
+  foreach ($columnas_disponibles as $tabla => $orden) {
+  echo '<label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox3" value="option3"> '.$tabla.'
+  </label>';
+  }
+  ?>
+  <button type="submit" class="btn btn-default btn-xs"><?php _t("Registrar"); ?></button>
+  </form>
+
+
+  <form class="form-inline">
+  <select>
+  <option>1er campo</option>
+
+  <?php
+
+  foreach ($columnas_disponibles as $tabla => $orden) {
+  echo '<option>'.$tabla.'</option>';
+  }
+  ?>
+  </select>
+
+
+  <select>
+  <option>1er campo</option>
+
+  <?php
+
+  foreach ($columnas_disponibles as $tabla => $orden) {
+  echo '<option>'.$tabla.'</option>';
+  }
+  ?>
+  </select>
+
+
+
+  <select>
+  <option>1er campo</option>
+
+  <?php
+
+  foreach ($columnas_disponibles as $tabla => $orden) {
+  echo '<option>'.$tabla.'</option>';
+  }
+  ?>
+  </select>
+
+
+
+  <select>
+  <option>1er campo</option>
+
+  <?php
+
+  foreach ($columnas_disponibles as $tabla => $orden) {
+  echo '<option>'.$tabla.'</option>';
+  }
+  ?>
+  </select>
+
+
+
+  <button type="submit" class="btn btn-default btn-xs"><?php _t("Registrar"); ?></button>
+  </form>
+
+
+  </div>
+  </div>
+
+
+ */
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 <h3> 
     <span class="glyphicon glyphicon-<?php echo _menu_icono_segun_pagina($p); ?>"></span> 
 

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 function emails_enviar($email, $body, $sujeto='') {
     global  $config_nombre_web,
             $config_email_nombre, 
@@ -49,4 +50,11 @@ function emails_enviar($email, $body, $sujeto='') {
         echo "Message sent!";
     }
 }
+=======
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 

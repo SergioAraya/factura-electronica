@@ -1,0 +1,7 @@
+pluging : version
+requiere:
+magia_version: 0.0.11 
+balanza 0.0.1
+presupuesto 0.0.1
+bancos 0.0.1
+contactos 0.0.1

@@ -28,7 +28,11 @@
 
         <?php
         if (permisos_tiene_permiso("ver", "_grupos", $_usuarios_grupo)) {
+<<<<<<< HEAD
          //   include "./_grupos/vista/tr_buscar.php";
+=======
+            include "./_grupos/vista/tr_buscar.php";
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
         }
         ?>
 
@@ -49,7 +53,11 @@
     </tbody>
     <?php
     if (permisos_tiene_permiso("crear", "_grupos", $_usuarios_grupo)) {
+<<<<<<< HEAD
      //   include "./_grupos/vista/tr_anadir.php";
+=======
+        include "./_grupos/vista/tr_anadir.php";
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
     }
     ?>
 

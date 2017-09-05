@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Genera un codigo para usarlo en captcha
  * @package captcha
@@ -17,14 +18,27 @@ function captcha_genera($largo){
  */
 function captcha_verifica($codigo, $captcha){
     if($codigo == $captcha){
+=======
+
+function captcha_genera(){
+    
+    return "10+0"; 
+}
+
+function captcha_verifica($codigo, $valor){
+    if($codigo == $valor){
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
         return true;
     }else{
         false;
     }
 }
+<<<<<<< HEAD
 /**
  * 
  */
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function captcha_html(){
     echo '<div class="form-group">
           <label for="captcha">Captcha</label>

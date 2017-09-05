@@ -37,7 +37,10 @@ function _menu_top() {
 /**
  * 
  * @global type $conexion
+<<<<<<< HEAD
  * @global type $_usuarios_grupo
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
  * @param type $padre
  * @param type $ubicacion
  */

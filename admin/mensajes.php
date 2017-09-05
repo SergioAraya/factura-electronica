@@ -1,10 +1,15 @@
 <?php
+<<<<<<< HEAD
 /**
  * Crea un mensaje, si se pasa el $tipo vacio crea como si fuera mensaje tipo: 'info'
  * @package mensajes
  * @param type $tipo Puede ser [atencion, ayuda, alto, info, ok, (vacio)]
  * @param type $sms Mensaje a ser enviado, este es traducido
  */
+=======
+
+// atencion	//	ayuda//	alto//	info//	ok
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function mensaje($tipo, $sms) {
 
     $tipo = strtolower($tipo); // pasamos todo a minusculas
@@ -56,12 +61,16 @@ function mensaje($tipo, $sms) {
             break;
     }
 }
+<<<<<<< HEAD
 /**
  * Un alias de mensaje() de tipo 'alto'
  * @package mensajes
  * @package mensajes
  * @param type $sms
  */
+=======
+
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 function sms($sms) {
     mensaje('alto', $sms);
 }

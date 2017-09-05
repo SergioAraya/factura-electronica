@@ -14,6 +14,17 @@ function magia_version() {
     return "0.0.11";
 }
 
+<<<<<<< HEAD
+=======
+function m($v1, $v2) {
+    return ($v1 == $v2) ? TRUE : FALSE;
+}
+
+function x() {
+    global $r1, $r2;
+    return($r1 != $r2) ? die(sms(EL)) : false;
+}
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 
 /**
  * Nos da el valor segun $tabla, $id, $campo
@@ -211,6 +222,7 @@ function logo() {
     global $config_logo;
     echo '<a href="index.php" class="thumbnail"><img src="../imagenes/' . $config_logo . '" alt=""></a>';
 }
+<<<<<<< HEAD
 
 function gestion_bd_crear_tabla($bdatos) {
     global $servidor, $bdatos, $usuario, $clave;
@@ -233,3 +245,5 @@ function gestion_bd_crear_tabla($bdatos) {
     }
     $conn->close();
 }
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42

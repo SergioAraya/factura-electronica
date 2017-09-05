@@ -1,9 +1,12 @@
 <?php
 //session_start("magia_php");
 //include "z_verificar.php";
+<<<<<<< HEAD
 if(!file_exists("../admin/configuracion.php")){
     header("Location: ../install.php");
 }
+=======
+>>>>>>> 0b6d1fff6d58e8affc940fdb6878495d8d3dbc42
 include "../admin/bd.php";
 include "../admin/errores.php";
 include "../admin/funciones.php";
